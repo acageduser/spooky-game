@@ -47,6 +47,7 @@
     {"id":{"name":"sprLibrarian","path":"sprites/sprLibrarian/sprLibrarian.yy",},},
     {"id":{"name":"sprMirror1","path":"sprites/sprMirror1/sprMirror1.yy",},},
     {"id":{"name":"sprMirror2","path":"sprites/sprMirror2/sprMirror2.yy",},},
+    {"id":{"name":"sprWallSet_Floor","path":"sprites/sprWallSet_Floor/sprWallSet_Floor.yy",},},
     {"id":{"name":"sprWallSet","path":"sprites/sprWallSet/sprWallSet.yy",},},
     {"id":{"name":"tlsWallSet","path":"tilesets/tlsWallSet/tlsWallSet.yy",},},
   ],
