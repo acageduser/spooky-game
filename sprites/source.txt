@@ -1,6 +1,3 @@
-# spooky-game
-CSC 240 Coursework
-
 /******************************************************************/
 /* Author: Jalen Lewis, Ryan Livinghouse, Angel Cruz              */
 /* Major: Information Technology/Game Development                 */
