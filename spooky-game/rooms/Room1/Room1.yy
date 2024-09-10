@@ -9,12 +9,12 @@
   "isDnd":false,
   "layers":[
     {"$GMRTileLayer":"","%Name":"Tiles_1","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_1","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":32,"SerialiseWidth":32,"TileCompressedData":[
-          -33,0,1,8,-28,3,4,7,0,0,11,-28,0,6,10,0,0,11,0,13,-24,3,8,14,0,10,0,0,11,0,11,-24,15,7,10,0,10,0,0,11,
-          0,-26,3,5,0,10,0,0,11,-28,0,4,10,0,0,11,-28,0,4,10,0,0,11,-28,0,4,10,0,0,11,-28,0,4,10,0,0,11,-28,0,
-          4,10,0,0,11,-28,0,4,10,0,0,11,-28,0,4,10,0,0,11,-28,0,4,10,0,0,11,-28,0,4,10,0,0,11,-28,0,4,10,0,0,11,
-          -28,0,4,10,0,0,11,-28,0,4,10,0,0,11,-28,0,4,10,0,0,11,-28,0,4,10,0,0,11,-28,0,4,10,0,0,11,-28,0,4,10,
-          0,0,11,-28,0,4,10,0,0,11,-28,0,4,10,0,0,11,-28,0,4,10,0,0,11,-28,0,4,10,0,0,11,-28,0,4,10,0,0,11,-28,
-          0,4,10,0,0,11,-28,0,4,10,0,0,11,-28,0,3,10,0,0,-30,3,-33,0,
+          -33,0,1,8,-28,3,4,7,0,0,11,-28,15,4,10,0,0,11,-28,15,4,10,0,0,11,-28,15,4,10,0,0,11,-28,15,4,10,0,0,
+          11,-28,15,4,10,0,0,11,-28,15,4,10,0,0,11,-28,15,4,10,0,0,11,-28,15,4,10,0,0,11,-28,15,4,10,0,0,11,-28,
+          15,4,10,0,0,11,-28,15,4,10,0,0,11,-28,15,4,10,0,0,11,-28,15,4,10,0,0,11,-28,15,4,10,0,0,11,-28,15,4,
+          10,0,0,11,-28,15,4,10,0,0,11,-28,15,4,10,0,0,11,-28,15,4,10,0,0,11,-28,15,4,10,0,0,11,-28,15,4,10,0,
+          0,11,-28,15,4,10,0,0,11,-28,15,4,10,0,0,11,-28,15,4,10,0,0,11,-28,15,4,10,0,0,11,-28,15,4,10,0,0,11,
+          -28,15,4,10,0,0,11,-28,15,4,10,0,0,11,-28,15,3,10,0,0,-30,3,-33,0,
         ],"TileDataFormat":1,},"tilesetId":{"name":"tlsWallSet","path":"tilesets/tlsWallSet/tlsWallSet.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
