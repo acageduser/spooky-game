@@ -2,7 +2,7 @@
   "$GMTileSet":"v1",
   "%Name":"tlsWallSet",
   "autoTileSets":[
-    {"$GMAutoTileSet":"","%Name":"autotile_1","closed_edge":false,"name":"autotile_1","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,15,],},
+    {"$GMAutoTileSet":"","%Name":"autotile_1","closed_edge":false,"name":"autotile_1","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[15,11,10,3,7,11,0,8,8,0,10,7,3,3,3,0,],},
   ],
   "macroPageTiles":{
     "SerialiseHeight":0,
@@ -20,8 +20,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"sprWallSet",
-    "path":"sprites/sprWallSet/sprWallSet.yy",
+    "name":"sprWallSet_Floor",
+    "path":"sprites/sprWallSet_Floor/sprWallSet_Floor.yy",
   },
   "spriteNoExport":false,
   "textureGroupId":{
