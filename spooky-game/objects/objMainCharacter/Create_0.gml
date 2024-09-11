@@ -1,5 +1,14 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Initialize Variables
+
+/*************************************************************************/
+/*                                                                       */
+/* Event name: Create                                                    */
+/* Description: Initializes the animation timer and speed for            */
+/* controlling the frame rate of character animations.                   */
+/* Parameters: none                                                      */
+/* Return Value: none                                                    */
+/*                                                                       */
+/*************************************************************************/
 
 image_speed = 0; //fix the character cycling through all 32 of my animations when idle. DO NOT CHANGE
 

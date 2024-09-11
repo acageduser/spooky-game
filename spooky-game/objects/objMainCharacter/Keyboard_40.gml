@@ -1,5 +1,14 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Down Animation Control
+
+/*************************************************************************/
+/*                                                                       */
+/* Event name: Key Down - Down                                           */
+/* Description: Moves the character down and animates the sprite to      */
+/* simulate walking down.                                                */
+/* Parameters: none                                                      */
+/* Return Value: none                                                    */
+/*                                                                       */
+/*************************************************************************/
 
 if (keyboard_check(vk_down)) {
     y += 4;

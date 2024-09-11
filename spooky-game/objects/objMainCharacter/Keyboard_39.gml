@@ -1,5 +1,14 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Right Animation Control
+
+/*************************************************************************/
+/*                                                                       */
+/* Event name: Key Down - Right                                          */
+/* Description: Moves the character right and animates the sprite to     */
+/* simulate walking right.                                               */
+/* Parameters: none                                                      */
+/* Return Value: none                                                    */
+/*                                                                       */
+/*************************************************************************/
 
 if (keyboard_check(vk_right)) {
     x += 4;

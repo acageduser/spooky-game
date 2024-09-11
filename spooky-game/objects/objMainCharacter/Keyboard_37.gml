@@ -1,5 +1,14 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Left Animation Control
+
+/*************************************************************************/
+/*                                                                       */
+/* Event name: Key Down - Left                                           */
+/* Description: Moves the character left and animates the sprite to      */
+/* simulate walking left.                                                */
+/* Parameters: none                                                      */
+/* Return Value: none                                                    */
+/*                                                                       */
+/*************************************************************************/
 
 if (keyboard_check(vk_left)) {
     x -= 4;

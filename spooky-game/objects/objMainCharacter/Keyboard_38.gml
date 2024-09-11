@@ -1,5 +1,14 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Up Animation Control
+
+/*************************************************************************/
+/*                                                                       */
+/* Event name: Key Down - Up                                             */
+/* Description: Moves the character up and animates the sprite to        */
+/* simulate walking up.                                                  */
+/* Parameters: none                                                      */
+/* Return Value: none                                                    */
+/*                                                                       */
+/*************************************************************************/
 
 if (keyboard_check(vk_up)) {
     y -= 4;
