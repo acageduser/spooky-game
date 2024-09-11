@@ -1,4 +1,13 @@
 /// @description Animation Reset
-// You can write your code in this editor
+
+/*************************************************************************/
+/*                                                                       */
+/* Event name: Key Up - Left                                             */
+/* Description: Resets the sprite to the first frame of the left         */
+/* animation when the left key is released.                              */
+/* Parameters: none                                                      */
+/* Return Value: none                                                    */
+/*                                                                       */
+/*************************************************************************/
 
 image_index = 8;
