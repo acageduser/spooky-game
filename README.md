@@ -17,9 +17,16 @@ CSC 240 Coursework
 
 This project was created uses our own assets as well as assets from the internet.
 
-Assets created BY US by hand:
+Assets created BY US using GameMaker:
 - sprJanitor
 - sprLibrarian
+
+Assets created BY US using Aseprite
+- sprWallPhase1
+- sprWallPhase2
+- sprCursed_Book
+- sprLantern_lit
+- sprLantern_Unlit
 
 Assets created BY US using Ryan's self developed AI checkpoint model + Lora model in Krita using Stable Diffusion on Automatic1111:
 - sprBookshelf1
@@ -28,13 +35,6 @@ Assets created BY US using Ryan's self developed AI checkpoint model + Lora mode
 - sprDesk_Cluttered
 - sprMirror1
 - sprMirror2
-
-Assets created BY US using Aseprite
-- sprWallPhase1
-- sprWallPhase2
-- sprCursed_Book
-- sprLantern_lit
-- sprLantern_Unlit
 
 Assets NOT created by us. These assets were taken from the internet with permission from the original artists as needed:
 - sprWallSet (Source: https://opengameart.org/content/16x16-wall-set)
