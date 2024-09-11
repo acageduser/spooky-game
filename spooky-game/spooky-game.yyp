@@ -34,6 +34,7 @@
   },
   "name":"spooky-game",
   "resources":[
+    {"id":{"name":"objCursedBook","path":"objects/objCursedBook/objCursedBook.yy",},},
     {"id":{"name":"objMainCharacter","path":"objects/objMainCharacter/objMainCharacter.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"sprBookshelf1","path":"sprites/sprBookshelf1/sprBookshelf1.yy",},},
