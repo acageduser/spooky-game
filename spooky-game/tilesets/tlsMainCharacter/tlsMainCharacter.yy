@@ -8,7 +8,7 @@
     "TileSerialiseData":[],
   },
   "name":"tlsMainCharacter",
-  "out_columns":8,
+  "out_columns":1,
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
@@ -26,13 +26,7 @@
     "name":"Default",
     "path":"texturegroups/Default",
   },
-  "tileAnimationFrames":[
-    {"$GMTileAnimation":"","%Name":"anmIdle","frames":[1,3,],"name":"anmIdle","resourceType":"GMTileAnimation","resourceVersion":"2.0",},
-    {"$GMTileAnimation":"","%Name":"anmRunDown","frames":[2,3,4,3,],"name":"anmRunDown","resourceType":"GMTileAnimation","resourceVersion":"2.0",},
-    {"$GMTileAnimation":"","%Name":"anmRunLeft","frames":[19,20,21,22,],"name":"anmRunLeft","resourceType":"GMTileAnimation","resourceVersion":"2.0",},
-    {"$GMTileAnimation":"","%Name":"anmRunUp","frames":[37,38,39,40,],"name":"anmRunUp","resourceType":"GMTileAnimation","resourceVersion":"2.0",},
-    {"$GMTileAnimation":"","%Name":"anmRunRight","frames":[55,56,57,58,],"name":"anmRunRight","resourceType":"GMTileAnimation","resourceVersion":"2.0",},
-  ],
+  "tileAnimationFrames":[],
   "tileAnimationSpeed":6.0,
   "tileHeight":48,
   "tilehsep":0,
@@ -40,5 +34,5 @@
   "tileWidth":48,
   "tilexoff":0,
   "tileyoff":0,
-  "tile_count":72,
+  "tile_count":1,
 }
