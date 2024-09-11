@@ -36,6 +36,8 @@
   "resources":[
     {"id":{"name":"objCursedBook","path":"objects/objCursedBook/objCursedBook.yy",},},
     {"id":{"name":"objMainCharacter","path":"objects/objMainCharacter/objMainCharacter.yy",},},
+    {"id":{"name":"objMirror1","path":"objects/objMirror1/objMirror1.yy",},},
+    {"id":{"name":"objMirror2","path":"objects/objMirror2/objMirror2.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"sprBookshelf1","path":"sprites/sprBookshelf1/sprBookshelf1.yy",},},
     {"id":{"name":"sprBookshelf2","path":"sprites/sprBookshelf2/sprBookshelf2.yy",},},
@@ -50,6 +52,8 @@
     {"id":{"name":"sprMainCharacter","path":"sprites/sprMainCharacter/sprMainCharacter.yy",},},
     {"id":{"name":"sprMirror1","path":"sprites/sprMirror1/sprMirror1.yy",},},
     {"id":{"name":"sprMirror2","path":"sprites/sprMirror2/sprMirror2.yy",},},
+    {"id":{"name":"sprWallPhase1","path":"sprites/sprWallPhase1/sprWallPhase1.yy",},},
+    {"id":{"name":"sprWallPhase2","path":"sprites/sprWallPhase2/sprWallPhase2.yy",},},
     {"id":{"name":"sprWallSet_Floor","path":"sprites/sprWallSet_Floor/sprWallSet_Floor.yy",},},
     {"id":{"name":"sprWallSet","path":"sprites/sprWallSet/sprWallSet.yy",},},
     {"id":{"name":"tlsWallSet","path":"tilesets/tlsWallSet/tlsWallSet.yy",},},
