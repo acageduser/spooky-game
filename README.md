@@ -1,5 +1,5 @@
 # spooky-game
-CSC 240 Coursework
+CSC 240-020 Coursework
 
 /******************************************************************/
 /* Author: Jalen Lewis, Ryan Livinghouse, Angel Cruz              */
