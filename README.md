@@ -15,7 +15,7 @@ CSC 240 Coursework
 /*                                                                */
 /******************************************************************/
 
-This project was created uses our own assets as well as assets from the internet.
+This project was created using our own assets as well as assets from the internet.
 
 Assets created BY US using GameMaker:
 - sprJanitor
