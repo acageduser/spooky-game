@@ -51,7 +51,6 @@
     {"id":{"name":"sprMirror2","path":"sprites/sprMirror2/sprMirror2.yy",},},
     {"id":{"name":"sprWallSet_Floor","path":"sprites/sprWallSet_Floor/sprWallSet_Floor.yy",},},
     {"id":{"name":"sprWallSet","path":"sprites/sprWallSet/sprWallSet.yy",},},
-    {"id":{"name":"tlsMainCharacter","path":"tilesets/tlsMainCharacter/tlsMainCharacter.yy",},},
     {"id":{"name":"tlsWallSet","path":"tilesets/tlsWallSet/tlsWallSet.yy",},},
   ],
   "resourceType":"GMProject",
