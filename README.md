@@ -18,18 +18,25 @@ CSC 240 Coursework
 This project was created uses our own assets as well as assets from the internet.
 
 Assets created BY US by hand:
-- sprCursed_Book.png
-- sprJanitor.png
-- sprLantern_lit.png
-- sprLantern_Unlit.png
+- sprJanitor
+- sprLibrarian
 
 Assets created BY US using Ryan's self developed AI checkpoint model + Lora model in Krita using Stable Diffusion on Automatic1111:
-- sprBookshelf1.png
-- sprBookshelf2.png
-- sprDesk_Clean.png
-- sprDesk_Cluttered.png
-- sprMirror1.png
-- sprMirror2.png
+- sprBookshelf1
+- sprBookshelf2
+- sprDesk_Clean
+- sprDesk_Cluttered
+- sprMirror1
+- sprMirror2
 
-Assets NOT created by us. These assets were taken from the internet with permission from the original artists:
-- WallSet.png (Source: https://opengameart.org/content/16x16-wall-set)
+Assets created BY US using Aseprite
+- sprWallPhase1
+- sprWallPhase2
+- sprCursed_Book
+- sprLantern_lit
+- sprLantern_Unlit
+
+Assets NOT created by us. These assets were taken from the internet with permission from the original artists as needed:
+- sprWallSet (Source: https://opengameart.org/content/16x16-wall-set)
+- sprWallSet_Floor (Source: https://opengameart.org/content/16x16-wall-set)
+- sprMainCharacter (Source: https://gibbongl.itch.io/8-directional-gameboy-character-template)
