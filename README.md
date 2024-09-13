@@ -31,10 +31,14 @@ Assets created BY US using Aseprite
 Assets created BY US using Ryan's self developed AI checkpoint model + Lora model in Krita using Stable Diffusion on Automatic1111:
 - sprBookshelf1
 - sprBookshelf2
+- sprBookshelf3
 - sprDesk_Clean
 - sprDesk_Cluttered
 - sprMirror1
 - sprMirror2
+- sprAlter
+- sprDoor
+
 
 Assets NOT created by us. These assets were taken from the internet with permission from the original artists as needed:
 - sprWallSet (Source: https://opengameart.org/content/16x16-wall-set)
