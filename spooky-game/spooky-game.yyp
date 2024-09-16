@@ -39,8 +39,8 @@
     {"id":{"name":"objMainCharacter","path":"objects/objMainCharacter/objMainCharacter.yy",},},
     {"id":{"name":"objMirror1","path":"objects/objMirror1/objMirror1.yy",},},
     {"id":{"name":"objMirror2","path":"objects/objMirror2/objMirror2.yy",},},
-    {"id":{"name":"menu","path":"rooms/menu/menu.yy",},},
-    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"roomGame","path":"rooms/roomGame/roomGame.yy",},},
+    {"id":{"name":"roomTitle","path":"rooms/roomTitle/roomTitle.yy",},},
     {"id":{"name":"sprAlter","path":"sprites/sprAlter/sprAlter.yy",},},
     {"id":{"name":"sprBookshelf1","path":"sprites/sprBookshelf1/sprBookshelf1.yy",},},
     {"id":{"name":"sprBookshelf2","path":"sprites/sprBookshelf2/sprBookshelf2.yy",},},
@@ -68,8 +68,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"menu","path":"rooms/menu/menu.yy",},},
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"roomTitle","path":"rooms/roomTitle/roomTitle.yy",},},
+    {"roomId":{"name":"roomGame","path":"rooms/roomGame/roomGame.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

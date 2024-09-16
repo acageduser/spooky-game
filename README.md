@@ -38,6 +38,8 @@ Assets created BY US using Ryan's self developed AI checkpoint model + Lora mode
 - sprMirror2
 - sprAlter
 - sprDoor
+- sprMainScreen
+- sprButton
 
 
 Assets NOT created by us. These assets were taken from the internet with permission from the original artists as needed:
