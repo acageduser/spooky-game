@@ -35,6 +35,7 @@
   "name":"spooky-game",
   "resources":[
     {"id":{"name":"objButtonAbout","path":"objects/objButtonAbout/objButtonAbout.yy",},},
+    {"id":{"name":"objButtonBack","path":"objects/objButtonBack/objButtonBack.yy",},},
     {"id":{"name":"objButtonPlay","path":"objects/objButtonPlay/objButtonPlay.yy",},},
     {"id":{"name":"objButtonQuit","path":"objects/objButtonQuit/objButtonQuit.yy",},},
     {"id":{"name":"objCursedBook","path":"objects/objCursedBook/objCursedBook.yy",},},
