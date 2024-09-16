@@ -34,7 +34,6 @@
   },
   "name":"spooky-game",
   "resources":[
-    {"id":{"name":"objAboutText","path":"objects/objAboutText/objAboutText.yy",},},
     {"id":{"name":"objButtonAbout","path":"objects/objButtonAbout/objButtonAbout.yy",},},
     {"id":{"name":"objButtonPlay","path":"objects/objButtonPlay/objButtonPlay.yy",},},
     {"id":{"name":"objButtonQuit","path":"objects/objButtonQuit/objButtonQuit.yy",},},
@@ -43,6 +42,7 @@
     {"id":{"name":"objMainCharacter","path":"objects/objMainCharacter/objMainCharacter.yy",},},
     {"id":{"name":"objMirror1","path":"objects/objMirror1/objMirror1.yy",},},
     {"id":{"name":"objMirror2","path":"objects/objMirror2/objMirror2.yy",},},
+    {"id":{"name":"roomAbout","path":"rooms/roomAbout/roomAbout.yy",},},
     {"id":{"name":"roomGame","path":"rooms/roomGame/roomGame.yy",},},
     {"id":{"name":"roomTitle","path":"rooms/roomTitle/roomTitle.yy",},},
     {"id":{"name":"sprAlter","path":"sprites/sprAlter/sprAlter.yy",},},
@@ -74,6 +74,7 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"roomTitle","path":"rooms/roomTitle/roomTitle.yy",},},
     {"roomId":{"name":"roomGame","path":"rooms/roomGame/roomGame.yy",},},
+    {"roomId":{"name":"roomAbout","path":"rooms/roomAbout/roomAbout.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
