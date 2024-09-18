@@ -47,3 +47,4 @@ Assets NOT created by us. These assets were taken from the internet with permiss
 - sprWallSet_Floor (Source: https://opengameart.org/content/16x16-wall-set)
 - sprMainCharacter (Source: https://gibbongl.itch.io/8-directional-gameboy-character-template)
 - sprWASD (https://www.vhv.rs/viewpic/hbRhhhh_wasd-keys-png-download-fire-pixel-art-png/)
+- sprAboutScreen(https://www.reddit.com/r/PixelArt/comments/ha2qch/undead_purgatory/)
