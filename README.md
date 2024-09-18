@@ -5,11 +5,11 @@ CSC 240-020 Coursework
 /* Author: Jalen Lewis, Ryan Livinghouse, Angel Cruz              */
 /* Major: Information Technology/Game Development                 */
 /* Creation Date: September 10, 2024                              */
-/* Due Date: September 11, 2024                                   */
+/* Due Date: September 18, 2024                                   */
 /* Course: CSC240 020                                             */
 /* Professor Name: Griffin Nye                                    */
 /* Assignment: Assignment 2- Asset & Room Creation Fall 2024      */
-/* Filename: source.txt                                           */
+/* Filename: README.txt                                           */
 /* Purpose: This file contains the needed sources that distinguish*/
 /* our assets from assets we pulled off the internet.             */
 /*                                                                */
