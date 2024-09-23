@@ -9,7 +9,7 @@ if (alarm[0] <= 0) {
     t = time_passed / flight_time;
     t_eased = t * t * (3 - 2 * t);
     
-    x = lerp(start_x, target_x, t_eased); //param key easing
+    x = lerp(start_x, target_x, t_eased);
     
     image_speed = 1;
 
@@ -19,6 +19,13 @@ if (alarm[0] <= 0) {
         
         time_passed = 0;
         flight_time = room_speed * irandom_range(3, 6);
-        alarm[0] = room_speed * irandom_range(3, 6);
+        alarm[0] = room_speed * random_range(1, 6);
+
+        image_xscale = random_range(0.1, 0.4);
+        image_yscale = image_xscale;
+
+        image_angle = random_range(30, 34);
+
+        move_speed = random_range(1, 3);
     }
 }

@@ -5,14 +5,14 @@ CSC 240-020 Coursework
 /* Author: Jalen Lewis, Ryan Livinghouse, Angel Cruz              */
 /* Major: Information Technology/Game Development                 */
 /* Creation Date: September 10, 2024                              */
-/* Due Date: September 18, 2024                                   */
+/* Due Date: September 25, 2024                                   */
 /* Course: CSC240 020                                             */
 /* Professor Name: Griffin Nye                                    */
-/* Assignment: Assignment 2- Asset & Room Creation Fall 2024      */
+/* Assignment: Assignment 4 - Animation Fall 2024                 */
 /* Filename: README.txt                                           */
 /* Purpose: This file contains the needed sources that distinguish*/
-/* our assets from assets we pulled off the internet.             */
-/*                                                                */
+/* our assets from assets we pulled off the internet. It also     */
+/* includes our revision proof per student.                       */
 /******************************************************************/
 
 This project was created using our own assets as well as assets from the internet.
@@ -48,3 +48,40 @@ Assets NOT created by us. These assets were taken from the internet with permiss
 - sprMainCharacter (Source: https://gibbongl.itch.io/8-directional-gameboy-character-template)
 - sprWASD (https://www.vhv.rs/viewpic/hbRhhhh_wasd-keys-png-download-fire-pixel-art-png/)
 - sprAboutScreen(https://www.reddit.com/r/PixelArt/comments/ha2qch/undead_purgatory/)
+
+Assignment 4 Revision Proofs
+
+##############################################################################################
+
+RYAN LIVINGHOUSE:
+
+Player sprite animations
+- Animations that change based on keybinds.
+- Sprite updates smoothly based on movement direction.
+
+Bird animation using three parameter keys
+1. Position: Bird moves from right to left using an easing function. The easing curve
+   changes the bird’s movement for a smooth start, acceleration in the middle, and
+   deceleration at the end.
+2. Scaling: Bird randomly scales between 0.1 and 0.4 each flight.
+3. Rotation: Bird tilts slightly with random rotation (30 to 34 degrees).
+
+I also added that each 'volley' of new birds will have random position, scaling,
+rotation, and delay per instance of bird instead of per volley of birds.
+
+Alarm Event
+- Used alarm event to delay the bird's flight for 3-6 seconds.
+- After each flight, the bird resets its position, scale, and rotation.
+##############################################################################################
+----------------------------------------------------------------------------------------------
+##############################################################################################
+
+JALEN LEWIS
+
+##############################################################################################
+----------------------------------------------------------------------------------------------
+##############################################################################################
+
+ANGEL CRUZ
+
+##############################################################################################
