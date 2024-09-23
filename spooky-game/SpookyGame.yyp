@@ -35,6 +35,7 @@
   "name":"SpookyGame",
   "resources":[
     {"id":{"name":"objAboutText","path":"objects/objAboutText/objAboutText.yy",},},
+    {"id":{"name":"objBirb","path":"objects/objBirb/objBirb.yy",},},
     {"id":{"name":"objButtonAbout","path":"objects/objButtonAbout/objButtonAbout.yy",},},
     {"id":{"name":"objButtonBack","path":"objects/objButtonBack/objButtonBack.yy",},},
     {"id":{"name":"objButtonPlay","path":"objects/objButtonPlay/objButtonPlay.yy",},},
@@ -56,6 +57,7 @@
     {"id":{"name":"sprBookshelf2","path":"sprites/sprBookshelf2/sprBookshelf2.yy",},},
     {"id":{"name":"sprBookshelf23","path":"sprites/sprBookshelf23/sprBookshelf23.yy",},},
     {"id":{"name":"sprBookshelf3","path":"sprites/sprBookshelf3/sprBookshelf3.yy",},},
+    {"id":{"name":"sprBrib","path":"sprites/sprBrib/sprBrib.yy",},},
     {"id":{"name":"sprButton","path":"sprites/sprButton/sprButton.yy",},},
     {"id":{"name":"sprCursed_Book","path":"sprites/sprCursed_Book/sprCursed_Book.yy",},},
     {"id":{"name":"sprDesk_Clean","path":"sprites/sprDesk_Clean/sprDesk_Clean.yy",},},
