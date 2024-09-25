@@ -30,10 +30,13 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.6.2.162",
+    "IDEVersion":"2024.8.1.171",
   },
   "name":"SpookyGame1",
   "resources":[
+    {"id":{"name":"fnt_play","path":"fonts/fnt_play/fnt_play.yy",},},
+    {"id":{"name":"fnt_title_small","path":"fonts/fnt_title_small/fnt_title_small.yy",},},
+    {"id":{"name":"fnt_title","path":"fonts/fnt_title/fnt_title.yy",},},
     {"id":{"name":"objAboutText","path":"objects/objAboutText/objAboutText.yy",},},
     {"id":{"name":"objBirb","path":"objects/objBirb/objBirb.yy",},},
     {"id":{"name":"objButtonAbout","path":"objects/objButtonAbout/objButtonAbout.yy",},},
@@ -47,6 +50,7 @@
     {"id":{"name":"objMirror1","path":"objects/objMirror1/objMirror1.yy",},},
     {"id":{"name":"objMirror2","path":"objects/objMirror2/objMirror2.yy",},},
     {"id":{"name":"objPlayerInput","path":"objects/objPlayerInput/objPlayerInput.yy",},},
+    {"id":{"name":"objTitle","path":"objects/objTitle/objTitle.yy",},},
     {"id":{"name":"Start","path":"objects/Start/Start.yy",},},
     {"id":{"name":"ParticleSystem1","path":"particles/ParticleSystem1/ParticleSystem1.yy",},},
     {"id":{"name":"roomAbout","path":"rooms/roomAbout/roomAbout.yy",},},

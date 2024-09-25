@@ -3,21 +3,21 @@
 
 draw_self();
 
+//set font to default
+draw_set_font(-1);
+
 //define text content
-var button_text = "ABOUT";
+var _button_text = "ABOUT";
 
 
 //define text position variables
-var text_x;
-var text_y;
+var _text_x;
+var _text_y;
 
 //calculate and assign text to center
-text_x = x + (sprite_width / 2) - (string_width(button_text) / 2);
-text_y = y + (sprite_height / 2) - (string_height(button_text) / 2);
-
-// Now, draw the description text somewhere else on the screen
-
+_text_x = x + (sprite_width / 2) - (string_width(_button_text) / 2);
+_text_y = y + (sprite_height / 2) - (string_height(_button_text) / 2);
 
 //set draw color to black
 draw_set_color(c_black);
-draw_text(text_x, text_y, button_text);
+draw_text(_text_x, _text_y, _button_text);
