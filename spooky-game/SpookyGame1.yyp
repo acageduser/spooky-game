@@ -34,6 +34,8 @@
   },
   "name":"SpookyGame1",
   "resources":[
+    {"id":{"name":"curLanternDown","path":"animcurves/curLanternDown/curLanternDown.yy",},},
+    {"id":{"name":"curLanternUp","path":"animcurves/curLanternUp/curLanternUp.yy",},},
     {"id":{"name":"fnt_play","path":"fonts/fnt_play/fnt_play.yy",},},
     {"id":{"name":"fnt_title_small","path":"fonts/fnt_title_small/fnt_title_small.yy",},},
     {"id":{"name":"fnt_title","path":"fonts/fnt_title/fnt_title.yy",},},
@@ -57,6 +59,7 @@
     {"id":{"name":"roomGame","path":"rooms/roomGame/roomGame.yy",},},
     {"id":{"name":"RoomPlayerInput","path":"rooms/RoomPlayerInput/RoomPlayerInput.yy",},},
     {"id":{"name":"roomTitle","path":"rooms/roomTitle/roomTitle.yy",},},
+    {"id":{"name":"seqLantern","path":"sequences/seqLantern/seqLantern.yy",},},
     {"id":{"name":"Sequence2","path":"sequences/Sequence2/Sequence2.yy",},},
     {"id":{"name":"Sequence3","path":"sequences/Sequence3/Sequence3.yy",},},
     {"id":{"name":"lightning","path":"sprites/lightning/lightning.yy",},},
