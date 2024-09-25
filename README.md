@@ -49,6 +49,8 @@ Assets NOT created by us. These assets were taken from the internet with permiss
 - sprWASD (https://www.vhv.rs/viewpic/hbRhhhh_wasd-keys-png-download-fire-pixel-art-png/)
 - sprAboutScreen (https://www.reddit.com/r/PixelArt/comments/ha2qch/undead_purgatory/)
 - sprBirb (https://www.shutterstock.com/image-illustration/flying-bird-animation-pixel-art-600nw-646008130.jpg)
+- sprlighting (https://purepng.com/public/uploads/medium/purepng.com-lightninglightningsudden-electrostatic-dischargeintra-cloud-lightningcc-lightning-1411527065801n2r18.png)
+- sprCloud(https://i.pinimg.com/originals/60/a8/2c/60a82c6cf7fda046b291e6b2c78ea531.png)
 
 Assignment 4 Revision Proofs
 
