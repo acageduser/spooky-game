@@ -78,6 +78,7 @@ Alarm Event
 ######################################################################################
 
 JALEN LEWIS
+  I Made 2 functions using sequences. 1 to make 2 clouds and all 3 buttons float in the wind. The other to creat lighting when the play button is clicked.
 
 ######################################################################################
 --------------------------------------------------------------------------------------
