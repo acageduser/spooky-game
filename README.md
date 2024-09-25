@@ -83,6 +83,35 @@ JALEN LEWIS
 --------------------------------------------------------------------------------------
 ######################################################################################
 
-ANGEL CRUZ
+ANGEL CRUZ:
+
+Title Object
+1. Sets the desired font and color
+2. Calculates the centered position of each section of the title
+3. Draws the title of the game ("Banished by the Book")
+
+I created new font resources so that I could make the title a bigger font than the text of
+the buttons. I also created another font for the Play button since it is bigger than the
+About/Quit Buttons and I wanted the size of the text to remain consistent with the size 
+of the buttons.
+
+Effect Layer
+1. Created an Effect layer of Effect Type: Gaussian Blur
+2. Effect Layer was moved to be after the background but before all of the assets
+
+Sequence animations
+- Title Object
+	1. The title begins offscreen and lowers into the center of the screen
+	2. The title fades in as it lowers (If i get it to work)
+
+- Book
+	1. The Cursed Book begins offscreen and travels down with the title of the game
+	2. The Cursed Book has rotation added in
+	3. The Cursed Book was scaled up
+
+I thought that with "Book" being included in the title it made sense to have the
+Cursed Book be part of the intro. It allows the player to create a connection with
+the book being mentioned and seen at the intro and the Cursed Book they'll encounter
+later in the game.
 
 ######################################################################################
