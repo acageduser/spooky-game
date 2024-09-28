@@ -70,6 +70,13 @@ Bird animation using three parameter keys
 I also added that each 'volley' of new birds will have random position, scaling,
 rotation, and delay per instance of bird instead of per volley of birds.
 
+objLantern
+	- New 'swaying' animation added. It's a ghostly lantern, so it needs to float like
+	a ghost.
+	- Uses an animation curve within the sequence under position and rotation parameter
+	tracks.
+	- Uses 3 'track panel' parameter tracks (position, rotation, scale).
+
 Alarm Event
 - Used alarm event to delay the bird's flight for 3-6 seconds.
 - After each flight, the bird resets its position, scale, and rotation.
@@ -78,7 +85,9 @@ Alarm Event
 ######################################################################################
 
 JALEN LEWIS
-  I Made 2 functions using sequences. 1 to make 2 clouds and all 3 buttons float in the wind. The other to creat lighting when the play button is clicked.
+  I Made 2 functions using sequences.
+	- 1 to make 2 clouds and all 3 buttons float in the wind. 
+	- The other to creat lighting when the play button is clicked.
 
 ######################################################################################
 --------------------------------------------------------------------------------------
