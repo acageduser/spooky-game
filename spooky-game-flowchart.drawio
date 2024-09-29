@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8">
   <diagram name="Page-1" id="-gNGQqq5mkuD4IOFfpTR">
-    <mxGraphModel dx="6263" dy="1777" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
+    <mxGraphModel dx="7448" dy="2488" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -115,7 +115,7 @@
         <mxCell id="_ZBO6iIKKOFlCHNLLO7m-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="zDNcXk9pmCtfYAZ4edZZ-19" target="zDNcXk9pmCtfYAZ4edZZ-5">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1789" y="1045" />
+              <mxPoint x="1828" y="1045" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -133,6 +133,19 @@
         </mxCell>
         <mxCell id="_ZBO6iIKKOFlCHNLLO7m-42" value="Mirror Route" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="_ZBO6iIKKOFlCHNLLO7m-41">
           <mxGeometry x="-0.6463" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-102" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="zDNcXk9pmCtfYAZ4edZZ-19" target="_ZBO6iIKKOFlCHNLLO7m-101">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1769" y="860" />
+              <mxPoint x="1769" y="860" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-103" value="Lantern Route" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="_ZBO6iIKKOFlCHNLLO7m-102">
+          <mxGeometry x="-0.5627" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
@@ -213,8 +226,8 @@
         <mxCell id="zDNcXk9pmCtfYAZ4edZZ-49" value="&quot;You arranged the books, and an ancient Cursed Book falls into your hands&quot; [hasHauntedBook flag]" style="whiteSpace=wrap;html=1;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="2594" y="2073" width="120" height="98" as="geometry" />
         </mxCell>
-        <mxCell id="zDNcXk9pmCtfYAZ4edZZ-53" value="&lt;font style=&quot;font-size: 42px;&quot;&gt;The great big list of FLAGS&lt;/font&gt;&lt;div style=&quot;font-size: 17px;&quot;&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;&lt;table style=&quot;&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;TYPE&lt;/td&gt;&lt;td&gt;NAME&lt;/td&gt;&lt;td&gt;RANGE&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;unlockedBookPuzzle&lt;br&gt;&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;hasHauntedBook&lt;br&gt;&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;wallPhase&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;interactJanitor&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;int&lt;/td&gt;&lt;td&gt;janitorDialogue&lt;/td&gt;&lt;td&gt;[0,2]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;int&lt;/td&gt;&lt;td&gt;janitorDialogueHint&lt;/td&gt;&lt;td&gt;[0-2]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;hauntedBookshelf&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;interactMirror&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;lanternLit&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;int&lt;/td&gt;&lt;td&gt;librarianDialogueHint&lt;/td&gt;&lt;td&gt;[0-2]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;int&lt;/td&gt;&lt;td&gt;librarianDialogue&lt;/td&gt;&lt;td&gt;[0,2-3]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;spiritLanternInteractable&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#3700CC;fontColor=#ffffff;fillColor=#6a00ff;align=center;" parent="1" vertex="1">
-          <mxGeometry x="1501.14" y="241" width="311.86" height="559" as="geometry" />
+        <mxCell id="zDNcXk9pmCtfYAZ4edZZ-53" value="&lt;font style=&quot;font-size: 42px;&quot;&gt;The great big list of FLAGS&lt;/font&gt;&lt;div style=&quot;font-size: 17px;&quot;&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;&lt;table style=&quot;&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;TYPE&lt;/td&gt;&lt;td&gt;NAME&lt;/td&gt;&lt;td&gt;RANGE&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;unlockedBookPuzzle&lt;br&gt;&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;hasHauntedBook&lt;br&gt;&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;wallPhase&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;interactJanitor&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;int&lt;/td&gt;&lt;td&gt;janitorDialogue&lt;/td&gt;&lt;td&gt;[0,2]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;int&lt;/td&gt;&lt;td&gt;janitorDialogueHint&lt;/td&gt;&lt;td&gt;[0-2]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;hauntedBookshelf&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;interactMirror&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;lanternLit&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;int&lt;/td&gt;&lt;td&gt;librarianDialogueHint&lt;/td&gt;&lt;td&gt;[0-2]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;int&lt;/td&gt;&lt;td&gt;librarianDialogue&lt;/td&gt;&lt;td&gt;[0,2-3]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;spiritLanternInteractable&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;pedestalOccupied&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#3700CC;fontColor=#ffffff;fillColor=#6a00ff;align=center;" parent="1" vertex="1">
+          <mxGeometry x="1051.14" y="222" width="311.86" height="559" as="geometry" />
         </mxCell>
         <mxCell id="zDNcXk9pmCtfYAZ4edZZ-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#028090;fontColor=#E4FDE1;fillColor=#F45B69;" parent="1" source="zDNcXk9pmCtfYAZ4edZZ-55" target="zDNcXk9pmCtfYAZ4edZZ-32" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -652,6 +665,61 @@
         </mxCell>
         <mxCell id="_ZBO6iIKKOFlCHNLLO7m-99" value="Unlocks interaction with spirits Lantern&lt;div&gt;[spiritLanternInteractable = true]&lt;/div&gt;" style="whiteSpace=wrap;html=1;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="3730" y="1082.5" width="146" height="73" as="geometry" />
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-105" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="_ZBO6iIKKOFlCHNLLO7m-101" target="_ZBO6iIKKOFlCHNLLO7m-104">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-101" value="Interact with Lantern" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#028090;fontColor=#E4FDE1;fillColor=#F45B69;" vertex="1" parent="1">
+          <mxGeometry x="1711" y="790" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-107" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="_ZBO6iIKKOFlCHNLLO7m-104" target="_ZBO6iIKKOFlCHNLLO7m-106">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-108" value="true" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="_ZBO6iIKKOFlCHNLLO7m-107">
+          <mxGeometry x="-0.1333" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-110" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="_ZBO6iIKKOFlCHNLLO7m-104" target="_ZBO6iIKKOFlCHNLLO7m-113">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1771" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-111" value="false" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="_ZBO6iIKKOFlCHNLLO7m-110">
+          <mxGeometry x="0.1" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-104" value="Check lanternLit" style="rhombus;whiteSpace=wrap;html=1;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1731" y="640" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-106" value="&quot;The lantern burns bright&quot;" style="whiteSpace=wrap;html=1;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1871" y="650" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-115" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="_ZBO6iIKKOFlCHNLLO7m-113" target="_ZBO6iIKKOFlCHNLLO7m-114">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-116" value="True" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="_ZBO6iIKKOFlCHNLLO7m-115">
+          <mxGeometry x="-0.1279" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-118" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="_ZBO6iIKKOFlCHNLLO7m-113" target="_ZBO6iIKKOFlCHNLLO7m-117">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-119" value="False" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="_ZBO6iIKKOFlCHNLLO7m-118">
+          <mxGeometry x="-0.0287" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-113" value="Check if cursed book is on pedestal&lt;div&gt;[pedestalOccupied]&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1705" y="416" width="132" height="132" as="geometry" />
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-114" value="Light the lantern by muttering the curse learned from reading the cursed book" style="whiteSpace=wrap;html=1;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1923" y="452" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-117" value="&quot;Its a cold, dark lantern&quot;" style="whiteSpace=wrap;html=1;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1711" y="240" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
