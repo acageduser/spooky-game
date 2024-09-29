@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8">
   <diagram name="Page-1" id="-gNGQqq5mkuD4IOFfpTR">
-    <mxGraphModel dx="7071" dy="2262" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
+    <mxGraphModel dx="5483" dy="1309" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -59,7 +59,11 @@
           <mxGeometry x="417" y="2119" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="zDNcXk9pmCtfYAZ4edZZ-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#028090;fontColor=#E4FDE1;fillColor=#F45B69;" parent="1" source="zDNcXk9pmCtfYAZ4edZZ-17" target="zDNcXk9pmCtfYAZ4edZZ-19" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="1389" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="zDNcXk9pmCtfYAZ4edZZ-17" value="Player Attemps to find a way through the bookshelves to access the door but cannot" style="whiteSpace=wrap;html=1;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;" parent="1" vertex="1">
           <mxGeometry x="1000" y="2000" width="120" height="77" as="geometry" />
@@ -114,6 +118,18 @@
         </mxCell>
         <mxCell id="_ZBO6iIKKOFlCHNLLO7m-37" value="Librarian Route" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="_ZBO6iIKKOFlCHNLLO7m-36">
           <mxGeometry x="-0.9008" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="zDNcXk9pmCtfYAZ4edZZ-19" target="_ZBO6iIKKOFlCHNLLO7m-40">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1609" y="1670" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-42" value="Mirror Route" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="_ZBO6iIKKOFlCHNLLO7m-41">
+          <mxGeometry x="-0.6463" y="2" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
@@ -194,7 +210,7 @@
         <mxCell id="zDNcXk9pmCtfYAZ4edZZ-49" value="&quot;You arranged the books, and an ancient Cursed Book falls into your hands&quot; [hasHauntedBook flag]" style="whiteSpace=wrap;html=1;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="2594" y="2073" width="120" height="98" as="geometry" />
         </mxCell>
-        <mxCell id="zDNcXk9pmCtfYAZ4edZZ-53" value="&lt;font style=&quot;font-size: 42px;&quot;&gt;The great big list of FLAGS&lt;/font&gt;&lt;div style=&quot;font-size: 17px;&quot;&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;&lt;table style=&quot;&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;TYPE&lt;/td&gt;&lt;td&gt;NAME&lt;/td&gt;&lt;td&gt;RANGE&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;unlockedBookPuzzle&lt;br&gt;&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;hasHauntedBook&lt;br&gt;&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;wallPhase&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;interactJanitor&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;int&lt;/td&gt;&lt;td&gt;janitorDialogue&lt;/td&gt;&lt;td&gt;[2-3]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;int&lt;/td&gt;&lt;td&gt;janitorDialogueHint&lt;/td&gt;&lt;td&gt;[1-2]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;hauntedBookshelf&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#3700CC;fontColor=#ffffff;fillColor=#6a00ff;align=center;" parent="1" vertex="1">
+        <mxCell id="zDNcXk9pmCtfYAZ4edZZ-53" value="&lt;font style=&quot;font-size: 42px;&quot;&gt;The great big list of FLAGS&lt;/font&gt;&lt;div style=&quot;font-size: 17px;&quot;&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;&lt;table style=&quot;&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;TYPE&lt;/td&gt;&lt;td&gt;NAME&lt;/td&gt;&lt;td&gt;RANGE&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;unlockedBookPuzzle&lt;br&gt;&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;hasHauntedBook&lt;br&gt;&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;wallPhase&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;interactJanitor&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;int&lt;/td&gt;&lt;td&gt;janitorDialogue&lt;/td&gt;&lt;td&gt;[2-3]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;int&lt;/td&gt;&lt;td&gt;janitorDialogueHint&lt;/td&gt;&lt;td&gt;[1-2]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;hauntedBookshelf&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bool&lt;/td&gt;&lt;td&gt;interactMirror&lt;/td&gt;&lt;td&gt;T/F&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#3700CC;fontColor=#ffffff;fillColor=#6a00ff;align=center;" parent="1" vertex="1">
           <mxGeometry x="1504" y="406" width="279" height="390" as="geometry" />
         </mxCell>
         <mxCell id="zDNcXk9pmCtfYAZ4edZZ-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#028090;fontColor=#E4FDE1;fillColor=#F45B69;" parent="1" source="zDNcXk9pmCtfYAZ4edZZ-55" target="zDNcXk9pmCtfYAZ4edZZ-32" edge="1">
@@ -432,6 +448,37 @@
         </mxCell>
         <mxCell id="_ZBO6iIKKOFlCHNLLO7m-33" value="Final sequence after returning cursed book" style="whiteSpace=wrap;html=1;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;" vertex="1" parent="1">
           <mxGeometry x="797.5" y="671" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-44" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="_ZBO6iIKKOFlCHNLLO7m-40" target="_ZBO6iIKKOFlCHNLLO7m-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-40" value="Talk to the mirror" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#028090;fontColor=#E4FDE1;fillColor=#F45B69;" vertex="1" parent="1">
+          <mxGeometry x="1363" y="1640" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-46" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="_ZBO6iIKKOFlCHNLLO7m-43" target="_ZBO6iIKKOFlCHNLLO7m-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-47" value="true" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="_ZBO6iIKKOFlCHNLLO7m-46">
+          <mxGeometry x="-0.1293" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-49" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="_ZBO6iIKKOFlCHNLLO7m-43" target="_ZBO6iIKKOFlCHNLLO7m-48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-50" value="false" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="_ZBO6iIKKOFlCHNLLO7m-49">
+          <mxGeometry x="-0.1068" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-43" value="Check [interactMirror]" style="rhombus;whiteSpace=wrap;html=1;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="1617" width="106" height="106" as="geometry" />
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-45" value="Unlocked Mirror Interaction Sequence" style="whiteSpace=wrap;html=1;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1163" y="1826" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_ZBO6iIKKOFlCHNLLO7m-48" value="Initial Interaction" style="whiteSpace=wrap;html=1;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1163" y="1454" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
