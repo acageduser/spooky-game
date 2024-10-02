@@ -2,7 +2,6 @@
 
 // Set offset to move the box and options up by 55 pixels
 var offsetY = 55;
-var textFullyDisplayed = (textProgress >= textLength);  // Track if text is fully rendered
 
 // Draw the background box for the dialogue, adjusted to the bottom of the screen and moved up by 55 pixels
 var boxTop = screenH - height - offsetY;
@@ -19,11 +18,11 @@ var textY = boxTop + padding;
 
 draw_text_ext(textX, textY, currentText, -1, width - padding * 2);
 
-
-// Handle dialogue choices if available and only when text is fully displayed
-if (choice && textFullyDisplayed) {
+// Handle dialogue choices if available and only when the 1-second delay is passed
+if (choice && global.textFullyDisplayed && global.canProceed) {
     var optionY = boxBottom - padding - 30;  // Start at the bottom of the box minus padding
     
+    // Draw options from bottom to top
     for (var i = array_length(options) - 1; i >= 0; i--) {
         var optionTextWidth = string_width(options[i]);
         var optionX = (screenW / 2) - (optionTextWidth / 2); // Center options horizontally
