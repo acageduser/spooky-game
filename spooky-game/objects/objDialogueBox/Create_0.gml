@@ -1,5 +1,7 @@
 //// @description Handles defining the attributes for the Dialogue Box object
 
+global.JanitorDisabled = false;
+
 /*** Positioning Variables ***/
 
 // GUI Dimensions
