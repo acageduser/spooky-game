@@ -1,6 +1,16 @@
 // Actions.gml
 
-global.actionOptions = ["Open Door", "Inspect Mirror", "Speak to Librarian", "Speak to Janitor"];
+// List of all available routes in the game
+global.actionOptions = [
+    "Open Door",          // Option to open the door
+    "Inspect Mirror",      // Option to inspect the mirror
+    "Speak to Librarian",  // Option to talk to the librarian
+    "Speak to Janitor",    // Option to talk to the janitor
+    "Interact with Bookshelf",  // Option to interact with the haunted bookshelf
+    "Inspect Pedestal",    // Option to interact with the pedestal
+    "Inspect Lantern",     // Option to interact with the lantern
+    "Exit the Room"        // Option to try and exit the room
+];
 
 function displayActionsMenu() {
     // Resetting the player's state to avoid interaction bleed
@@ -31,35 +41,51 @@ function submitPlayerAction(choice) {
                     objPlayer.isTalkingToJanitor = true;
                     global.currentDialogueState = "janitor";
                     break;
+                case 4:
+                    interactWithBookshelf();  // Call the haunted bookshelf script
+                    global.currentDialogueState = "bookshelf";
+                    break;
+                case 5:
+                    interactWithPedestal();  // Call the pedestal interaction script
+                    global.currentDialogueState = "pedestal";
+                    break;
+                case 6:
+                    interactWithLantern();  // Call the lantern interaction script
+                    global.currentDialogueState = "lantern";
+                    break;
+                case 7:
+                    tryToExitRoom();  // Call the exit room script
+                    global.currentDialogueState = "exitRoom";
+                    break;
             }
             break;
 
         case "janitor":
-            submitJanitorAction(choice);
+            submitJanitorAction(choice);  // Call janitor's script if player is talking to Janitor
             break;
 
         case "librarian":
-            submitLibrarianAction(choice);
+            submitLibrarianAction(choice);  // Call librarian's script if player is talking to Librarian
             break;
 
         case "bookshelf":
-            interactWithBookshelf();
+            interactWithBookshelf();  // Call bookshelf interaction script
             break;
 
         case "pedestal":
-            interactWithPedestal();
+            interactWithPedestal();  // Call pedestal interaction script
             break;
 
         case "lantern":
-            interactWithLantern();
+            interactWithLantern();  // Call lantern interaction script
             break;
 
         case "exitRoom":
-            tryToExitRoom();
+            tryToExitRoom();  // Call the exit room logic script
             break;
 
         case "mirror":
-            inspectMirror();
+            inspectMirror();  // Handle the mirror script case again, if needed
             break;
     }
 }
