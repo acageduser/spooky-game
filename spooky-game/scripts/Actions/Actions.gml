@@ -4,30 +4,46 @@
 // Actions.gml
 
 global.actionOptions = ["Open Door", "Inspect Mirror", "Speak to Librarian", "Speak to Janitor"];
-global.isTalkingToJanitor = false;  // New flag to check if player is talking to the Janitor
 
 function displayActionsMenu() {
+    // Resetting the player's state to avoid interaction bleed
+    objPlayer.isTalkingToLibrarian = false;
+    objPlayer.isTalkingToJanitor = false;
+    global.currentDialogueState = "actions";  // Track current state
+    
     objDialogueBox.setDialogue("What would you like to do?", global.actionOptions);
 }
 
 function submitPlayerAction(choice) {
-    if (!global.isTalkingToJanitor) {  // Only handle player actions when NOT talking to the Janitor
-        switch (choice) {
-            case 0:
-                openDoor();
-                break;
-            case 1:
-                inspectMirror();
-                break;
-            case 2:
-                displayLibrarianMenu();
-                objPlayer.isTalkingToLibrarian = true;
-                break;
-            case 3:
-                displayJanitorMenu();
-                global.isTalkingToJanitor = true;  // Set this flag when the player chooses to talk to the Janitor
-                break;
-        }
+    switch (global.currentDialogueState) {
+        case "actions":
+            switch (choice) {
+                case 0:
+                    openDoor();
+                    break;
+                case 1:
+                    inspectMirror();
+                    break;
+                case 2:
+                    displayLibrarianMenu();
+                    objPlayer.isTalkingToLibrarian = true;
+                    global.currentDialogueState = "librarian";
+                    break;
+                case 3:
+                    displayJanitorMenu();
+                    objPlayer.isTalkingToJanitor = true;
+                    global.currentDialogueState = "janitor";
+                    break;
+            }
+            break;
+
+        case "janitor":
+            submitJanitorAction(choice);
+            break;
+
+        case "librarian":
+            // Implement logic for interacting with the librarian
+            break;
     }
 }
 

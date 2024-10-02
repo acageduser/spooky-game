@@ -105,8 +105,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"roomTitle","path":"rooms/roomTitle/roomTitle.yy",},},
     {"roomId":{"name":"roomGame","path":"rooms/roomGame/roomGame.yy",},},
+    {"roomId":{"name":"roomTitle","path":"rooms/roomTitle/roomTitle.yy",},},
     {"roomId":{"name":"roomAbout","path":"rooms/roomAbout/roomAbout.yy",},},
     {"roomId":{"name":"RoomPlayerInput","path":"rooms/RoomPlayerInput/RoomPlayerInput.yy",},},
   ],
