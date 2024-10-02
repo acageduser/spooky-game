@@ -1,4 +1,5 @@
 //// @description Handles defining the attributes for the Dialogue Box object
+
 /*** Positioning Variables ***/
 
 // GUI Dimensions
@@ -11,13 +12,13 @@ padding = 20;
 
 // Box Dimensions
 width = screenW - (margin * 2);
-height = screenH / 2 - (margin * 2);
+height = (screenH * 0.8) - (margin * 2);  // Adjusted to make the box take up 80% of the screen's height
 
 // Adjust the box to be at the top of the screen
-top = margin;             // Set top to margin, placing the box at the top of the screen
-bottom = top + (height * 1.2);  // Set bottom based on top and height
-left = margin;             // Left position remains the same
-right = screenW - margin;  // Right position remains the same
+top = margin;                // Set top to margin, placing the box at the top of the screen
+bottom = screenH - margin;    // Extend bottom to be near the bottom of the screen
+left = margin;                // Left position remains the same
+right = screenW - margin;     // Right position remains the same
 
 /*** Text Variables ***/
 text = "You awaken in a dimly lit, spooky library. The air is thick with dust and the faint scent of old books.\n" +
@@ -44,9 +45,9 @@ global.isTalkingToLibrarian = false;
 /*** Define function to set dialogue text and options ***/
 function setDialogue(dialogueText, choices = []) {
     draw_set_color(c_white);
-    text = dialogueText; // Set new dialogue text
-    selected = -1;       // Clear previous selection
-    textProgress = 0;    // Reset text progress
+    text = dialogueText;       // Set new dialogue text
+    selected = -1;             // Clear previous selection
+    textProgress = 0;          // Reset text progress
 
     // Setup options based on whether choices are provided
     if (array_length(choices) == 0) {
@@ -66,11 +67,11 @@ function setDialogue(dialogueText, choices = []) {
 draw_self();  // Draw the dialogue box background
 
 // Draw the dialogue text
-draw_text(left + padding, top + padding, string_copy(text, 1, floor(textProgress)));
+draw_text_ext(left + padding, top + padding, string_copy(text, 1, floor(textProgress)), -1, width - (padding * 2)); // Adjusted for extended width
 
 // Draw options if available
 if (choice) {
-    var optionY = bottom + 10;  // Start drawing options below the dialogue box
+    var optionY = bottom - (array_length(options) * 30) - padding;  // Start drawing options above the bottom of the dialogue box
     for (var i = 0; i < array_length(options); i++) {
         // Highlight option if mouse hovers over it
         if (mouse_x > left && mouse_x < right && mouse_y > optionY && mouse_y < optionY + 30) {
@@ -90,7 +91,7 @@ if (choice) {
 
 /*** Mouse Left Pressed Event ***/
 if (choice) {
-    var optionY = bottom + 10;  // Same Y coordinate logic as the Draw event
+    var optionY = bottom - (array_length(options) * 30) - padding;  // Same Y coordinate logic as the Draw event
     for (var i = 0; i < array_length(options); i++) {
         // Detect if the mouse is clicking on an option
         if (mouse_x > left && mouse_x < right && mouse_y > optionY && mouse_y < optionY + 30) {

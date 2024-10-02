@@ -35,6 +35,7 @@ function submitJanitorAction(choice) {
     if (global.janitorDialogueBranch == 0) {
         switch (choice) {
             case 0:
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                 objDialogueBox.setDialogue("A mishap with the lantern...I\'m cursed to sweep these floors for all eternity.");
                 global.janitorDialogueBranch = 1;  // Unlock next set of dialogue
@@ -42,30 +43,37 @@ function submitJanitorAction(choice) {
                 objDialogueBox.setDialogue("A mishap with the lantern... I\'m cursed to sweep these floors for all eternity.");
                 global.janitorDialogueBranch = 1;
 >>>>>>> Stashed changes
+=======
+                objDialogueBox.setDialogue("A mishap with the lantern...I’m cursed to sweep these floors for all eternity.");
+                global.janitorDialogueBranch = 1;  // Move to the next branch of the dialogue
+>>>>>>> 7e8e16456d896ed1bf200964b3b81831077cb60b
                 break;
             case 1:
-                objPlayer.isTalkingToJanitor = false;  // Quit option
+                // Quit option: return to action menu, but preserve the current state
+                objPlayer.isTalkingToJanitor = false;
+                displayActionsMenu();  // Return to the action menu without resetting the branch
                 break;
         }
     } 
     else if (global.janitorDialogueBranch == 1) {
         switch (choice) {
             case 0:
-                objDialogueBox.setDialogue("That bookshelf hides a powerful book, but the order of the books must be precise to reveal it. I can\'t free it myself, but I can tell you how. The Red book must come first.");
-                global.unlockBookshelf = true;  // Unlock the ability to interact with the bookshelf
+                objDialogueBox.setDialogue("That bookshelf hides a powerful book. The Red book must come first.");
+                global.unlockBookshelf = true;  // Unlock bookshelf interaction
                 break;
             case 1:
-                objPlayer.isTalkingToJanitor = false;  // Quit option
+                // Quit option: return to action menu, but preserve the current state
+                objPlayer.isTalkingToJanitor = false;
+                displayActionsMenu();  // Return to the action menu without resetting the branch
                 break;
             case 2:
                 if (global.unlockGreenBook) {
                     objDialogueBox.setDialogue("The Green book comes after the Blue; it serves as the bridge between the first and the last.");
-                    global.unlockYellowBook = true;  // Unlocks the Yellow Book hint
                 }
                 break;
             case 3:
                 if (global.unlockYellowBook) {
-                    objDialogueBox.setDialogue("The Yellow book is the final piece. Place it last on the shelf, and the ritual will be complete.");
+                    objDialogueBox.setDialogue("The Yellow book is the final piece. Place it last on the shelf.");
                 }
                 break;
         }
@@ -73,7 +81,8 @@ function submitJanitorAction(choice) {
     else if (global.janitorDialogueBranch == 2) {
         if (choice == 0) {
             objDialogueBox.setDialogue("Goodbye.");
-            objPlayer.isTalkingToJanitor = false;  // Ending conversation
+            objPlayer.isTalkingToJanitor = false;
+            displayActionsMenu();  // Return to the action menu without resetting the branch
         }
     }
 }

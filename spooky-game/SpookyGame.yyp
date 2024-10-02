@@ -64,9 +64,21 @@
     {"id":{"name":"roomTitle","path":"rooms/roomTitle/roomTitle.yy",},},
     {"id":{"name":"Actions","path":"scripts/Actions/Actions.yy",},},
     {"id":{"name":"DialogueBox","path":"scripts/DialogueBox/DialogueBox.yy",},},
+    {"id":{"name":"exitRoom","path":"scripts/exitRoom/exitRoom.yy",},},
     {"id":{"name":"flags","path":"scripts/flags/flags.yy",},},
+<<<<<<< HEAD
+=======
+    {"id":{"name":"hauntedBookshelf","path":"scripts/hauntedBookshelf/hauntedBookshelf.yy",},},
+    {"id":{"name":"inspectMirror","path":"scripts/inspectMirror/inspectMirror.yy",},},
+>>>>>>> 7e8e16456d896ed1bf200964b3b81831077cb60b
     {"id":{"name":"JanitorDialogue","path":"scripts/JanitorDialogue/JanitorDialogue.yy",},},
+    {"id":{"name":"lanternInteraction","path":"scripts/lanternInteraction/lanternInteraction.yy",},},
     {"id":{"name":"LibrarianDialogue","path":"scripts/LibrarianDialogue/LibrarianDialogue.yy",},},
+<<<<<<< HEAD
+=======
+    {"id":{"name":"openDoor","path":"scripts/openDoor/openDoor.yy",},},
+    {"id":{"name":"pedestalInteraction","path":"scripts/pedestalInteraction/pedestalInteraction.yy",},},
+>>>>>>> 7e8e16456d896ed1bf200964b3b81831077cb60b
     {"id":{"name":"seqLantern","path":"sequences/seqLantern/seqLantern.yy",},},
     {"id":{"name":"Sequence2","path":"sequences/Sequence2/Sequence2.yy",},},
     {"id":{"name":"Sequence3","path":"sequences/Sequence3/Sequence3.yy",},},
