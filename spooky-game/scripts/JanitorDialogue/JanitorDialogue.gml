@@ -35,8 +35,18 @@ function submitJanitorAction(choice) {
     if (global.janitorDialogueBranch == 0) {
         switch (choice) {
             case 0:
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+                objDialogueBox.setDialogue("A mishap with the lantern...I\'m cursed to sweep these floors for all eternity.");
+                global.janitorDialogueBranch = 1;  // Unlock next set of dialogue
+=======
+                objDialogueBox.setDialogue("A mishap with the lantern... I\'m cursed to sweep these floors for all eternity.");
+                global.janitorDialogueBranch = 1;
+>>>>>>> Stashed changes
+=======
                 objDialogueBox.setDialogue("A mishap with the lantern...I’m cursed to sweep these floors for all eternity.");
                 global.janitorDialogueBranch = 1;  // Move to the next branch of the dialogue
+>>>>>>> 7e8e16456d896ed1bf200964b3b81831077cb60b
                 break;
             case 1:
                 // Quit option: return to action menu, but preserve the current state
