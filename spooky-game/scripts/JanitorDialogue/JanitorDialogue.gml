@@ -35,8 +35,13 @@ function submitJanitorAction(choice) {
     if (global.janitorDialogueBranch == 0) {
         switch (choice) {
             case 0:
+<<<<<<< Updated upstream
                 objDialogueBox.setDialogue("A mishap with the lantern...I\'m cursed to sweep these floors for all eternity.");
                 global.janitorDialogueBranch = 1;  // Unlock next set of dialogue
+=======
+                objDialogueBox.setDialogue("A mishap with the lantern... I\'m cursed to sweep these floors for all eternity.");
+                global.janitorDialogueBranch = 1;
+>>>>>>> Stashed changes
                 break;
             case 1:
                 objPlayer.isTalkingToJanitor = false;  // Quit option
