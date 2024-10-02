@@ -1,5 +1,4 @@
 //// @description Handles defining the attributes for the Dialogue Box object
-
 /*** Positioning Variables ***/
 
 // GUI Dimensions
