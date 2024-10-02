@@ -42,7 +42,7 @@ function submitPlayerAction(choice) {
             break;
 
         case "librarian":
-            // Implement logic for interacting with the librarian
+            submitLibrarianAction(choice);
             break;
     }
 }
