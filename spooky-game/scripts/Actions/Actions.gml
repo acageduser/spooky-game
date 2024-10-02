@@ -16,18 +16,18 @@ function submitPlayerAction(choice) {
         case "actions":
             switch (choice) {
                 case 0:
-                    openDoor();  // Call the new openDoor script
+                    openDoor();  // Call the openDoor script
                     break;
                 case 1:
-                    inspectMirror();  // Call the new inspectMirror script
+                    inspectMirror();  // Call the inspectMirror script
                     break;
                 case 2:
-                    displayLibrarianMenu();
+                    displayLibrarianMenu();  // Move to librarian dialogue
                     objPlayer.isTalkingToLibrarian = true;
                     global.currentDialogueState = "librarian";
                     break;
                 case 3:
-                    displayJanitorMenu();
+                    displayJanitorMenu();  // Move to janitor dialogue
                     objPlayer.isTalkingToJanitor = true;
                     global.currentDialogueState = "janitor";
                     break;
@@ -40,6 +40,26 @@ function submitPlayerAction(choice) {
 
         case "librarian":
             submitLibrarianAction(choice);
+            break;
+
+        case "bookshelf":
+            interactWithBookshelf();
+            break;
+
+        case "pedestal":
+            interactWithPedestal();
+            break;
+
+        case "lantern":
+            interactWithLantern();
+            break;
+
+        case "exitRoom":
+            tryToExitRoom();
+            break;
+
+        case "mirror":
+            inspectMirror();
             break;
     }
 }
