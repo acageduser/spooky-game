@@ -47,7 +47,7 @@ mouseY = 0;
 /// @param {array} [choices] Array of strings indicating the user's possible choices/responses. Empty (or non-included) argument will proceed with spacebar press.
 /// @return {undefined}
 function setDialogue(dialogueText, choices = []) {
-	
+	draw_set_color(c_white);
 	text = dialogueText; //Set text to new prompt
 	selected = -1;       //Clear any previous user selections
 	textProgress = 0;    //Reset textProgress

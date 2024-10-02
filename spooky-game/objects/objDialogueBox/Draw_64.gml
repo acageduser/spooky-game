@@ -15,8 +15,8 @@ var currentText = string_copy(text, 1, textProgress);
 // Draw the background box
 
 // Draw the text
+draw_set_font(fnt_dialogue); // Make sure to have a proper font set
 draw_set_color(c_white);
-draw_set_font(fnt_dialouge); // Make sure to have a proper font set
 
 var textX = left + padding;
 var textY = top + padding;
