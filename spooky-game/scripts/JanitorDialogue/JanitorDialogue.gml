@@ -38,6 +38,7 @@ function submitJanitorAction(choice) {
             case 1:
                 objDialogueBox.setDialogue("Goodbye.");
                 objPlayer.isTalkingToJanitor = false;
+                global.isTalkingToJanitor = false;  // Reset the flag when finished talking to the Janitor
                 break;
         }
     }

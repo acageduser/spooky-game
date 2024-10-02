@@ -1,14 +1,9 @@
 /// @description Handles drawing the Dialogue Box object to the GUI Layer
 
-//NOTE: Draw GUI event draws to the GUI layer, as opposed to regular Draw event, which draws to the room
-//      The Draw event uses room coordinates to place items, 
-//			ie If I move around my room, the objects will move in/out of camera view
-//		The Draw event uses GUI coordinates to place items, coordinates are mapped to the window (much like Processing)
-//			ie If I move around my room, the objects will stay in place (like a minimap or a HUD)
-//      Also, make sure that if you are using a viewport for one room, you enable them for ALL rooms, (including
-//      your intro sequence room) and set the viewports to the same size (verying Camera size doesn't matter). If you run into
-//      issues where GameMaker ignores your Font size, check that is configured properly
+// NOTE: Draw GUI event draws to the GUI layer, as opposed to the regular Draw event, which draws to the room
+// The Draw GUI event uses GUI coordinates (mapped to the window) instead of room coordinates (mapped to the room itself).
 
+// Draw the background box for the dialogue
 draw_sprite_stretched(sprText_Box, 0, left, top, width, height);
 
 // Draw the dialogue text
@@ -19,7 +14,7 @@ draw_set_color(c_white);
 var textX = left + padding;
 var textY = top + padding;
 
-draw_text_ext(textX, textY, currentText, -1, 475); // line spacing
+draw_text_ext(textX, textY, currentText, -1, 475); // Line spacing
 
 // Increase textProgress based on speed
 if (textProgress < textLength) {
@@ -31,6 +26,7 @@ if (textProgress < textLength) {
     }
 }
 
+// Handle dialogue choices
 if (choice) {
     var totalOptionsHeight = array_length(options) * 24;
     var optionY = (bottom + padding) - totalOptionsHeight / 0.5; // Center vertically
@@ -39,10 +35,10 @@ if (choice) {
         var optionTextWidth = string_width(options[i]);
         var optionX = (screenW / 2) - (optionTextWidth / 2); // Center horizontally
 
-        // Check mouse hover and highlight the hovered option
+        // Check if the mouse is hovering over the option
         var mouseOver = (mouse_x >= optionX && mouse_x <= optionX + optionTextWidth 
                         && mouse_y >= optionY && mouse_y <= optionY + 24);
-        
+
         if (mouseOver) {
             draw_set_color(c_yellow); // Highlight the hovered option
             selected = i;             // Update the selected index
@@ -55,27 +51,35 @@ if (choice) {
         draw_text(optionX, optionY, options[i]);
         optionY += 24; // Move down for the next option
     }
-}
 
-// Mouse click detection
-if (mouse_check_button_pressed(mb_left) && selected >= 0) {
-    submitPlayerAction(selected); // Call the action based on the selected option
-}
+    // Detect mouse click on the selected option
+    if (mouse_check_button_pressed(mb_left) && selected >= 0) {
+        if (global.isTalkingToJanitor) {
+            submitJanitorAction(selected); // Call Janitor action if in Janitor dialogue
+        } else {
+            submitPlayerAction(selected);  // Otherwise, handle general player actions
+        }
+    }
 
-// Keyboard navigation
-if (keyboard_check_pressed(vk_up)) {
-    selected -= 1;
-    if (selected < 0) selected = array_length(options) - 1; // Wrap around to the last option
-}
+    // Handle keyboard navigation
+    if (keyboard_check_pressed(vk_up)) {
+        selected -= 1;
+        if (selected < 0) selected = array_length(options) - 1; // Wrap around to the last option
+    }
 
-if (keyboard_check_pressed(vk_down)) {
-    selected += 1;
-    if (selected >= array_length(options)) selected = 0; // Wrap around to the first option
-}
+    if (keyboard_check_pressed(vk_down)) {
+        selected += 1;
+        if (selected >= array_length(options)) selected = 0; // Wrap around to the first option
+    }
 
-// Confirm action with space or enter
-if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter)) {
-    if (selected >= 0) {
-        submitPlayerAction(selected); // Call the action for the selected option
+    // Confirm action with space or enter
+    if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter)) {
+        if (selected >= 0) {
+            if (global.isTalkingToJanitor) {
+                submitJanitorAction(selected); // Call Janitor action if in Janitor dialogue
+            } else {
+                submitPlayerAction(selected);  // Otherwise, handle general player actions
+            }
+        }
     }
 }

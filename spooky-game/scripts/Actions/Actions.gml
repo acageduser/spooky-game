@@ -4,27 +4,30 @@
 // Actions.gml
 
 global.actionOptions = ["Open Door", "Inspect Mirror", "Speak to Librarian", "Speak to Janitor"];
+global.isTalkingToJanitor = false;  // New flag to check if player is talking to the Janitor
 
 function displayActionsMenu() {
     objDialogueBox.setDialogue("What would you like to do?", global.actionOptions);
 }
 
 function submitPlayerAction(choice) {
-    switch (choice) {
-        case 0:
-            openDoor();
-            break;
-        case 1:
-            inspectMirror();
-            break;
-        case 2:
-            displayLibrarianMenu();
-            objPlayer.isTalkingToLibrarian = true;
-            break;
-        case 3:
-            displayJanitorMenu();
-            objPlayer.isTalkingToJanitor = true;
-            break;
+    if (!global.isTalkingToJanitor) {  // Only handle player actions when NOT talking to the Janitor
+        switch (choice) {
+            case 0:
+                openDoor();
+                break;
+            case 1:
+                inspectMirror();
+                break;
+            case 2:
+                displayLibrarianMenu();
+                objPlayer.isTalkingToLibrarian = true;
+                break;
+            case 3:
+                displayJanitorMenu();
+                global.isTalkingToJanitor = true;  // Set this flag when the player chooses to talk to the Janitor
+                break;
+        }
     }
 }
 
