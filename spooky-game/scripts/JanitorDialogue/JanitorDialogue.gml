@@ -29,7 +29,7 @@ function submitJanitorAction(choice) {
     if (global.janitorDialogueBranch == 0) {
         switch (choice) {
             case 0:
-                objDialogueBox.setDialogue("A mishap with the lantern... I’m cursed to sweep these floors for all eternity.");
+                objDialogueBox.setDialogue("A mishap with the lantern... I\'m cursed to sweep these floors for all eternity.");
                 global.janitorDialogueBranch = 1;
                 break;
             case 1:
