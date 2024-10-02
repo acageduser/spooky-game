@@ -64,6 +64,7 @@
     {"id":{"name":"roomTitle","path":"rooms/roomTitle/roomTitle.yy",},},
     {"id":{"name":"Actions","path":"scripts/Actions/Actions.yy",},},
     {"id":{"name":"DialogueBox","path":"scripts/DialogueBox/DialogueBox.yy",},},
+    {"id":{"name":"flags","path":"scripts/flags/flags.yy",},},
     {"id":{"name":"JanitorDialogue","path":"scripts/JanitorDialogue/JanitorDialogue.yy",},},
     {"id":{"name":"LibrarianDialogue","path":"scripts/LibrarianDialogue/LibrarianDialogue.yy",},},
     {"id":{"name":"seqLantern","path":"sequences/seqLantern/seqLantern.yy",},},

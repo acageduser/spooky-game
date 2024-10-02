@@ -3,9 +3,6 @@
 /*** Positioning Variables ***/
 
 //GUI Dimensions
-/*** Positioning Variables ***/
-
-//GUI Dimensions
 screenW = display_get_gui_width();
 screenH = display_get_gui_height();
 
@@ -41,13 +38,14 @@ options = [];
 mouseX = 0;
 mouseY = 0;
 
-/// @function setDialogue(dialogueText, choices)
+
+/// @function setDialogue
 /// @desc Applies new dialogue text and possible user choices to DialogueBox and configures them for display.
 /// @param {string} dialogueText Text for the DialogueBox (Always Narrator or NPC lines in my example, but can be used for player lines as well)
 /// @param {array} [choices] Array of strings indicating the user's possible choices/responses. Empty (or non-included) argument will proceed with spacebar press.
 /// @return {undefined}
 function setDialogue(dialogueText, choices = []) {
-	draw_set_color(c_white);
+    draw_set_color(c_white);
 	text = dialogueText; //Set text to new prompt
 	selected = -1;       //Clear any previous user selections
 	textProgress = 0;    //Reset textProgress
@@ -60,9 +58,53 @@ function setDialogue(dialogueText, choices = []) {
 	} else { //Choices case
 		choice = true;                                              //Indicate choice present
 		options = [];												//Clear options array
-		array_copy(options, 0, choices, 0, array_length(choices) ); //Populate new user choices
-	}//end if
+		array_copy(options, 0, choices, 0, array_length(choices));  //Populate new user choices
+	}
 	
 	textLength = string_length(text); //Update length of text prompt
-	
-}//end setDialogue
+}
+
+/*** Draw Event (Handles drawing text and options) ***/
+/// @desc Draws the dialogue box, text, and user choices.
+
+draw_self();  //Draw the dialogue box background
+
+//Draw the dialogue text
+draw_text(left + padding, top + padding, string_copy(text, 1, floor(textProgress)));
+
+//If options are available, draw them
+if (choice) {
+    var optionY = bottom + 10;  // Start drawing options slightly below the dialogue box
+    for (var i = 0; i < array_length(options); i++) {
+        // Highlight option if mouse is over it
+        if (mouse_x > left && mouse_x < right && mouse_y > optionY && mouse_y < optionY + 30) {
+            draw_set_color(c_yellow);  // Highlight the option when hovered
+        } else {
+            draw_set_color(c_white);
+        }
+
+        //Draw the option
+        draw_text(left + padding, optionY, options[i]);
+        
+        optionY += 40;  //space between options
+    }
+    
+    draw_set_color(c_white);
+}
+
+
+/*** Mouse Left Pressed Event (Handles option selection) ***/
+/// @desc Detects mouse clicks on dialogue options and triggers the respective action.
+
+if (choice) {
+    var optionY = bottom + 10;  // Same Y coordinate logic as the Draw event
+    for (var i = 0; i < array_length(options); i++) {
+        // Detect if the mouse is clicking on an option
+        if (mouse_x > left && mouse_x < right && mouse_y > optionY && mouse_y < optionY + 30) {
+            submitPlayerAction(i);  // Call the appropriate action based on the choice
+            break;
+        }
+        
+        optionY += 40;  // Adjust for the next option
+    }
+}
