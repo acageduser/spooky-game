@@ -10,7 +10,7 @@ global.unlockYellowBook = false;
 
 function displayJanitorMenu() {
     if (global.janitorDialogueBranch == 0) {
-        objDialogueBox.setDialogue("Oh, you startled me! I’m the janitor here. I’ve been sweeping these floors for as long as I can remember.", ["What happened to you?", "Quit"]);
+        objDialogueBox.setDialogue("Oh, you startled me! I am the janitor here. I have been sweeping these floors for as long as I can remember.", ["What happened to you?", "Quit"]);
     } else if (global.janitorDialogueBranch == 1) {
         var options = ["What's with the bookshelf?", "Quit"];
         if (global.unlockGreenBook) {
