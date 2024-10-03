@@ -6,7 +6,7 @@ if (!is_undefined(global.JanitorDisabled) && choice) {
     } else if (objPlayer.isTalkingToJanitor) {
         submitJanitorAction(selected);
     } else {
-        if (global.LibrarianDisabled && selected == 2) {
+        if (global.librarianDisabled && selected == 2) {
             selected = -1;
         } else if (global.JanitorDisabled && selected == 3) {
             selected = -1;

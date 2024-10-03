@@ -16,5 +16,5 @@ if (textProgress < textLength) {
 
 // Handle space key press (but only if the 1-second delay has passed)
 if (keyboard_check_pressed(vk_space) && global.textFullyDisplayed && global.canProceed) {
-    alarm[0] = room_speed * 0.2;  // Proceed to the next action or display menu
+    alarm[0] = room_speed ;  // Proceed to the next action or display menu
 }

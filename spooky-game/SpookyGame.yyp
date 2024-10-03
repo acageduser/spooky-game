@@ -1,6 +1,6 @@
 {
   "$GMProject":"",
-  "%Name":"SpookyGame9",
+  "%Name":"SpookyGame",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
@@ -30,9 +30,9 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.8.1.171",
+    "IDEVersion":"2024.6.2.162",
   },
-  "name":"SpookyGame9",
+  "name":"SpookyGame",
   "resources":[
     {"id":{"name":"curLanternDown","path":"animcurves/curLanternDown/curLanternDown.yy",},},
     {"id":{"name":"curLanternUp","path":"animcurves/curLanternUp/curLanternUp.yy",},},

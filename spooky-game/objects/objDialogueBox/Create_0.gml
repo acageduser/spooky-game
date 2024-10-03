@@ -1,7 +1,10 @@
 //// @description Handles defining the attributes for the Dialogue Box object
 
 global.JanitorDisabled = false;
-
+global.librarianDisabled = false;
+global.textFullyDisplayed = false;
+global.canProceed = false;
+global.hasCursedBook = false;
 /*** Positioning Variables ***/
 
 // GUI Dimensions
