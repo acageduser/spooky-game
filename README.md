@@ -52,6 +52,114 @@ Assets NOT created by us. These assets were taken from the internet with permiss
 - sprlighting (https://purepng.com/public/uploads/medium/purepng.com-lightninglightningsudden-electrostatic-dischargeintra-cloud-lightningcc-lightning-1411527065801n2r18.png)
 - sprCloud(https://i.pinimg.com/originals/60/a8/2c/60a82c6cf7fda046b291e6b2c78ea531.png)
 
+Assignment 5 Revision Proofs
+
+######################################################################################
+
+RYAN LIVINGHOUSE:
+
+Space bar functionality:
+- Space bar speedup: Holding space speeds up how fast the text generates by 4x the 
+normal speed.
+- Prevent menu skipping: You can’t just press space to go back to the main menu 
+whenever you want anymore. Now, you can only go back to the main menu when the game 
+prompts you to (like after dialogue finishes).
+- Disable space bar on highlighted options: The space bar no longer “clicks” 
+highlighted options. It used to act like a left-click when you hovered over options 
+with the mouse and hit space. That’s fixed now.
+
+objDialogueBox:
+	- Text rendering and progression: Handles how text shows up and speeds up when holding 
+	space. Also controls when the player can move on based on if the text is fully 
+	generated or not.
+	- Menu interaction fixes: Menu options are now consistently drawn from the bottom up 
+	and stay aligned. Mouse clicks work for selecting options, and space bar is only 
+	allowed for moving on when the game prompts it.
+	- GUI Layer tweaks: The dialogue options are drawn 55 pixels up from the bottom of 
+	the screen. Hovering over options highlights them, and mouse clicks are correctly 
+	handled for making selections.
+
+	Step:
+		- Mouse and keyboard checks: Makes sure text speeds up while holding space and stops 
+		the game from jumping to the main menu if you press space before the text finishes 
+		generating.
+		- Text progression: Updates how fast text shows up on screen based on `textSpeed`, 
+		and speeds things up when space is held.
+
+	Alarm 0:
+		- Transition management: Handles moving between different menus and dialogue choices, 
+		making sure the right actions are trigggered whether you're talking to an NPC or in 
+		the general action menu.
+
+	Alarm 1:
+		- No more forced delay: Got rid of any forced wait time between text finishing and 
+		the ability to move on. As soon as the text finishes displaying, you can immediately 
+		continue without waiting.
+
+Create Flowchart:
+	- Dialogue flow overview: Shows all the dialogue paths with the Janitor, Librarian, 
+	and interactive elements like the Haunted Bookshelf, Lantern, and Pedestal. The 
+	flowchart tracks everything from initial interactions to how the game changes based 
+	on your choices and unlocked items.
+	- Menu navigation: Outlines how you move between menus, dialogue screens, and events. 
+	Each choice and action updates the game state, and the flowchart explains how 
+	everything links up.
+	- Text and interaction sequence: Includes how text appears, how dialogue works 
+	with NPCs, and how fast-forwarding or advancing through the game changes based on 
+	what’s happening.
+
+Create in-line documentation:
+	- Every function now has comments that match the required format:
+		- @function: Lists the name of the function.
+		- @desc: A brief description of what the function does.
+		- @param: Details any parameters.
+		- @return: If anything is returned.
+	- Updated the in line comments to reflect the behavior of each line.
+
+######################################################################################
+--------------------------------------------------------------------------------------
+######################################################################################
+
+JALEN LEWIS:
+
+
+######################################################################################
+--------------------------------------------------------------------------------------
+######################################################################################
+
+ANGEL CRUZ:
+
+
+######################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Assignment 4 Revision Proofs
 
 ######################################################################################

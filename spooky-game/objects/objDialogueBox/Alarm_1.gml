@@ -1,2 +1,5 @@
-/// @description Alarm[1] event: Allow player to proceed after 1 second
-global.canProceed = true;
+/// @function Alarm 1
+/// @desc allows player to proceed after delay
+/// @return none
+
+global.canProceed = true;  //allow player to proceed after delay

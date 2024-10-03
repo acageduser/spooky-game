@@ -1,74 +1,75 @@
-global.janitorDialogueBranch = 0;
-global.janitorDisabled = false;
-global.unlockBookshelf = false;
-global.unlockGreenBook = false;
-global.unlockYellowBook = false;
-global.lanternLit = false;
+/// @function displayJanitorMenu
+/// @desc displays the janitor dialogue options based on the current state and flags
+/// @return none
 
-// Displays the janitor dialogue options based on the current state and unlocked flags
 function displayJanitorMenu() {
     if (global.janitorDisabled) {
-        objDialogueBox.setDialogue("The janitor has moved on and can no longer be spoken to.", ["Quit"]);
-        return;
+        objDialogueBox.setDialogue("The janitor has moved on and can no longer be spoken to.", ["Quit"]);  //handle janitor disabled case
+        return;  //exit the function early
     }
 
     if (global.janitorDialogueBranch == 0) {
-        objDialogueBox.setDialogue("Oh, you startled me! I'm the janitor here. I've been sweeping these floors for as long as I can remember.", ["What happened to you?", "Quit"]);
+        objDialogueBox.setDialogue("Oh, you startled me! I'm the janitor here. I've been sweeping these floors for as long as I can remember.", ["What happened to you?", "Quit"]);  //initial dialogue options
     } else if (global.janitorDialogueBranch == 1) {
-        var options = ["What's with the bookshelf?", "Quit"];
+        var options = ["What's with the bookshelf?", "Quit"];  //options for branch 1
         if (global.unlockYellowBook) {
-            array_push(options, "Tell me about the Yellow book");
+            array_push(options, "Tell me about the Yellow book");  //add yellow book option if unlocked
         }
         if (global.lanternLit) {
-            array_push(options, "Are you free?");
+            array_push(options, "Are you free?");  //add freedom option if lantern is lit
         }
-        objDialogueBox.setDialogue("What would you like to ask?", options);
+        objDialogueBox.setDialogue("What would you like to ask?", options);  //display updated options
     } else if (global.janitorDialogueBranch == 2) {
-        objDialogueBox.setDialogue("What should I do now?", ["Goodbye"]);
+        objDialogueBox.setDialogue("What should I do now?", ["Goodbye"]);  //final dialogue options
     }
 }
 
+/// @function submitJanitorAction
+/// @desc processes the player's selected janitor dialogue option
+/// @param {integer} choice - index of the selected option
+/// @return none
+
 function submitJanitorAction(choice) {
     if (global.janitorDisabled) {
-        objPlayer.isTalkingToJanitor = false;
-        displayActionsMenu();
-        return;
+        objPlayer.isTalkingToJanitor = false;  //stop interaction if janitor is disabled
+        displayActionsMenu();  //return to action menu
+        return;  //exit the function early
     }
 
     if (global.janitorDialogueBranch == 0) {
         switch (choice) {
             case 0:
-                objDialogueBox.setDialogue("A mishap with the lantern... I'm cursed to sweep these floors for all eternity.");
-                global.janitorDialogueBranch = 1;
+                objDialogueBox.setDialogue("A mishap with the lantern... I'm cursed to sweep these floors for all eternity.");  //janitor explains his curse
+                global.janitorDialogueBranch = 1;  //move to next dialogue branch
                 break;
             case 1:
-                objPlayer.isTalkingToJanitor = false;
-                displayActionsMenu();
+                objPlayer.isTalkingToJanitor = false;  //end interaction if "Quit" is chosen
+                displayActionsMenu();  //return to action menu
                 break;
         }
     } else if (global.janitorDialogueBranch == 1) {
         switch (choice) {
             case 0:
-                objDialogueBox.setDialogue("That bookshelf hides a powerful book. The Red book must come first and The Green book comes after Blue.");
-                global.unlockBookshelf = true;
+                objDialogueBox.setDialogue("That bookshelf hides a powerful book. The Red book must come first and The Green book comes after Blue.");  //explanation of bookshelf puzzle
+                global.unlockBookshelf = true;  //unlock the haunted bookshelf
                 break;
             case 1:
-                objPlayer.isTalkingToJanitor = false;
-                displayActionsMenu();
+                objPlayer.isTalkingToJanitor = false;  //end interaction if "Quit" is chosen
+                displayActionsMenu();  //return to action menu
                 break;
             case 2:
                 if (global.lanternLit) {
-                    objDialogueBox.setDialogue("Yes, at last I can finally move on from this place. Thank you.");
-                    global.janitorDialogueBranch = 2;
-                    global.janitorDisabled = true;  // Disable further janitor dialogue
+                    objDialogueBox.setDialogue("Yes, at last I can finally move on from this place. Thank you.");  //janitor freed dialogue
+                    global.janitorDialogueBranch = 2;  //advance to final branch
+                    global.janitorDisabled = true;  //disable further janitor interaction
                 }
                 break;
         }
     } else if (global.janitorDialogueBranch == 2) {
         if (choice == 0) {
-            objDialogueBox.setDialogue("Goodbye.");
-            objPlayer.isTalkingToJanitor = false;
-            displayActionsMenu();
+            objDialogueBox.setDialogue("Goodbye.");  //janitor final goodbye
+            objPlayer.isTalkingToJanitor = false;  //end interaction
+            displayActionsMenu();  //return to action menu
         }
     }
 }

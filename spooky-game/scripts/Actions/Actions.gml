@@ -1,91 +1,96 @@
-// Actions.gml
+/// @function displayActionsMenu
+/// @desc displays the main actions menu and resets player state
+/// @return none
 
-// List of all available routes in the game
-global.actionOptions = [
-    "Open Door",          // Option to open the door
-    "Inspect Mirror",      // Option to inspect the mirror
-    "Speak to Librarian",  // Option to talk to the librarian
-    "Speak to Janitor",    // Option to talk to the janitor
-    "Interact with Bookshelf",  // Option to interact with the haunted bookshelf
-    "Inspect Pedestal",    // Option to interact with the pedestal
-    "Inspect Lantern",     // Option to interact with the lantern
-    "Exit the Room"        // Option to try and exit the room
+global.actionOptions = [  
+    "Open Door",           //option to open door
+    "Inspect Mirror",       //option to inspect mirror
+    "Speak to Librarian",   //option to speak to librarian
+    "Speak to Janitor",     //option to speak to janitor
+    "Interact with Bookshelf",  //option to interact with bookshelf
+    "Inspect Pedestal",     //option to inspect pedestal
+    "Inspect Lantern",      //option to inspect lantern
+    "Exit the Room"         //option to exit room
 ];
 
 function displayActionsMenu() {
-    // Resetting the player's state to avoid interaction bleed
-    objPlayer.isTalkingToLibrarian = false;
-    objPlayer.isTalkingToJanitor = false;
-    global.currentDialogueState = "actions";  // Track current state
+    objPlayer.isTalkingToLibrarian = false;  //reset librarian interaction state
+    objPlayer.isTalkingToJanitor = false;  //reset janitor interaction state
+    global.currentDialogueState = "actions";  //set dialogue state to actions
     
-    objDialogueBox.setDialogue("What would you like to do?", global.actionOptions);
+    objDialogueBox.setDialogue("What would you like to do?", global.actionOptions);  //display options
 }
+
+/// @function submitPlayerAction
+/// @desc handles user input based on chosen action
+/// @param {integer} choice - index of the chosen action
+/// @return none
 
 function submitPlayerAction(choice) {
     switch (global.currentDialogueState) {
         case "actions":
             switch (choice) {
                 case 0:
-                    openDoor();  // Call the openDoor script
+                    openDoor();  //call open door script
                     break;
                 case 1:
-                    inspectMirror();  // Call the inspectMirror script
+                    inspectMirror();  //call inspect mirror script
                     break;
                 case 2:
-                    displayLibrarianMenu();  // Move to librarian dialogue
+                    displayLibrarianMenu();  //open librarian dialogue
                     objPlayer.isTalkingToLibrarian = true;
-                    global.currentDialogueState = "librarian";
+                    global.currentDialogueState = "librarian";  //update dialogue state
                     break;
                 case 3:
-                    displayJanitorMenu();  // Move to janitor dialogue
+                    displayJanitorMenu();  //open janitor dialogue
                     objPlayer.isTalkingToJanitor = true;
-                    global.currentDialogueState = "janitor";
+                    global.currentDialogueState = "janitor";  //update dialogue state
                     break;
                 case 4:
-                    interactWithBookshelf();  // Call the haunted bookshelf script
-                    global.currentDialogueState = "bookshelf";
+                    interactWithBookshelf();  //call bookshelf interaction script
+                    global.currentDialogueState = "bookshelf";  //update dialogue state
                     break;
                 case 5:
-                    interactWithPedestal();  // Call the pedestal interaction script
-                    global.currentDialogueState = "pedestal";
+                    interactWithPedestal();  //call pedestal interaction script
+                    global.currentDialogueState = "pedestal";  //update dialogue state
                     break;
                 case 6:
-                    interactWithLantern();  // Call the lantern interaction script
-                    global.currentDialogueState = "lantern";
+                    interactWithLantern();  //call lantern interaction script
+                    global.currentDialogueState = "lantern";  //update dialogue state
                     break;
                 case 7:
-                    tryToExitRoom();  // Call the exit room script
-                    global.currentDialogueState = "exitRoom";
+                    tryToExitRoom();  //call exit room script
+                    global.currentDialogueState = "exitRoom";  //update dialogue state
                     break;
             }
             break;
 
         case "janitor":
-            submitJanitorAction(choice);  // Call janitor's script if player is talking to Janitor
+            submitJanitorAction(choice);  //handle janitor actions
             break;
 
         case "librarian":
-            submitLibrarianAction(choice);  // Call librarian's script if player is talking to Librarian
+            submitLibrarianAction(choice);  //handle librarian actions
             break;
 
         case "bookshelf":
-            interactWithBookshelf();  // Call bookshelf interaction script
+            interactWithBookshelf();  //handle bookshelf interaction
             break;
 
         case "pedestal":
-            interactWithPedestal();  // Call pedestal interaction script
+            interactWithPedestal();  //handle pedestal interaction
             break;
 
         case "lantern":
-            interactWithLantern();  // Call lantern interaction script
+            interactWithLantern();  //handle lantern interaction
             break;
 
         case "exitRoom":
-            tryToExitRoom();  // Call the exit room logic script
+            tryToExitRoom();  //handle exit room logic
             break;
 
         case "mirror":
-            inspectMirror();  // Handle the mirror script case again, if needed
+            inspectMirror();  //handle mirror case
             break;
     }
 }
