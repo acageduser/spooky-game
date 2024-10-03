@@ -1,8 +1,25 @@
 {
-  "$GMTileSet":"",
+  "$GMTileSet":"v1",
   "%Name":"tlsWallSet",
   "autoTileSets":[
-    {"$GMAutoTileSet":"","%Name":"autotile_1","closed_edge":false,"name":"autotile_1","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[15,0,0,3,0,11,0,0,0,0,10,7,3,0,0,0,],},
+    {"$GMAutoTileSet":"","%Name":"autotile_1","closed_edge":false,"name":"autotile_1","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[
+        15,
+        0,
+        0,
+        3,
+        0,
+        11,
+        0,
+        0,
+        0,
+        0,
+        10,
+        7,
+        3,
+        0,
+        0,
+        0,
+      ],},
   ],
   "macroPageTiles":{
     "SerialiseHeight":0,
@@ -27,10 +44,6 @@
   "textureGroupId":{
     "name":"Default",
     "path":"texturegroups/Default",
-  },
-  "tileAnimation":{
-    "FrameData":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,],
-    "SerialiseFrameCount":1,
   },
   "tileAnimationFrames":[],
   "tileAnimationSpeed":15.0,

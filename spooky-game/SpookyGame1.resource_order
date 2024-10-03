@@ -1,0 +1,15 @@
+{
+  "FolderOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"curLanternDown","order":1,"path":"animcurves/curLanternDown/curLanternDown.yy",},
+    {"name":"Start","order":1,"path":"objects/Start/Start.yy",},
+    {"name":"roomAbout","order":3,"path":"rooms/roomAbout/roomAbout.yy",},
+    {"name":"roomGame","order":2,"path":"rooms/roomGame/roomGame.yy",},
+    {"name":"RoomPlayerInput","order":1,"path":"rooms/RoomPlayerInput/RoomPlayerInput.yy",},
+    {"name":"seqLantern","order":2,"path":"sequences/seqLantern/seqLantern.yy",},
+    {"name":"Sequence3","order":1,"path":"sequences/Sequence3/Sequence3.yy",},
+    {"name":"lightning","order":2,"path":"sprites/lightning/lightning.yy",},
+    {"name":"Sprite29","order":3,"path":"sprites/Sprite29/Sprite29.yy",},
+    {"name":"sprWind","order":1,"path":"sprites/sprWind/sprWind.yy",},
+  ],
+}

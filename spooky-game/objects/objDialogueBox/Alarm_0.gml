@@ -1,20 +1,16 @@
-/// @description Handles the transition between text and the next action
-
-if (!is_undefined(global.JanitorDisabled) && choice) {
-    if (objPlayer.isTalkingToLibrarian) {
-        submitLibrarianAction(selected);
-    } else if (objPlayer.isTalkingToJanitor) {
-        submitJanitorAction(selected);
-    } else {
-        if (global.librarianDisabled && selected == 2) {
-            selected = -1;
-        } else if (global.JanitorDisabled && selected == 3) {
-            selected = -1;
+/// @description Manages spacebar and ensures correct flow when advancing the game
+if (global.textFullyDisplayed && global.canProceed) {
+    if (choice) {
+        // Handle options selection within a menu
+        if (objPlayer.isTalkingToLibrarian) {
+            submitLibrarianAction(selected);
+        } else if (objPlayer.isTalkingToJanitor) {
+            submitJanitorAction(selected);
         } else {
             submitPlayerAction(selected);
         }
+    } else {
+        // Only show the actions menu if no choices are present
+        displayActionsMenu();
     }
-} else { 
-    // If no choices presented, display Actions Menu by default
-    displayActionsMenu();
 }

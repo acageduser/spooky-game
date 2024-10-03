@@ -5,6 +5,8 @@ global.librarianDisabled = false;
 global.textFullyDisplayed = false;
 global.canProceed = false;
 global.hasCursedBook = false;
+global.showSpacebarPrompt = false;  // New flag to track when the spacebar prompt is shown
+
 /*** Positioning Variables ***/
 
 // GUI Dimensions
@@ -46,6 +48,7 @@ mouseY = 0;
 /*** Initialize global dialogue flags ***/
 global.isTalkingToJanitor = false;
 global.isTalkingToLibrarian = false;
+global.showSpacebarPrompt = false;  // Reset flag
 
 /*** Define function to set dialogue text and options ***/
 function setDialogue(dialogueText, choices = []) {
@@ -59,10 +62,12 @@ function setDialogue(dialogueText, choices = []) {
         text += "\n\nPress spacebar to continue..."; // Append spacebar instructions if no choices
         choice = false;
         options = [];
+        global.showSpacebarPrompt = true;  // Only show spacebar prompt in this case
     } else {
         choice = true;
         options = [];
         array_copy(options, 0, choices, 0, array_length(choices)); // Copy options
+        global.showSpacebarPrompt = false;  // No spacebar prompt when there are options
     }
     
     textLength = string_length(text); // Update text length

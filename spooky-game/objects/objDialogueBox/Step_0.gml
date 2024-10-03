@@ -1,20 +1,19 @@
-/// @description Handles updating text and spacebar actions
+/// @description Updates text speed and handles spacebar logic
 mouseX = device_mouse_x_to_gui(0);
 mouseY = device_mouse_y_to_gui(0);
 
-// Update textProgress if less than the length of the text
+// Check if text is still rendering
 if (textProgress < textLength) {
-    textProgress += textSpeed;
+    // Handle fast-forwarding the text if spacebar is pressed
+    if (keyboard_check(vk_space)) {
+        textProgress += textSpeed * 4;  // Speed up text rendering by 4x
+    } else {
+        textProgress += textSpeed;  // Normal text rendering speed
+    }
 } else {
-    // When text is fully displayed, start the delay if it hasn't started
+    // If text is fully displayed, handle spacebar press for progressing to the next event
     if (!global.textFullyDisplayed) {
         global.textFullyDisplayed = true;
-        global.canProceed = false;  // Set the flag to prevent advancing
-        alarm[1] = room_speed * 1;  // Set a 1-second alarm
+        global.canProceed = true;  // Now allow player to advance with spacebar
     }
-}
-
-// Handle space key press (but only if the 1-second delay has passed)
-if (keyboard_check_pressed(vk_space) && global.textFullyDisplayed && global.canProceed) {
-    alarm[0] = room_speed ;  // Proceed to the next action or display menu
 }
