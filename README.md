@@ -166,7 +166,10 @@ clear enough (I still have no idea how typing in a field that says 'type' isn't 
 ######################################################################################
 
 JALEN LEWIS:
-
+ 1. made the dialouge box and the beggining discription of the game seeting when it starts
+ 2. I fixed thd bugs with the pedestal
+ 3. I chabged the clues for the book color combination. I changed it to where the player needs to go to the janitor and the librarian for one clue each. 
+4. The janitor and librarian dialogue  disabling after the tasks were done and I  make them thank the player.
 
 ######################################################################################
 --------------------------------------------------------------------------------------
