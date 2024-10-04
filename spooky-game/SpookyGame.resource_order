@@ -1,4 +1,7 @@
 {
   "FolderOrderSettings":[],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"winScreen","order":1,"path":"rooms/winScreen/winScreen.yy",},
+    {"name":"sprWinScreen","order":1,"path":"sprites/sprWinScreen/sprWinScreen.yy",},
+  ],
 }

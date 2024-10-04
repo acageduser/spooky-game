@@ -62,6 +62,7 @@
     {"id":{"name":"roomGame","path":"rooms/roomGame/roomGame.yy",},},
     {"id":{"name":"RoomPlayerInput","path":"rooms/RoomPlayerInput/RoomPlayerInput.yy",},},
     {"id":{"name":"roomTitle","path":"rooms/roomTitle/roomTitle.yy",},},
+    {"id":{"name":"winScreen","path":"rooms/winScreen/winScreen.yy",},},
     {"id":{"name":"Actions","path":"scripts/Actions/Actions.yy",},},
     {"id":{"name":"DialogueBox","path":"scripts/DialogueBox/DialogueBox.yy",},},
     {"id":{"name":"exitRoom","path":"scripts/exitRoom/exitRoom.yy",},},
@@ -106,6 +107,7 @@
     {"id":{"name":"sprWallSet","path":"sprites/sprWallSet/sprWallSet.yy",},},
     {"id":{"name":"sprWasd","path":"sprites/sprWasd/sprWasd.yy",},},
     {"id":{"name":"sprWind","path":"sprites/sprWind/sprWind.yy",},},
+    {"id":{"name":"sprWinScreen","path":"sprites/sprWinScreen/sprWinScreen.yy",},},
     {"id":{"name":"tlsWallSet","path":"tilesets/tlsWallSet/tlsWallSet.yy",},},
   ],
   "resourceType":"GMProject",
@@ -115,6 +117,7 @@
     {"roomId":{"name":"roomTitle","path":"rooms/roomTitle/roomTitle.yy",},},
     {"roomId":{"name":"roomAbout","path":"rooms/roomAbout/roomAbout.yy",},},
     {"roomId":{"name":"RoomPlayerInput","path":"rooms/RoomPlayerInput/RoomPlayerInput.yy",},},
+    {"roomId":{"name":"winScreen","path":"rooms/winScreen/winScreen.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

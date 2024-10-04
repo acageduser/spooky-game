@@ -81,4 +81,4 @@ function submitLibrarianAction(choice) {
 //        global.librarianDisabled = true;  //disable further dialogue
 //        objDialogueBox.setDialogue("You’ve done all that you can for us...but you’re still here, aren’t you? Look into the mirror, and you will see your true self. Only then can you escape. Thank you for setting me free... It is time to set yourself free...");  //final message
 //    }
-//}
+}
