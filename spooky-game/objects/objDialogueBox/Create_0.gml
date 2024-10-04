@@ -11,6 +11,8 @@ global.canProceed = false;
 global.hasCursedBook = false;
 global.showSpacebarPrompt = false;  //track when spacebar prompt is shown
 
+
+
 /*** Positioning Variables ***/
 
 //gui dimensions

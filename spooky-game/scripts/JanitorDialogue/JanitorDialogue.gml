@@ -12,9 +12,10 @@ function displayJanitorMenu() {
         objDialogueBox.setDialogue("Oh, you startled me! I'm the janitor here. I've been sweeping these floors for as long as I can remember.", ["What happened to you?", "Quit"]);  //initial dialogue options
     } else if (global.janitorDialogueBranch == 1) {
         var options = ["What's with the bookshelf?", "Quit"];  //options for branch 1
-        if (global.unlockYellowBook) {
-            array_push(options, "Tell me about the Yellow book");  //add yellow book option if unlocked
-        }
+//OLD CODE NOT USED
+//        if (global.janitorDialogueBranch == 1) {
+//            array_push(options, "Tell me about the bookshelves");  //add yellow book option if unlocked
+//        }
         if (global.lanternLit) {
             array_push(options, "Are you free?");  //add freedom option if lantern is lit
         }
@@ -50,8 +51,10 @@ function submitJanitorAction(choice) {
     } else if (global.janitorDialogueBranch == 1) {
         switch (choice) {
             case 0:
-                objDialogueBox.setDialogue("That bookshelf hides a powerful book. The Red book must come first and The Green book comes after Blue.");  //explanation of bookshelf puzzle
-                global.unlockBookshelf = true;  //unlock the haunted bookshelf
+                objDialogueBox.setDialogue("That bookshelf hides a powerful book. The Yellow book must come last and the Green book comes after Blue.");  //explanation of bookshelf puzzle
+                global.unlockHauntedBookshelf = true;  //unlock the haunted bookshelf
+				//debugging for unlocking bookshelf
+				show_debug_message("Haunted bookshelf has been unlocked.");
                 break;
             case 1:
                 objPlayer.isTalkingToJanitor = false;  //end interaction if "Quit" is chosen
@@ -59,7 +62,7 @@ function submitJanitorAction(choice) {
                 break;
             case 2:
                 if (global.lanternLit) {
-                    objDialogueBox.setDialogue("Yes, at last I can finally move on from this place. Thank you.");  //janitor freed dialogue
+                    objDialogueBox.setDialogue("Yes, at last I can finally move on from this place. Thank you. Please speak with the Librarian now.");  //janitor freed dialogue
                     global.janitorDialogueBranch = 2;  //advance to final branch
                     global.janitorDisabled = true;  //disable further janitor interaction
                 }

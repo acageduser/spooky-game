@@ -16,3 +16,4 @@ global.lanternHasCursedFlame = false;  //cursed flame in lantern
 global.lanternLit = false;  //lantern has been lit
 global.spiritAwakening = false;  //player's spirit awakening triggered
 global.pedestalOccupied = false;  //pedestal is occupied with cursed book
+global.inventory = [];  // Empty inventory at the start

@@ -58,6 +58,17 @@ Assignment 5 Revision Proofs
 
 RYAN LIVINGHOUSE:
 
+Creation of the following scripts:
+- Actions.gml
+- DialogueBox.gml
+- exitRoom.gml
+- hauntedBookshelf.gml
+- inspectMirror.gml
+- JanitorDialogue.gml
+- lanternInteraction.gml
+- openDoor.gml
+-pedistalInteraction.gml
+
 Space bar functionality:
 - Space bar speedup: Holding space speeds up how fast the text generates by 4x the 
 normal speed.
@@ -115,6 +126,8 @@ Create in-line documentation:
 		- @param: Details any parameters.
 		- @return: If anything is returned.
 	- Updated the in line comments to reflect the behavior of each line.
+
+Directions on how to navigate the menu are included.
 
 ######################################################################################
 --------------------------------------------------------------------------------------

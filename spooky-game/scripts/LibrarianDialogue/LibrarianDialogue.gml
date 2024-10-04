@@ -5,11 +5,11 @@ global.librarianDisabled = false;
 /// @desc displays the librarian's dialogue options based on the current dialogue branch and game state
 /// @return none
 function displayLibrarianMenu() {
-    //check if librarian is disabled
-    if (global.librarianDisabled) {
-        objDialogueBox.setDialogue("Thank you for setting me free.");  //final message if librarian is free
-        return;  //exit to prevent further options
-    }
+    ////check if librarian is disabled
+    //if (global.librarianDisabled) {
+    //    objDialogueBox.setDialogue("You’ve done all that you can for her... Look into the mirror...");  //final message if librarian is free
+    //    return;  //exit to prevent further options
+    //}
 
     var options = ["Who are you?", "Walk away"];  //initial dialogue options
 
@@ -31,8 +31,10 @@ function displayLibrarianMenu() {
 
     //check if the pedestal is occupied
     if (global.pedestalOccupied && !global.librarianDisabled) {
-        objDialogueBox.setDialogue("Thank you for setting me free.");  //final message when pedestal is occupied
+        objDialogueBox.setDialogue("You’ve done all that you can for us...but you’re still here, aren’t you? Look into the mirror, and you will see your true self. Only then can you escape. Thank you for setting me free... It is time to set yourself free...");  //final message when pedestal is occupied
         global.librarianDisabled = true;  //disable further dialogue
+		//mirror interaction here
+		
     }
 }
 
@@ -43,7 +45,7 @@ function displayLibrarianMenu() {
 function submitLibrarianAction(choice) {
     //check if librarian is disabled
     if (global.librarianDisabled) {
-        objDialogueBox.setDialogue("Thank you for setting me free.");  //final message
+        objDialogueBox.setDialogue("You have done all that you can for us...but you are still here, aren\’t you? Look into the mirror, and you will see your true self. Only then can you escape. Thank you for setting me free... It is time to set yourself free...");  //final message
         return;  //exit
     }
 
@@ -68,6 +70,8 @@ function submitLibrarianAction(choice) {
                 break;
             case 1:
                 objDialogueBox.setDialogue("All I know is that the Blue book comes after the Red book.");  //bookshelf hint
+                global.unlockHauntedBookshelf = true;  // Unlock the haunted bookshelf
+                show_debug_message("Haunted bookshelf has been unlocked.");
                 break;
         }
     }
@@ -75,6 +79,6 @@ function submitLibrarianAction(choice) {
     //check if the pedestal is occupied after interaction
     if (global.pedestalOccupied && !global.librarianDisabled) {
         global.librarianDisabled = true;  //disable further dialogue
-        objDialogueBox.setDialogue("Thank you for setting me free.");  //final message
+        objDialogueBox.setDialogue("You’ve done all that you can for us...but you’re still here, aren’t you? Look into the mirror, and you will see your true self. Only then can you escape. Thank you for setting me free... It is time to set yourself free...");  //final message
     }
 }
