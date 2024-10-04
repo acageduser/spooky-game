@@ -5,7 +5,9 @@
 function tryToExitRoom() {
     if (global.wallPhase == true) {
         objDialogueBox.setDialogue("You open the door and exit the library. You have beaten the game!");  //player exits with wall phase ability
-        game_end();  //end game logic here
+		//wait for a 5 second delay, then restart the game here
+		
+		game_end();  //end game logic here
     } else {
         objDialogueBox.setDialogue("The door is blocked. I can't get through.");  //no exit without wall phase
     }

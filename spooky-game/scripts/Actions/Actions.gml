@@ -3,7 +3,7 @@
 /// @return none
 
 global.actionOptions = [  
-    "Open Door",           //option to open door
+    "Check the broken bookshelves",           //option to open door
     "Inspect Mirror",       //option to inspect mirror
     "Speak to Librarian",   //option to speak to librarian
     "Speak to Janitor",     //option to speak to janitor

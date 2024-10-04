@@ -3,6 +3,8 @@
 /// @return none
 
 global.unlockHauntedBookshelf = false;  //player unlocks haunted bookshelf
+global.unlockHauntedBookshelfLibrarianHalf = false;
+global.unlockHauntedBookshelfJanitorHalf = false;
 global.hasInspectedMirror = false;  //player has inspected the mirror
 global.wallPhase = false;  //wall phase ability unlocked
 global.returnedCursedBook = false;  //player returned cursed book

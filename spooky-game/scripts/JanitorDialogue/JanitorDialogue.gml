@@ -52,9 +52,9 @@ function submitJanitorAction(choice) {
         switch (choice) {
             case 0:
                 objDialogueBox.setDialogue("That bookshelf hides a powerful book. The Yellow book must come last and the Green book comes after Blue.");  //explanation of bookshelf puzzle
-                global.unlockHauntedBookshelf = true;  //unlock the haunted bookshelf
+                global.unlockHauntedBookshelfJanitorHalf = true;  //unlock the haunted bookshelf
 				//debugging for unlocking bookshelf
-				show_debug_message("Haunted bookshelf has been unlocked.");
+				show_debug_message("Haunted bookshelf - 2 books have been unlocked.");
                 break;
             case 1:
                 objPlayer.isTalkingToJanitor = false;  //end interaction if "Quit" is chosen
