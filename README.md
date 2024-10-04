@@ -128,9 +128,38 @@ Create in-line documentation:
 		- @return: If anything is returned.
 	- Updated the in line comments to reflect the behavior of each line.
 
-Directions on how to navigate the menu are included.
+- Directions on how to navigate the menu are included.
 
-Update the formatting for the intro sequence.
+- Update the formatting for the intro sequence.
+
+- Fix the book puzzle. Previously, the player would automatically know the puzzle solution.
+
+- Fix a bug where the player could complete the game without talking to both NPCs. The
+player must get both halves of the book puzzle before they are allowed to solve.
+
+- Add in the ending game sequence:
+  - Added sprWinScreen.
+  - Added the winScreen room.
+  - Made a link between exiting the room from the actions menu to the win screen.
+  
+- Fixed the logic that handles checking for the state of the:
+  - lantern
+  - pedestal
+  - librarian
+  - janitor
+  - leaving the room
+  - peering behind the empty bookshelves
+
+- Created the inventory menu and associated flags:
+  - The items the player gets in the game are now tracked behind the scenes.
+  - The items the player gets in the game are now tracked visually through a text menu.
+
+- Included directions in how to use the "Type your Name" box. Apparently they were not
+clear enough (I still have no idea how typing in a field that says 'type' isn't clear, but okay...)
+
+- Fixed the Title Screen:
+  - There was no indication that the user's click was accepted when clicking Play. Now,
+  all the buttons will vanish once the play button is clicked.
 
 ######################################################################################
 --------------------------------------------------------------------------------------
