@@ -177,6 +177,24 @@ JALEN LEWIS:
 
 ANGEL CRUZ:
 
+Created and worked on:
+
+- Actions.gml
+- DialogueBox.gml
+- JanitorDialogue.gml
+- LibrarianDialogue.gml
+- openDoor.gml
+- inspectMirror.gml
+
+Fixed instruction mistake where it said that the player could use the right mouse
+button to select an option when its actually the left mouse button.
+
+Fixed a bug where the player would select and option and receive a response that
+corresponded with a different option (w/Ryan)
+
+Fixed a bug where the Librarians responses were appearing in the incorrect branch
+
+Fixed a bug where the apostrophe (') was appearing as a box
 
 ######################################################################################
 
