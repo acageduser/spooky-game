@@ -68,7 +68,7 @@ function displayActionsMenu() {
     }
 
     // Combine the inventory and action options into the dialogue text
-    var dialogueText = "What would you like to do?\n(HINT: Use the mouse to right click on any option. Holding space bar will speed up the text generation speed)\n" + getInventoryText() + "\n";
+    var dialogueText = "What would you like to do?\n(HINT: Use the mouse to left click on any option. Holding space bar will speed up the text generation speed)\n" + getInventoryText() + "\n";
     
     objDialogueBox.setDialogue(dialogueText, global.actionOptions);  //display options
 }
