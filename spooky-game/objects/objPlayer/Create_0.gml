@@ -25,3 +25,4 @@ animation_speed = room_speed / 6; //room speed by default is (I think) 30 FPS
 hsp = 0;  // horizontal speed
 vsp = 0;  // vertical speed
 move_speed = 4;  // movement speed
+
