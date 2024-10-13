@@ -68,6 +68,7 @@
     {"id":{"name":"roomAbout","path":"rooms/roomAbout/roomAbout.yy",},},
     {"id":{"name":"roomGame","path":"rooms/roomGame/roomGame.yy",},},
     {"id":{"name":"RoomPlayerInput","path":"rooms/RoomPlayerInput/RoomPlayerInput.yy",},},
+    {"id":{"name":"roomTest","path":"rooms/roomTest/roomTest.yy",},},
     {"id":{"name":"roomTitle","path":"rooms/roomTitle/roomTitle.yy",},},
     {"id":{"name":"winScreen","path":"rooms/winScreen/winScreen.yy",},},
     {"id":{"name":"Actions","path":"scripts/Actions/Actions.yy",},},
@@ -83,6 +84,7 @@
     {"id":{"name":"pedestalInteraction","path":"scripts/pedestalInteraction/pedestalInteraction.yy",},},
     {"id":{"name":"scrPlayerMovement","path":"scripts/scrPlayerMovement/scrPlayerMovement.yy",},},
     {"id":{"name":"scrTileCollide","path":"scripts/scrTileCollide/scrTileCollide.yy",},},
+    {"id":{"name":"sort_depth_by_y","path":"scripts/sort_depth_by_y/sort_depth_by_y.yy",},},
     {"id":{"name":"seqLantern","path":"sequences/seqLantern/seqLantern.yy",},},
     {"id":{"name":"Sequence2","path":"sequences/Sequence2/Sequence2.yy",},},
     {"id":{"name":"Sequence3","path":"sequences/Sequence3/Sequence3.yy",},},
@@ -123,6 +125,7 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"roomGame","path":"rooms/roomGame/roomGame.yy",},},
+    {"roomId":{"name":"roomTest","path":"rooms/roomTest/roomTest.yy",},},
     {"roomId":{"name":"roomTitle","path":"rooms/roomTitle/roomTitle.yy",},},
     {"roomId":{"name":"roomAbout","path":"rooms/roomAbout/roomAbout.yy",},},
     {"roomId":{"name":"RoomPlayerInput","path":"rooms/RoomPlayerInput/RoomPlayerInput.yy",},},

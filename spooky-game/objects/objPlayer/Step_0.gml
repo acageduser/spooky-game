@@ -1,13 +1,12 @@
 /// @function Step
-/// @desc Handles player movement, animations, diagonal movement with reduced speed, movement logic for shift key, opposite key press handling, collisions with objects, and idle logic.
+/// @desc Handles player movement, animations, diagonal movement with reduced speed, movement logic for shift key, opposite key press handling, collisions with objects, and depth handling.
 /// @param None
 /// @return None
 
+// *** Player Movement Section *** 
+
 move_speed = 2;  // Base movement speed
 animation_multiplier = 1;  // Base animation multiplier
-
-// Tile size (adjust this based on your actual tile size)
-var tile_size = 32;
 
 // Track last direction for idle frame
 if (!variable_global_exists("last_direction")) {
@@ -121,7 +120,7 @@ if (key_count >= 3 || opposite_directions_pressed) {
 
     // ***Collision Check with Objects*** 
     // If there's a collision with a solid object, revert movement
-    if (place_meeting(x + hsp, y + vsp, objSolid)) {  // Adjust objSolid to match your game's collision object
+    if (place_meeting(x, y, objSolid)) {  // Adjust objSolid to match your game's collision object
         x -= hsp;  // undo horizontal movement if there's a collision
         y -= vsp;  // undo vertical movement if there's a collision
     }
@@ -150,10 +149,6 @@ if (tilemap != -1) {
     var collision_bottom_left = tilemap_get_at_pixel(tilemap, x + buffer, y + player_height - buffer);  // bottom-left corner with buffer
     var collision_bottom_right = tilemap_get_at_pixel(tilemap, x + player_width - buffer, y + player_height - buffer);  // bottom-right corner with buffer
 
-    // Debug: Check what tile is being detected at each of the player's corners
-    show_debug_message("Top Left: " + string(collision_top_left) + " | Top Right: " + string(collision_top_right));
-    show_debug_message("Bottom Left: " + string(collision_bottom_left) + " | Bottom Right: " + string(collision_bottom_right));
-
     // If any of the corners are colliding with a wall (non-zero tile), stop the movement
     if (collision_top_left != 0 || collision_top_right != 0 || collision_bottom_left != 0 || collision_bottom_right != 0) {
         // Revert player movement if a collision is detected
@@ -161,3 +156,39 @@ if (tilemap != -1) {
         y -= vsp;
     }
 }
+
+// *** 2.5D Depth Handling with Buffer and Expanded Checking ***
+
+var depth_buffer = 2;  // Small buffer to prevent flipping when close to object edges
+var expansion_buffer = 8;  // Additional pixels to check for objects that are "near"
+
+// Expand the area to check by the buffer value
+var expanded_x1 = bbox_left - expansion_buffer;
+var expanded_x2 = bbox_right + expansion_buffer;
+var expanded_y1 = bbox_top - expansion_buffer;
+var expanded_y2 = bbox_bottom + expansion_buffer;
+
+// Check if the player is touching or near an object from objSolid, with expanded boundaries
+var touched_object = instance_position((expanded_x1 + expanded_x2) / 2, (expanded_y1 + expanded_y2) / 2, objSolid);
+
+if (touched_object != noone) {
+    // Get the bottom of the player and the object being touched
+    var player_bottom = bbox_bottom;  // Use player's bounding box bottom
+    var object_bottom = touched_object.bbox_bottom;  // Use touched object's bounding box bottom
+
+    // Adjust depth based on whether the player is in front of or behind the object
+    if (player_bottom > object_bottom + depth_buffer) {
+        // Player is in front of the object
+        depth = -object_bottom;
+    } else if (player_bottom < object_bottom - depth_buffer) {
+        // Player is behind the object
+        depth = object_bottom;
+    }
+} else {
+    // If no object is touched, default to the player's own depth
+    depth = -bbox_bottom;
+}
+
+// Apply depth sorting globally to ensure proper layering
+sort_depth_by_y();
+
