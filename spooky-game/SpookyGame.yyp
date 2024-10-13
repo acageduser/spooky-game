@@ -30,7 +30,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.8.0.169",
+    "IDEVersion":"2024.8.1.171",
   },
   "name":"SpookyGame",
   "resources":[
@@ -74,6 +74,7 @@
     {"id":{"name":"LibrarianDialogue","path":"scripts/LibrarianDialogue/LibrarianDialogue.yy",},},
     {"id":{"name":"openDoor","path":"scripts/openDoor/openDoor.yy",},},
     {"id":{"name":"pedestalInteraction","path":"scripts/pedestalInteraction/pedestalInteraction.yy",},},
+    {"id":{"name":"scrPlayerMovement","path":"scripts/scrPlayerMovement/scrPlayerMovement.yy",},},
     {"id":{"name":"seqLantern","path":"sequences/seqLantern/seqLantern.yy",},},
     {"id":{"name":"Sequence2","path":"sequences/Sequence2/Sequence2.yy",},},
     {"id":{"name":"Sequence3","path":"sequences/Sequence3/Sequence3.yy",},},
@@ -113,8 +114,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"roomTitle","path":"rooms/roomTitle/roomTitle.yy",},},
     {"roomId":{"name":"roomGame","path":"rooms/roomGame/roomGame.yy",},},
+    {"roomId":{"name":"roomTitle","path":"rooms/roomTitle/roomTitle.yy",},},
     {"roomId":{"name":"roomAbout","path":"rooms/roomAbout/roomAbout.yy",},},
     {"roomId":{"name":"RoomPlayerInput","path":"rooms/RoomPlayerInput/RoomPlayerInput.yy",},},
     {"roomId":{"name":"winScreen","path":"rooms/winScreen/winScreen.yy",},},
