@@ -1,11 +1,11 @@
 {
   "$GMSprite":"",
   "%Name":"sprLibrarian",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":62,
   "bbox_left":0,
   "bbox_right":31,
-  "bbox_top":1,
+  "bbox_top":26,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,

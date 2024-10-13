@@ -1,18 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"objCursedBook",
+  "%Name":"objSolid",
   "eventList":[],
   "managed":true,
-  "name":"objCursedBook",
+  "name":"objSolid",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
-  "parentObjectId":{
-    "name":"objSolid",
-    "path":"objects/objSolid/objSolid.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -30,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sprCursed_Book",
-    "path":"sprites/sprCursed_Book/sprCursed_Book.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

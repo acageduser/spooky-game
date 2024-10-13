@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"objCursedBook",
+  "%Name":"objAlter",
   "eventList":[],
   "managed":true,
-  "name":"objCursedBook",
+  "name":"objAlter",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprCursed_Book",
-    "path":"sprites/sprCursed_Book/sprCursed_Book.yy",
+    "name":"sprAlter",
+    "path":"sprites/sprAlter/sprAlter.yy",
   },
   "spriteMaskId":null,
   "visible":true,

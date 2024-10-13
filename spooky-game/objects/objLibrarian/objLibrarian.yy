@@ -1,9 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"objCursedBook",
-  "eventList":[],
+  "%Name":"objLibrarian",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"objCursedBook",
+  "name":"objLibrarian",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -31,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprCursed_Book",
-    "path":"sprites/sprCursed_Book/sprCursed_Book.yy",
+    "name":"sprLibrarian",
+    "path":"sprites/sprLibrarian/sprLibrarian.yy",
   },
   "spriteMaskId":null,
   "visible":true,

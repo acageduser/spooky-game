@@ -1,11 +1,11 @@
 {
   "$GMSprite":"",
   "%Name":"sprLantern_Unlit",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":27,
   "bbox_left":6,
   "bbox_right":25,
-  "bbox_top":2,
+  "bbox_top":7,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,

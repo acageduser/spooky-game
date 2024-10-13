@@ -1,11 +1,11 @@
 {
   "$GMSprite":"",
   "%Name":"sprJanitor",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":312,
   "bbox_left":155,
   "bbox_right":337,
-  "bbox_top":124,
+  "bbox_top":179,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,

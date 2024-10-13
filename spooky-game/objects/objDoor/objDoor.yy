@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"objCursedBook",
+  "%Name":"objDoor",
   "eventList":[],
   "managed":true,
-  "name":"objCursedBook",
+  "name":"objDoor",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprCursed_Book",
-    "path":"sprites/sprCursed_Book/sprCursed_Book.yy",
+    "name":"sprDoor",
+    "path":"sprites/sprDoor/sprDoor.yy",
   },
   "spriteMaskId":null,
   "visible":true,

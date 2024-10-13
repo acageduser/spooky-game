@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"objCursedBook",
+  "%Name":"objBookshelf2",
   "eventList":[],
   "managed":true,
-  "name":"objCursedBook",
+  "name":"objBookshelf2",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprCursed_Book",
-    "path":"sprites/sprCursed_Book/sprCursed_Book.yy",
+    "name":"sprBookshelf2",
+    "path":"sprites/sprBookshelf2/sprBookshelf2.yy",
   },
   "spriteMaskId":null,
   "visible":true,

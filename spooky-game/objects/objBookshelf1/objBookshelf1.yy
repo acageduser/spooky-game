@@ -1,17 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"Librarian",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"objBookshelf1",
+  "eventList":[],
   "managed":true,
-  "name":"Librarian",
+  "name":"objBookshelf1",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"objSolid",
+    "path":"objects/objSolid/objSolid.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -30,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprLibrarian",
-    "path":"sprites/sprLibrarian/sprLibrarian.yy",
+    "name":"sprBookshelf1",
+    "path":"sprites/sprBookshelf1/sprBookshelf1.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"objCursedBook",
+  "%Name":"objDeskClean",
   "eventList":[],
   "managed":true,
-  "name":"objCursedBook",
+  "name":"objDeskClean",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprCursed_Book",
-    "path":"sprites/sprCursed_Book/sprCursed_Book.yy",
+    "name":"sprDesk_Clean",
+    "path":"sprites/sprDesk_Clean/sprDesk_Clean.yy",
   },
   "spriteMaskId":null,
   "visible":true,

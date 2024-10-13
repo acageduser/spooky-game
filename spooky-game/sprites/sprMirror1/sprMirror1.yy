@@ -1,8 +1,8 @@
 {
   "$GMSprite":"",
   "%Name":"sprMirror1",
-  "bboxMode":0,
-  "bbox_bottom":115,
+  "bboxMode":2,
+  "bbox_bottom":94,
   "bbox_left":23,
   "bbox_right":102,
   "bbox_top":10,
