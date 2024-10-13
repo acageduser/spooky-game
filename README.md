@@ -53,6 +53,75 @@ Assets NOT created by us. These assets were taken from the internet with permiss
 - sprCloud(https://i.pinimg.com/originals/60/a8/2c/60a82c6cf7fda046b291e6b2c78ea531.png)
 - sprWinScreen (https://www.vecteezy.com/vector-art/11234047-you-win-video-game)
 
+Assignment 6 Revision Proofs
+
+######################################################################################
+
+RYAN LIVINGHOUSE:
+Changelog:
+
+Added:
+- scrPlayerMovement: Handles all player movement logic.
+- objPlayer Step: Now responsible for controlling player movement.
+- Omni-directional movement with 8 different directions! (UP, DOWN, LEFT, RIGHT, and all 4 DIAGONALS).
+- Sprint feature: Hold shift to boost your speed by 1.5x! Run like the wind!
+- objSolid: Introduced as the parent for all solid objects.
+- All objects now have custom collision boxes for that sweet 2.5D effect.
+- scrTileCollide: Moved into objPlayer’s Step event to manage tile collisions.
+- Player can no longer break through the edges of the world. You’re locked in now!
+- No more running through objects. Collisions are officially a thing.
+- sort_depth_by_y: Added to manage the 2.5D depth effect.
+- 2.5D is fully in place: Player now appears behind or in front of objects based on position.
+- Viewport is live! Camera zooms in slightly and follows the player around.
+
+Changed:
+- objPlayer Create: Now initializes all movement variables.
+- All player movement is now handled in the Step event (no more 8 separate key events).
+- Reorganized objects into their own instances for better management.
+
+
+######################################################################################
+--------------------------------------------------------------------------------------
+######################################################################################
+
+JALEN LEWIS:
+
+
+######################################################################################
+--------------------------------------------------------------------------------------
+######################################################################################
+
+ANGEL CRUZ:
+
+
+
+######################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Assignment 5 Revision Proofs
 
 ######################################################################################
