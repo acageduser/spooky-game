@@ -8,7 +8,7 @@ with (objSolid) {
 }
 
 with (objPlayer) {
-    if (y != undefined) {  // Ensure the player's y-coordinate is defined
+    if (y != undefined) {  //make sure the player's y-coordinate is defined
         depth = -y;  // The higher the Y value, the lower the depth (appears on top)
     }
 }
