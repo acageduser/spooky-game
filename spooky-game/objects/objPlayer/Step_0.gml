@@ -189,6 +189,44 @@ if (touched_object != noone) {
     depth = -bbox_bottom;
 }
 
+
 // Apply depth sorting globally to ensure proper layering
 sort_depth_by_y();
+
+var distance_to_book = distance_to_object(objCursedBook);
+var distance_to_phase = distance_to_object(objPhase)
+
+if (distance_to_book < 1 && global.puzzleComplete = true) { // Adjust the distance threshold as needed
+    // Add the cursed book to the player's inventory
+    global.HasCursedBook = true;
+sprite_index = sprPickUp; // Change to your pickup animation sprite
+    image_index = 0; // Reset the animation to the first frame
+    image_speed = 0.01; // Set animation speed; adjust as needed
+    // Destroy the book object
+    with (objCursedBook) {
+        instance_destroy();
+		alarm[1] = room_speed; // Set the alarm to trigger after 1 second (adjust as needed)
+    }
+}
+if (distance_to_phase < 1 && keyboard_check(vk_space)) { // Adjust the distance threshold as needed
+    // Add the cursed book to the player's inventory
+    global.wallPhase = true;
+sprite_index = sprPickUp; // Change to your pickup animation sprite
+    image_index = 0; // Reset the animation to the first frame
+    image_speed = 0.1; // Set animation speed; adjust as needed
+    // Destroy the book object
+    with (objPhase) {
+        instance_destroy();
+		alarm[1] = room_speed; // Set the alarm to trigger after 1 second (adjust as needed)
+    }
+}
+if (sprite_index == sprPickUp) {
+    // Check if the animation is done (depends on your sprite frame count)
+    if (image_index >= sprite_get_number(sprPickUp) - 1) {
+        // Reset to the idle sprite after the pickup animation
+        sprite_index = sprMainCharacter; // Change this to your idle sprite
+        image_index = 0; // Reset animation frame
+        image_speed = 0; // Stop the animation
+    }
+}
 

@@ -3,6 +3,7 @@
 /// @return none
 
 global.unlockHauntedBookshelf = false;  //player unlocks haunted bookshelf
+global.puzzleComplete = false
 global.unlockHauntedBookshelfLibrarianHalf = false;
 global.unlockHauntedBookshelfJanitorHalf = false;
 global.hasInspectedMirror = false;  //player has inspected the mirror
