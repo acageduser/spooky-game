@@ -86,10 +86,14 @@ Changed:
 
 JALEN LEWIS:
 
-
-######################################################################################
---------------------------------------------------------------------------------------
-######################################################################################
+- picking up the wallphase
+- picking up the book
+- interacting with hidden door
+- fixing dialouge to make options selectable
+- logic for dialouge happening when interactiong with the bookshelf
+- logic for dialouge happening interacting with the pedelstal
+- 
+-  
 
 ANGEL CRUZ:
 
