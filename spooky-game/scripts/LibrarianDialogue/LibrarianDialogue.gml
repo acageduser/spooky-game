@@ -4,6 +4,9 @@ global.librarianDisabled = false;
 /// @function displayLibrarianMenu
 /// @desc displays the librarian's dialogue options based on the current dialogue branch and game state
 /// @return none
+/// @function displayLibrarianMenu
+/// @desc displays the librarian's dialogue options based on the current dialogue branch and game state
+/// @return none
 function displayLibrarianMenu() {
     var options = ["Who are you?", "Walk away"];  //initial dialogue options
 
@@ -28,9 +31,9 @@ function displayLibrarianMenu() {
         objDialogueBox.setDialogue("You have done all that you can for us...but you are still here, aren\'t you? Look into the mirror, and you will see your true self. Only then can you escape. Thank you for setting me free... It is time to set yourself free...");  //final message when pedestal is occupied
         global.librarianDisabled = true;  //disable further dialogue
 		//mirror interaction here
-		
     }
 }
+
 
 /// @function submitLibrarianAction
 /// @desc handles the player's selection during the librarian's dialogue
@@ -45,8 +48,8 @@ function submitLibrarianAction(choice) {
                 global.LibrarianDialogueBranch = 1;  //advance dialogue branch
                 break;
             case 1:
-                //displayActionsMenu();  //quit: return to actions menu
                 global.isTalkingToLibrarian = false;  //exit talking state
+				instance_destroy();
                 break;
         }
     }
