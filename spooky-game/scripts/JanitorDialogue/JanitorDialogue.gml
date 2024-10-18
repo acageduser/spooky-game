@@ -1,29 +1,27 @@
 /// @function displayJanitorMenu
 /// @desc displays the janitor dialogue options based on the current state and flags
 /// @return none
-
 function displayJanitorMenu() {
-    if (global.janitorDisabled) {
-        objDialogueBox.setDialogue("The janitor has moved on and can no longer be spoken to.", ["Quit"]);  //handle janitor disabled case
-        return;  //exit the function early
-    }
+	if(instance_exists(objDialogueBox)){
+	    if (global.janitorDisabled) {
+	        objDialogueBox.setDialogue("The janitor has moved on and can no longer be spoken to.", ["Quit"]);  //handle janitor disabled case
+	        return;  //exit the function early
+	    }
 
-    if (global.janitorDialogueBranch == 0) {
-        objDialogueBox.setDialogue("Oh, you startled me! I'm the janitor here. I've been sweeping these floors for as long as I can remember.", ["What happened to you?", "Quit"]);  //initial dialogue options
-    } else if (global.janitorDialogueBranch == 1) {
-        var options = ["What's with the bookshelf?", "Quit"];  //options for branch 1
-//OLD CODE NOT USED
-//        if (global.janitorDialogueBranch == 1) {
-//            array_push(options, "Tell me about the bookshelves");  //add yellow book option if unlocked
-//        }
-        if (global.lanternLit) {
-            array_push(options, "Are you free?");  //add freedom option if lantern is lit
-        }
-        objDialogueBox.setDialogue("What would you like to ask?", options);  //display updated options
-    } else if (global.janitorDialogueBranch == 2) {
-        objDialogueBox.setDialogue("What should I do now?", ["Goodbye"]);  //final dialogue options
-    }
+	    if (global.janitorDialogueBranch == 0) {
+	        objDialogueBox.setDialogue("Oh, you startled me! I'm the janitor here. I've been sweeping these floors for as long as I can remember.", ["What happened to you?", "Quit"]);  //initial dialogue options
+	    } else if (global.janitorDialogueBranch == 1) {
+	        var options = ["What's with the bookshelf?", "Quit"];  //options for branch 1
+	        if (global.lanternLit) {
+	            array_push(options, "Are you free?");  //add freedom option if lantern is lit
+	        }
+	        objDialogueBox.setDialogue("What would you like to ask?", options);  //display updated options
+	    } else if (global.janitorDialogueBranch == 2) {
+	        objDialogueBox.setDialogue("What should I do now?", ["Goodbye"]);  //final dialogue options
+	    }
+	}
 }
+
 
 /// @function submitJanitorAction
 /// @desc processes the player's selected janitor dialogue option
@@ -31,12 +29,6 @@ function displayJanitorMenu() {
 /// @return none
 
 function submitJanitorAction(choice) {
-    if (global.janitorDisabled) {
-        objPlayer.isTalkingToJanitor = false;  //stop interaction if janitor is disabled
-        displayActionsMenu();  //return to action menu
-        return;  //exit the function early
-    }
-
     if (global.janitorDialogueBranch == 0) {
         switch (choice) {
             case 0:
@@ -45,7 +37,7 @@ function submitJanitorAction(choice) {
                 break;
             case 1:
                 objPlayer.isTalkingToJanitor = false;  //end interaction if "Quit" is chosen
-                displayActionsMenu();  //return to action menu
+					instance_destroy(); // get rid of dialouge box after quitting
                 break;
         }
     } else if (global.janitorDialogueBranch == 1) {
@@ -58,7 +50,7 @@ function submitJanitorAction(choice) {
                 break;
             case 1:
                 objPlayer.isTalkingToJanitor = false;  //end interaction if "Quit" is chosen
-                displayActionsMenu();  //return to action menu
+					instance_destory(); //get rid of that dialouge box now
                 break;
             case 2:
                 if (global.lanternLit) {
@@ -72,7 +64,7 @@ function submitJanitorAction(choice) {
         if (choice == 0) {
             objDialogueBox.setDialogue("Goodbye.");  //janitor final goodbye
             objPlayer.isTalkingToJanitor = false;  //end interaction
-            displayActionsMenu();  //return to action menu
+            instance_destroy(); // get rid of dialouge box after quitting
         }
     }
 }

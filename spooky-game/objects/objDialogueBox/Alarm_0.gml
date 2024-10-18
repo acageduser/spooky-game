@@ -9,11 +9,8 @@ if (global.textFullyDisplayed && global.canProceed) {
             submitLibrarianAction(selected);  //process librarian actions
         } else if (objPlayer.isTalkingToJanitor) {
             submitJanitorAction(selected);  //process janitor actions
-        } else {
-            submitPlayerAction(selected);  //process general player actions
         }
     } else {
-        //show the actions menu if no choices are available
-        displayActionsMenu();  //go back to the main menu
+        self.alarm[2] = 1;
     }
 }
