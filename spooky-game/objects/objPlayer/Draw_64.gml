@@ -15,4 +15,4 @@ draw_set_color(c_white);
 draw_set_font(-1);  // Use default system font
 
 // Draw the inventory in the top-left corner (starting at 10px from the top and left edges)
-draw_text(10, 480, inventoryText);
+draw_text(10, 10, inventoryText);
