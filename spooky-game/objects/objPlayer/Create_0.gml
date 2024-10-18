@@ -26,3 +26,7 @@ hsp = 0;  // horizontal speed
 vsp = 0;  // vertical speed
 move_speed = 4;  // movement speed
 
+if (!variable_global_exists("last_direction")) {
+    global.last_direction = 0;  //default to down-facing direction
+}
+global.currentDialogueContext = "";  // This will track what dialogue the player is currently in (like 'librarian', 'bookshelf' and others)

@@ -22,7 +22,6 @@ function displayJanitorMenu() {
 	}
 }
 
-
 /// @function submitJanitorAction
 /// @desc processes the player's selected janitor dialogue option
 /// @param {integer} choice - index of the selected option
@@ -34,10 +33,11 @@ function submitJanitorAction(choice) {
             case 0:
                 objDialogueBox.setDialogue("A mishap with the lantern... I'm cursed to sweep these floors for all eternity.");  //janitor explains his curse
                 global.janitorDialogueBranch = 1;  //move to next dialogue branch
+				global.isTalkingToJanitor = false;  //exit talking state
                 break;
             case 1:
                 objPlayer.isTalkingToJanitor = false;  //end interaction if "Quit" is chosen
-					instance_destroy(); // get rid of dialouge box after quitting
+                instance_destroy();  //correct function name
                 break;
         }
     } else if (global.janitorDialogueBranch == 1) {
@@ -45,12 +45,11 @@ function submitJanitorAction(choice) {
             case 0:
                 objDialogueBox.setDialogue("That bookshelf hides a powerful book. The Yellow book must come last and the Green book comes after Blue.");  //explanation of bookshelf puzzle
                 global.unlockHauntedBookshelfJanitorHalf = true;  //unlock the haunted bookshelf
-				//debugging for unlocking bookshelf
-				show_debug_message("Haunted bookshelf - 2 books have been unlocked.");
+                show_debug_message("Haunted bookshelf - 2 books have been unlocked.");
                 break;
             case 1:
                 objPlayer.isTalkingToJanitor = false;  //end interaction if "Quit" is chosen
-					instance_destory(); //get rid of that dialouge box now
+                instance_destroy();  //correct function name
                 break;
             case 2:
                 if (global.lanternLit) {
@@ -64,7 +63,7 @@ function submitJanitorAction(choice) {
         if (choice == 0) {
             objDialogueBox.setDialogue("Goodbye.");  //janitor final goodbye
             objPlayer.isTalkingToJanitor = false;  //end interaction
-            instance_destroy(); // get rid of dialouge box after quitting
+            instance_destroy();  //correct function name
         }
     }
 }

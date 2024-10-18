@@ -199,6 +199,7 @@ var lib_distance = distance_to_object(objLibrarian);
 
 if (!global.librarianDisabled && lib_distance <= 15 && keyboard_check_pressed(ord("F"))){
 	show_debug_message("Player can interact with Librarian");
+    global.currentDialogueContext = "librarian";  // Set context to librarian
 	isTalkingToLibrarian = true;	
 	self.alarm[0] = 1;
 }
@@ -220,7 +221,7 @@ var hbs_distance = distance_to_object(hbs)
 if(hbs_distance <= 15 && keyboard_check_pressed(ord("F"))){
 	self.alarm[0] = 1;
 	if (global.unlockHauntedBookshelfJanitorHalf == true && global.unlockHauntedBookshelfLibrarianHalf == true) {
-        objDialogueBox.setDialogue("You arrange the books in the correct order and reveal the Cursed Book. You open it up and learn to chant a curse to light a lantern...");  //reveal cursed book
+//        objDialogueBox.setDialogue("You arrange the books in the correct order and reveal the Cursed Book. You open it up and learn to chant a curse to light a lantern...");  //reveal cursed book
         hasCursedBook = true;  //give player cursed book
         array_push(global.inventory, "Cursed Book");  //add cursed book to inventory
         show_debug_message("Cursed Book added to inventory.");  //log inventory addition

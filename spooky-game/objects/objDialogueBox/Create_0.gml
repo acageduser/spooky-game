@@ -1,4 +1,4 @@
-///// @function Create
+/// @function Create
 /// @desc sets up dialogue text and options for the dialogue box
 /// @param dialogueText - the dialogue to display
 /// @param [choices] - optional, an array of player choices (if any)
@@ -10,8 +10,6 @@ global.textFullyDisplayed = false;
 global.canProceed = false;
 global.hasCursedBook = false;
 global.showSpacebarPrompt = false;  //track when spacebar prompt is shown
-
-
 
 /*** Positioning Variables ***/
 
@@ -74,6 +72,7 @@ function setDialogue(dialogueText, choices = []) {
         choice = false;  //no choices
         options = [];  //clear previous options
         global.showSpacebarPrompt = true;  //show spacebar prompt
+//		instance_destroy();
     } else {
         choice = true;  //choices available
         options = [];  //clear previous options
