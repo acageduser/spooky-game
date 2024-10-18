@@ -13,7 +13,9 @@ isTalkingToJanitor = false;
 isTalkingToLibrarian = false;
 hasCursedBook = false;
 hasWallPhase = false;
-
+isInteractingWithBookshelf = false;
+isInteractingWithPedestal = false;
+isOpeningDoor = false;
 
 
 image_speed = 0; //fix the character cycling through all 32 of my animations when idle. DO NOT CHANGE

@@ -1,12 +1,12 @@
 /// @function initialize_global_flags
 /// @desc initializes all global game state flags
 /// @return none
-
 global.unlockHauntedBookshelf = false;  //player unlocks haunted bookshelf
 global.unlockHauntedBookshelfLibrarianHalf = false;
 global.unlockHauntedBookshelfJanitorHalf = false;
 global.hasInspectedMirror = false;  //player has inspected the mirror
 global.wallPhase = false;  //wall phase ability unlocked
+global.puzzleComplete = false
 global.returnedCursedBook = false;  //player returned cursed book
 global.spokenWithLibrarian = false;  //player has spoken with librarian
 global.librarianDialogueBranch = 0;  //tracks librarian dialogue progress
@@ -21,3 +21,6 @@ global.pedestalOccupied = false;  //pedestal is occupied with cursed book
 global.inventory = [];  // Empty inventory at the start
 global.isTalkingToLibrarian = false;
 global.isTalkingToJanitor = false;
+global.isInteractingWithBookshelf = false;
+global.isInteractingWithPedestal = false;
+global.isOpeningDoor = false 

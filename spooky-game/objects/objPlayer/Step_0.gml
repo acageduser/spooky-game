@@ -214,11 +214,16 @@ if (!global.janitorDisabled && jan_distance <= 15 && keyboard_check_pressed(ord(
 }
 	
 //Haunted Bookshelf Interaction
-var hbs = inst_38BBC3DF;
+var hbs = inst_72352DA4;
+var hiddenDoor =inst_38BBC3DF
 
 var hbs_distance = distance_to_object(hbs)
+var hidden_distance = distance_to_object(hiddenDoor)
 
-if(hbs_distance <= 15 && keyboard_check_pressed(ord("F"))){
+if(hbs_distance <= 5 && keyboard_check_pressed(ord("F"))){
+	isInteractingWithBookshelf = true
+	isTalkingToLibrarian = false
+	isTalkingToJanitor = false
 	self.alarm[0] = 1;
 	if (global.unlockHauntedBookshelfJanitorHalf == true && global.unlockHauntedBookshelfLibrarianHalf == true) {
 //        objDialogueBox.setDialogue("You arrange the books in the correct order and reveal the Cursed Book. You open it up and learn to chant a curse to light a lantern...");  //reveal cursed book
@@ -255,19 +260,13 @@ if (lan_distance <= 15 && keyboard_check_pressed(ord("F"))) {
 //Pedestal Interaction
 var ped_distance = distance_to_object(objAlter)
 
-if (ped_distance <=15 && keyboard_check_pressed(ord("F")) && !global.pedestalOccupied) {
-        if (hasCursedBook) {
-            // Player has the Cursed Book and places it on the pedestal
-            show_debug_message("You place the Cursed Book on the pedestal. The ritual is complete. You see the Librarian's eyes go wide...");  // Ritual completes
-            global.pedestalOccupied = true;  // Update pedestal state
-            removeItemFromInventory();  // Remove the Cursed Book from inventory
-			global.inventory = [];
-            hasCursedBook = false;  // The player no longer has the Cursed Book
-            show_debug_message("Cursed Book removed from inventory.");
-        } else {
-            // Pedestal is empty but player lacks the Cursed Book
-            show_debug_message("The pedestal is empty.");  // No action without Cursed Book
-        }
+if (ped_distance <=5 && keyboard_check_pressed(ord("F"))) {
+	  isInteractingWithBookshelf = false
+	  isTalkingToJanitor = false
+	  isTalkingToLibrarian = false
+      isInteractingWithPedestal= true
+	  
+		self.alarm[0] = 1
 }
 
 //Mirror Interaction
@@ -294,6 +293,49 @@ if(door_distance <= 15 && keyboard_check_pressed(ord("F"))){
         show_debug_message("I can't get through... Peering through the cracks in the bookshelf you can see a door.");  //player is blocked by the bookshelf
     }
 }
+var distance_to_book = distance_to_object(objCursedBook);
+var distance_to_phase = distance_to_object(objPhase)
 
+if (distance_to_book < 1 && global.puzzleComplete = true && keyboard_check(vk_space)) { // Adjust the distance threshold as needed
+    // Add the cursed book to the player's inventory
+    global.HasCursedBook = true;
+sprite_index = sprPickUp; // Change to your pickup animation sprite
+    image_index = 0; // Reset the animation to the first frame
+    image_speed = 0.01; // Set animation speed; adjust as needed
+    // Destroy the book object
+    with (objCursedBook) {
+        instance_destroy();
+		alarm[1] = room_speed; // Set the alarm to trigger after 1 second (adjust as needed)
+    }
+}
+
+
+if (distance_to_phase < 1 && global.janitorDisabled && global.librarianDisabled && keyboard_check(vk_space)) { // Adjust the distance threshold as needed
+    // Add the cursed book to the player's inventory
+    global.wallPhase = true;
+sprite_index = sprPickUp; // Change to your pickup animation sprite
+    image_index = 0; // Reset the animation to the first frame
+    image_speed = 0.1; // Set animation speed; adjust as needed
+    // Destroy the book object
+    with (objPhase) {
+        instance_destroy();
+		alarm[1] = room_speed; // Set the alarm to trigger after 1 second (adjust as needed)
+    }
+}
+if (sprite_index == sprPickUp) {
+    // Check if the animation is done (depends on your sprite frame count)
+    if (image_index >= sprite_get_number(sprPickUp) - 1) {
+        // Reset to the idle sprite after the pickup animation
+        sprite_index = sprMainCharacter; // Change this to your idle sprite
+        image_index = 0; // Reset animation frame
+        image_speed = 0; // Stop the animation
+    }
+}
+if(hbs_distance <= 5 && keyboard_check_pressed(ord("F"))&& hasWallPhase = true){
+	 isInteractingWithBookshelf = false
+	  isTalkingToJanitor = false
+	  isTalkingToLibrarian = false
+      isInteractingWithPedestal= false
+}
 
 
