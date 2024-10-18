@@ -30,7 +30,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.8.1.171",
+    "IDEVersion":"2024.6.2.162",
   },
   "name":"SpookyGame",
   "resources":[
@@ -59,6 +59,7 @@
     {"id":{"name":"objLibrarian","path":"objects/objLibrarian/objLibrarian.yy",},},
     {"id":{"name":"objMirror1","path":"objects/objMirror1/objMirror1.yy",},},
     {"id":{"name":"objMirror2","path":"objects/objMirror2/objMirror2.yy",},},
+    {"id":{"name":"objPhase","path":"objects/objPhase/objPhase.yy",},},
     {"id":{"name":"objPlayer","path":"objects/objPlayer/objPlayer.yy",},},
     {"id":{"name":"objPlayerInput","path":"objects/objPlayerInput/objPlayerInput.yy",},},
     {"id":{"name":"objSolid","path":"objects/objSolid/objSolid.yy",},},
@@ -110,6 +111,7 @@
     {"id":{"name":"sprMainScreen","path":"sprites/sprMainScreen/sprMainScreen.yy",},},
     {"id":{"name":"sprMirror1","path":"sprites/sprMirror1/sprMirror1.yy",},},
     {"id":{"name":"sprMirror2","path":"sprites/sprMirror2/sprMirror2.yy",},},
+    {"id":{"name":"sprPickUp","path":"sprites/sprPickUp/sprPickUp.yy",},},
     {"id":{"name":"sprText_Box","path":"sprites/sprText_Box/sprText_Box.yy",},},
     {"id":{"name":"sprWallPhase1","path":"sprites/sprWallPhase1/sprWallPhase1.yy",},},
     {"id":{"name":"sprWallPhase2","path":"sprites/sprWallPhase2/sprWallPhase2.yy",},},
