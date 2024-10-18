@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"JanitorDialogue",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"JanitorDialogue",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
