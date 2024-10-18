@@ -16,6 +16,7 @@
     {"name":"flags","order":10,"path":"scripts/flags/flags.yy",},
     {"name":"hauntedBookshelf","order":4,"path":"scripts/hauntedBookshelf/hauntedBookshelf.yy",},
     {"name":"inspectMirror","order":8,"path":"scripts/inspectMirror/inspectMirror.yy",},
+    {"name":"inventory_management","order":14,"path":"scripts/inventory_management/inventory_management.yy",},
     {"name":"JanitorDialogue","order":6,"path":"scripts/JanitorDialogue/JanitorDialogue.yy",},
     {"name":"lanternInteraction","order":1,"path":"scripts/lanternInteraction/lanternInteraction.yy",},
     {"name":"LibrarianDialogue","order":2,"path":"scripts/LibrarianDialogue/LibrarianDialogue.yy",},

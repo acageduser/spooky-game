@@ -77,6 +77,7 @@
     {"id":{"name":"flags","path":"scripts/flags/flags.yy",},},
     {"id":{"name":"hauntedBookshelf","path":"scripts/hauntedBookshelf/hauntedBookshelf.yy",},},
     {"id":{"name":"inspectMirror","path":"scripts/inspectMirror/inspectMirror.yy",},},
+    {"id":{"name":"inventory_management","path":"scripts/inventory_management/inventory_management.yy",},},
     {"id":{"name":"JanitorDialogue","path":"scripts/JanitorDialogue/JanitorDialogue.yy",},},
     {"id":{"name":"lanternInteraction","path":"scripts/lanternInteraction/lanternInteraction.yy",},},
     {"id":{"name":"LibrarianDialogue","path":"scripts/LibrarianDialogue/LibrarianDialogue.yy",},},

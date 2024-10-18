@@ -21,3 +21,4 @@ global.pedestalOccupied = false;  //pedestal is occupied with cursed book
 global.inventory = [];  // Empty inventory at the start
 global.isTalkingToLibrarian = false;
 global.isTalkingToJanitor = false;
+
