@@ -4,126 +4,130 @@
 /// @return None
 
 // *** Player Movement Section *** 
+// Disable player movement if dialogue box is active
+if (!instance_exists(objDialogueBox)) {
 
-move_speed = 2;  //base player speed
-animation_multiplier = 1;  //base animation speed
 
-//set default direction to down-facing if not set
-if (!variable_global_exists("last_direction")) {
-    global.last_direction = 0;  //default to down
-}
+	move_speed = 2;  //base player speed
+	animation_multiplier = 1;  //base animation speed
 
-//check if shift is held for sprint
-if (keyboard_check(vk_shift)) {
-    move_speed *= 1.5;  //1.5x movement speed
-    animation_multiplier = 1.5;  //1.5x animation speed
-}
+	//set default direction to down-facing if not set
+	if (!variable_global_exists("last_direction")) {
+	    global.last_direction = 0;  //default to down
+	}
 
-//reset speeds
-hsp = 0;
-vsp = 0;
+	//check if shift is held for sprint
+	if (keyboard_check(vk_shift)) {
+	    move_speed *= 1.5;  //1.5x movement speed
+	    animation_multiplier = 1.5;  //1.5x animation speed
+	}
 
-//reset animation frame
-var frame_offset = 0;
-animation_timer += animation_multiplier;  //adjust by multiplier
+	//reset speeds
+	hsp = 0;
+	vsp = 0;
 
-//count how many directional keys pressed
-var key_count = 0;
+	//reset animation frame
+	var frame_offset = 0;
+	animation_timer += animation_multiplier;  //adjust by multiplier
 
-//track if opposite directions are pressed
-var opposite_directions_pressed = false;
+	//count how many directional keys pressed
+	var key_count = 0;
 
-var right_pressed = keyboard_check(vk_right) || keyboard_check(ord("D"));
-var left_pressed = keyboard_check(vk_left) || keyboard_check(ord("A"));
-var down_pressed = keyboard_check(vk_down) || keyboard_check(ord("S"));
-var up_pressed = keyboard_check(vk_up) || keyboard_check(ord("W"));
+	//track if opposite directions are pressed
+	var opposite_directions_pressed = false;
 
-//check for opposite key presses
-if (right_pressed && left_pressed) {
-    opposite_directions_pressed = true;
-}
-if (up_pressed && down_pressed) {
-    opposite_directions_pressed = true;
-}
+	var right_pressed = keyboard_check(vk_right) || keyboard_check(ord("D"));
+	var left_pressed = keyboard_check(vk_left) || keyboard_check(ord("A"));
+	var down_pressed = keyboard_check(vk_down) || keyboard_check(ord("S"));
+	var up_pressed = keyboard_check(vk_up) || keyboard_check(ord("W"));
 
-//count direction keys pressed
-if (right_pressed) key_count++;
-if (left_pressed) key_count++;
-if (down_pressed) key_count++;
-if (up_pressed) key_count++;
+	//check for opposite key presses
+	if (right_pressed && left_pressed) {
+	    opposite_directions_pressed = true;
+	}
+	if (up_pressed && down_pressed) {
+	    opposite_directions_pressed = true;
+	}
 
-//stop if 3+ keys or opposite keys pressed
-if (key_count >= 3 || opposite_directions_pressed) {
-    hsp = 0;
-    vsp = 0;
-    image_index = 0;  //idle frame when no move
-} else {
-    //handle movement if valid key input
-    var diagonal_movement = false;
+	//count direction keys pressed
+	if (right_pressed) key_count++;
+	if (left_pressed) key_count++;
+	if (down_pressed) key_count++;
+	if (up_pressed) key_count++;
 
-    if (right_pressed) {
-        hsp = move_speed;  //move right
-        global.last_direction = 24;  //track last direction
-    }
-    if (left_pressed) {
-        hsp = -move_speed;  //move left
-        global.last_direction = 8;  //track left
-    }
-    if (down_pressed) {
-        vsp = move_speed;  //move down
-        global.last_direction = 0;  //track down
-    }
-    if (up_pressed) {
-        vsp = -move_speed;  //move up
-        global.last_direction = 16;  //track up
-    }
+	//stop if 3+ keys or opposite keys pressed
+	if (key_count >= 3 || opposite_directions_pressed) {
+	    hsp = 0;
+	    vsp = 0;
+	    image_index = 0;  //idle frame when no move
+	} else {
+	    //handle movement if valid key input
+	    var diagonal_movement = false;
 
-    //reduce speed for diagonal movement
-    if (hsp != 0 && vsp != 0) {
-        hsp *= 0.8;  //reduce horizontal speed
-        vsp *= 0.8;  //reduce vertical speed
-        diagonal_movement = true;
+	    if (right_pressed) {
+	        hsp = move_speed;  //move right
+	        global.last_direction = 24;  //track last direction
+	    }
+	    if (left_pressed) {
+	        hsp = -move_speed;  //move left
+	        global.last_direction = 8;  //track left
+	    }
+	    if (down_pressed) {
+	        vsp = move_speed;  //move down
+	        global.last_direction = 0;  //track down
+	    }
+	    if (up_pressed) {
+	        vsp = -move_speed;  //move up
+	        global.last_direction = 16;  //track up
+	    }
 
-        //check which diagonal direction for animations
-        if (hsp > 0 && vsp > 0) {
-            frame_offset = 28;  //down-right
-            global.last_direction = 28;  //track down-right
-        } else if (hsp > 0 && vsp < 0) {
-            frame_offset = 20;  //up-right
-            global.last_direction = 20;  //track up-right
-        } else if (hsp < 0 && vsp > 0) {
-            frame_offset = 4;  //down-left
-            global.last_direction = 4;  //track down-left
-        } else if (hsp < 0 && vsp < 0) {
-            frame_offset = 12;  //up-left
-            global.last_direction = 12;  //track up-left
-        }
-    } else if (hsp > 0) {
-        frame_offset = 24;  //right
-    } else if (hsp < 0) {
-        frame_offset = 8;  //left
-    } else if (vsp > 0) {
-        frame_offset = 0;  //down
-    } else if (vsp < 0) {
-        frame_offset = 16;  //up
-    }
+	    //reduce speed for diagonal movement
+	    if (hsp != 0 && vsp != 0) {
+	        hsp *= 0.8;  //reduce horizontal speed
+	        vsp *= 0.8;  //reduce vertical speed
+	        diagonal_movement = true;
 
-    //update animation frame
-    if (animation_timer >= animation_speed / animation_multiplier) {
-        image_index = frame_offset + (image_index + 1) mod 4;  //cycle frames
-        animation_timer = 0;  //reset timer
-    }
+	        //check which diagonal direction for animations
+	        if (hsp > 0 && vsp > 0) {
+	            frame_offset = 28;  //down-right
+	            global.last_direction = 28;  //track down-right
+	        } else if (hsp > 0 && vsp < 0) {
+	            frame_offset = 20;  //up-right
+	            global.last_direction = 20;  //track up-right
+	        } else if (hsp < 0 && vsp > 0) {
+	            frame_offset = 4;  //down-left
+	            global.last_direction = 4;  //track down-left
+	        } else if (hsp < 0 && vsp < 0) {
+	            frame_offset = 12;  //up-left
+	            global.last_direction = 12;  //track up-left
+	        }
+	    } else if (hsp > 0) {
+	        frame_offset = 24;  //right
+	    } else if (hsp < 0) {
+	        frame_offset = 8;  //left
+	    } else if (vsp > 0) {
+	        frame_offset = 0;  //down
+	    } else if (vsp < 0) {
+	        frame_offset = 16;  //up
+	    }
 
-    //apply movement
-    x += hsp;
-    y += vsp;
+	    //update animation frame
+	    if (animation_timer >= animation_speed / animation_multiplier) {
+	        image_index = frame_offset + (image_index + 1) mod 4;  //cycle frames
+	        animation_timer = 0;  //reset timer
+	    }
 
-    // ***Collision Check with Objects*** 
-    //stop player on collision
-    if (place_meeting(x, y, objSolid)) {
-        x -= hsp;  //undo horizontal movement
-        y -= vsp;  //undo vertical movement
-    }
+	    //apply movement
+	    x += hsp;
+	    y += vsp;
+
+	    // ***Collision Check with Objects*** 
+	    //stop player on collision
+	    if (place_meeting(x, y, objSolid)) {
+	        x -= hsp;  //undo horizontal movement
+	        y -= vsp;  //undo vertical movement
+	    }
+	}
 }
 
 //handle idle frame

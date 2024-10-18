@@ -2,6 +2,13 @@
 /// @desc updates text speed and handles spacebar logic
 /// @return none
 
+
+// Disable player movement when dialogue box is active
+if (instance_exists(objDialogueBox)) {
+    objPlayer.hsp = 0;
+    objPlayer.vsp = 0;
+}
+
 mouseX = device_mouse_x_to_gui(0);
 mouseY = device_mouse_x_to_gui(0);
 
