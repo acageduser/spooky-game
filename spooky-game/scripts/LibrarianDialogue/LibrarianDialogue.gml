@@ -5,12 +5,6 @@ global.librarianDisabled = false;
 /// @desc displays the librarian's dialogue options based on the current dialogue branch and game state
 /// @return none
 function displayLibrarianMenu() {
-    ////check if librarian is disabled
-    //if (global.librarianDisabled) {
-    //    objDialogueBox.setDialogue("You’ve done all that you can for her... Look into the mirror...");  //final message if librarian is free
-    //    return;  //exit to prevent further options
-    //}
-
     var options = ["Who are you?", "Walk away"];  //initial dialogue options
 
     //branch 0: initial dialogue
@@ -43,12 +37,6 @@ function displayLibrarianMenu() {
 /// @param choice - player's chosen dialogue option
 /// @return none
 function submitLibrarianAction(choice) {
-    ////check if librarian is disabled
-    //if (global.librarianDisabled) {
-    //    objDialogueBox.setDialogue("You have done all that you can for us...but you are still here, aren\’t you? Look into the mirror, and you will see your true self. Only then can you escape. Thank you for setting me free... It is time to set yourself free...");  //final message
-    //    return;  //exit
-    //}
-
     //branch 0: handle initial interaction
     if (global.LibrarianDialogueBranch == 0) {
         switch (choice) {
@@ -57,7 +45,7 @@ function submitLibrarianAction(choice) {
                 global.LibrarianDialogueBranch = 1;  //advance dialogue branch
                 break;
             case 1:
-                displayActionsMenu();  //quit: return to actions menu
+                //displayActionsMenu();  //quit: return to actions menu
                 global.isTalkingToLibrarian = false;  //exit talking state
                 break;
         }
@@ -75,10 +63,4 @@ function submitLibrarianAction(choice) {
                 break;
         }
     }
-
-//    //check if the pedestal is occupied after interaction
-//    if (global.pedestalOccupied && !global.librarianDisabled) {
-//        global.librarianDisabled = true;  //disable further dialogue
-//        objDialogueBox.setDialogue("You’ve done all that you can for us...but you’re still here, aren’t you? Look into the mirror, and you will see your true self. Only then can you escape. Thank you for setting me free... It is time to set yourself free...");  //final message
-//    }
 }

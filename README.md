@@ -86,18 +86,20 @@ Changed:
 
 JALEN LEWIS:
 
-- picking up the wallphase
-- picking up the book
-- interacting with hidden door
-- fixing dialouge to make options selectable
-- logic for dialouge happening when interactiong with the bookshelf
-- logic for dialouge happening interacting with the pedelstal
-- 
--  
+
+######################################################################################
+--------------------------------------------------------------------------------------
+######################################################################################
 
 ANGEL CRUZ:
 
+Each NPC and object interaction has its own block of code in the players step event.
+The way the collision was done did not allow for collision mask overlap so I could not
+do collision events.
 
+There is an issue with the dialogue box where the options are not highlighted when
+being hovered over with the mouse and are not able to be selected. All interactions
+have debug messages in place of the dialogue box while I work on a fix.
 
 ######################################################################################
 

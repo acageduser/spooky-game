@@ -3,7 +3,6 @@
 /// @return none
 
 global.unlockHauntedBookshelf = false;  //player unlocks haunted bookshelf
-global.puzzleComplete = false
 global.unlockHauntedBookshelfLibrarianHalf = false;
 global.unlockHauntedBookshelfJanitorHalf = false;
 global.hasInspectedMirror = false;  //player has inspected the mirror
@@ -20,3 +19,5 @@ global.lanternLit = false;  //lantern has been lit
 global.spiritAwakening = false;  //player's spirit awakening triggered
 global.pedestalOccupied = false;  //pedestal is occupied with cursed book
 global.inventory = [];  // Empty inventory at the start
+global.isTalkingToLibrarian = false;
+global.isTalkingToJanitor = false;
