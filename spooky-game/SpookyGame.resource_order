@@ -7,6 +7,7 @@
     {"name":"objBookshelf3","order":5,"path":"objects/objBookshelf3/objBookshelf3.yy",},
     {"name":"objDeskClean","order":2,"path":"objects/objDeskClean/objDeskClean.yy",},
     {"name":"objDoor","order":7,"path":"objects/objDoor/objDoor.yy",},
+    {"name":"objPhase","order":8,"path":"objects/objPhase/objPhase.yy",},
     {"name":"objSolid","order":1,"path":"objects/objSolid/objSolid.yy",},
     {"name":"roomTest","order":2,"path":"rooms/roomTest/roomTest.yy",},
     {"name":"winScreen","order":1,"path":"rooms/winScreen/winScreen.yy",},
@@ -23,6 +24,7 @@
     {"name":"scrPlayerMovement","order":11,"path":"scripts/scrPlayerMovement/scrPlayerMovement.yy",},
     {"name":"scrTileCollide","order":12,"path":"scripts/scrTileCollide/scrTileCollide.yy",},
     {"name":"sort_depth_by_y","order":13,"path":"scripts/sort_depth_by_y/sort_depth_by_y.yy",},
+    {"name":"sprPickUp","order":2,"path":"sprites/sprPickUp/sprPickUp.yy",},
     {"name":"sprWinScreen","order":1,"path":"sprites/sprWinScreen/sprWinScreen.yy",},
   ],
 }

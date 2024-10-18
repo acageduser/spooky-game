@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-//Destroy any existing instances of objDialogueBox
+
 if( instance_exists(objDialogueBox) ) {
 	instance_destroy(objDialogueBox);
 }//end if
@@ -13,4 +13,12 @@ if(isTalkingToJanitor) {
 	displayJanitorMenu();
 } else if (isTalkingToLibrarian) {
 	displayLibrarianMenu();
+}else if (isInteractingWithBookshelf){
+	interactWithBookshelf();
+}else if (isInteractingWithPedestal){
+	interactWithPedestal();
 }//end if
+
+if(isOpeningDoor){
+	tryToExitRoom();
+}

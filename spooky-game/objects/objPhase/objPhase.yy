@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprWallPhase1",
-    "path":"sprites/sprWallPhase1/sprWallPhase1.yy",
+    "name":"sprWallPhase2",
+    "path":"sprites/sprWallPhase2/sprWallPhase2.yy",
   },
   "spriteMaskId":null,
   "visible":true,
