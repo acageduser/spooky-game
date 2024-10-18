@@ -7,6 +7,7 @@
     {"name":"objBookshelf3","order":5,"path":"objects/objBookshelf3/objBookshelf3.yy",},
     {"name":"objDeskClean","order":2,"path":"objects/objDeskClean/objDeskClean.yy",},
     {"name":"objDoor","order":7,"path":"objects/objDoor/objDoor.yy",},
+    {"name":"objLanternLit","order":8,"path":"objects/objLanternLit/objLanternLit.yy",},
     {"name":"objSolid","order":1,"path":"objects/objSolid/objSolid.yy",},
     {"name":"roomTest","order":2,"path":"rooms/roomTest/roomTest.yy",},
     {"name":"winScreen","order":1,"path":"rooms/winScreen/winScreen.yy",},

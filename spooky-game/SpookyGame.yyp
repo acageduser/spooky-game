@@ -56,6 +56,7 @@
     {"id":{"name":"objDoor","path":"objects/objDoor/objDoor.yy",},},
     {"id":{"name":"objJanitor","path":"objects/objJanitor/objJanitor.yy",},},
     {"id":{"name":"objLantern","path":"objects/objLantern/objLantern.yy",},},
+    {"id":{"name":"objLanternLit","path":"objects/objLanternLit/objLanternLit.yy",},},
     {"id":{"name":"objLibrarian","path":"objects/objLibrarian/objLibrarian.yy",},},
     {"id":{"name":"objMirror1","path":"objects/objMirror1/objMirror1.yy",},},
     {"id":{"name":"objMirror2","path":"objects/objMirror2/objMirror2.yy",},},

@@ -1,11 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"objLantern",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"objLanternLit",
+  "eventList":[],
   "managed":true,
-  "name":"objLantern",
+  "name":"objLanternLit",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -33,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprLantern_Unlit",
-    "path":"sprites/sprLantern_Unlit/sprLantern_Unlit.yy",
+    "name":"sprLantern_lit",
+    "path":"sprites/sprLantern_lit/sprLantern_lit.yy",
   },
   "spriteMaskId":null,
   "visible":true,
