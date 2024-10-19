@@ -79,6 +79,27 @@ Changed:
 - All player movement is now handled in the Step event (no more 8 separate key events).
 - Reorganized objects into their own instances for better management.
 
+UPDATED CHANGES:
+
+- Intro text is now displayed. Following the intro text, the dialogue box is destroyed in the DialogueBox instance, preventing the old actions menu to come up
+- The menu now appears on screen when talking to the NPCs
+- Each NPC interaction has their own menu with their own options you can select.
+- submitPlayerAction is taken out since it references the old Actions.gml script. Actions.gml is deprecated.
+- displayActionsMenu is taken out since it references the old Actions.gml script. Actions.gml is deprecated.
+- The actions menu is now completely killed. It no longer has any references or code that is running at all. Everything is handled within the librarian/janitor dialogue scrips
+- Pressing the 'quit' now instance_destory()'s the dialogue box and lets you walk around again.
+- Fix player moving while in dialogue box. The player now sits still when the dialogue box is open.
+- Redesigned the level to include the new objCursedBook and new bookshelves within a new bookshelvesDestroy layer. The new level design will make the game concept more clear.
+- Added bookshelf destruction! After rearranging the books in the correct order, the bookshelves now disappear, enabling the player to get past them.
+- The inventory is now displayed on the screen at all times.
+- The inventory can now be populated with the correct items the player has picked up.
+- The cursed book can now be obtained
+- When placing the cursed book on the pedestal, it now displays on top of the pedestal. It's rough, but hey it works.
+- The lantern now functions correctly. It also switches to the 'objLanternLit' object once it's lit
+- The player can now interact with the door and leave the room, prompting them to view the win screen.
+- The player can interact with the mirror and get the wall phase ability.
+- Player is now able to phase through solid bookshelves to reach the door.
+
 
 ######################################################################################
 --------------------------------------------------------------------------------------
