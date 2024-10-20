@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"structPlayer",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"structPlayer",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

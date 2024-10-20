@@ -1,6 +1,7 @@
 /// @function initialize_global_flags
 /// @desc initializes all global game state flags
 /// @return none
+//flags.gml
 
 global.unlockHauntedBookshelf = false;  //player unlocks haunted bookshelf
 global.unlockHauntedBookshelfLibrarianHalf = false;
