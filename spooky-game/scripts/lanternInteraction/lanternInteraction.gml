@@ -1,34 +1,35 @@
 /// @function interactWithLantern
 /// @desc handles the player's interaction with the lantern and checks conditions for lighting it
+/// @param none
 /// @return none
 
 function interactWithLantern() {
-    // Ensure that the dialogue box exists
+    //ensure dialogue box exists
     if (!instance_exists(objDialogueBox)) {
-        instance_create_layer(x, y, "DialogueBox", objDialogueBox);  // Create dialogue box on the correct layer
+        instance_create_layer(x, y, "DialogueBox", objDialogueBox);  //create dialogue box instance
     }
 
-    // Check if the player has the cursed book or the pedestal is occupied
+    //check if player has cursed book or pedestal is occupied
     if (global.HasCursedBook == true || global.pedestalOccupied == true) {
         if (global.lanternLit == false) {
-            // Set dialogue for lighting the lantern
-            objDialogueBox.setDialogue("You light the lantern using the curse from the book. The janitor's eyes go wide...You've freed him. Only the Librarian remains...");
+            //set dialogue for lighting lantern
+            objDialogueBox.setDialogue("you light the lantern using the curse from the book. the janitor's eyes go wide...you've freed him. only the librarian remains...");
 
-            // Mark the lantern as lit
+            //mark lantern as lit
             global.lanternLit = true;
-            global.janitorDisabled = true;  // Janitor is now freed
+            global.janitorDisabled = true;  //disable janitor dialogue
 
-            // Replace the unlit lantern with the lit version
+            //replace unlit lantern with lit version
             with (objLantern) {
-                instance_create_layer(x, y, "Lantern", objLanternLit);  // Ensure objLanternLit is the correct object
-                instance_destroy();  // Destroy the unlit lantern
+                instance_create_layer(x, y, "Lantern", objLanternLit);  //create lit lantern
+                instance_destroy();  //destroy unlit lantern
             }
         }
     } else if (global.lanternLit == true) {
-        // If the lantern is already lit, inform the player
-        objDialogueBox.setDialogue("The lantern is already lit.");
+        //inform player lantern already lit
+        objDialogueBox.setDialogue("the lantern is already lit.");
     } else {
-        // If the conditions are not met, ensure dialogue box exists and inform the player
-        objDialogueBox.setDialogue("The lantern is cold and dark...");  // No action without cursed book
+        //inform player no cursed book
+        objDialogueBox.setDialogue("the lantern is cold and dark...");  //no action possible
     }
 }

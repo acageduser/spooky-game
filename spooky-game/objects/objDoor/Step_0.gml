@@ -1,10 +1,11 @@
 /// @function Step
-/// @desc Allows the player to interact with the door
-/// @param None
+/// @desc allows the player to interact with the door
+/// @param none
 
+//check distance between player and door
 var player_distance = distance_to_object(objPlayer);
 
-// Check if the player is close enough to interact and presses the 'F' key
+//check if player is close enough and presses 'F'
 if (player_distance <= 15 && keyboard_check_pressed(ord("F"))) {
-    interactWithDoor();  // Call the door interaction function
+    interactWithDoor();  //trigger door interaction
 }

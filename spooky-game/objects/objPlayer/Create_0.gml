@@ -1,7 +1,4 @@
-// objPlayer: Create Event
-player = new myPlayer(self);
+/// @description Create Event for objPlayer
 
-// Initialize global inventory if not already done
-if (!variable_global_exists("inventory")) {
-    global.inventory = [];
-}
+player = new myPlayer(id);
+show_debug_message("player struct created with owner id: " + string(id));

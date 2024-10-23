@@ -1,5 +1,5 @@
 /// @function Alarm 1
-/// @desc allows player to proceed after delay
+/// @desc allows the player to proceed after a brief delay
 /// @return none
 
-global.canProceed = true;  //allow player to proceed after delay
+global.canProceed = true;  //player can now advance dialogue

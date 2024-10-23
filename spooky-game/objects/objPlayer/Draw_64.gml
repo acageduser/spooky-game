@@ -1,2 +1,3 @@
-// objPlayer: Draw GUI Event
-player.drawInventory();  // Call to display the player's inventory
+/// @description Draw Event for objPlayer
+
+player.drawInventory();

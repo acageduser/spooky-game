@@ -1,171 +1,273 @@
-// structPlayer.gml
+/// @function myPlayer
+/// @desc constructs player object with movement and interaction functionality
+/// @param {object} inst - player instance
+/// @return none
 
 function myPlayer(inst) constructor {
-    owner = inst; // Store instance reference
+    owner = inst; //store instance reference
 
-    // Player attributes
-    move_speed = 4;
-    animation_speed = room_speed / 6;  // Set frame speed based on room speed
-    animation_timer = 0;
-    hsp = 0;  // Horizontal speed
-    vsp = 0;  // Vertical speed
+    //initialize player attributes
+    move_speed = 4; //movement speed
+    animation_speed = room_speed / 6; //animation frame speed
+    animation_timer = 0; //timer for animations
+    hsp = 0; //horizontal speed
+    vsp = 0; //vertical speed
+    animation_multiplier = 1; //controls animation speed
+    frame_offset = 0; //adjusts animation frame
+    key_count = 0; //tracks number of keys pressed
+    opposite_directions_pressed = false; //flag for opposite key presses
 
-    // Initialize interaction flags on the instance
+    //interaction flags stored on owner instance
     with (owner) {
-        isTalkingToLibrarian = false;
         isTalkingToJanitor = false;
+        isTalkingToLibrarian = false;
+        isInteracting = false; //flag for other interactions
+        hasCursedBook = false;
+        hasWallPhase = false;
+        image_speed = 0; //stop animation when idle
     }
 
-
+    //initialize global variables if not yet set
     if (!variable_global_exists("last_direction")) {
-        global.last_direction = 0;  // Default down-facing direction
+        global.last_direction = 0; //default direction (down)
     }
 
-    // Wall phase ability and other flags
-    global.currentDialogueContext = "";  // Tracks dialogue context
+    if (!variable_global_exists("currentDialogueContext")) {
+        global.currentDialogueContext = ""; //track dialogue context
+    }
 
-    // Control method (Handles movement, input, collisions, and interactions)
+    /// @function control
+    /// @desc handles player movement, input, and animation updates
+    /// @param none
     control = function() {
-        with (owner) {
-            // Player movement and input logic
-            move_speed = 2;
-            var animation_multiplier = 1;
+        //disable player movement if dialogue box is active
+        if (!instance_exists(objDialogueBox)) {
 
-            // Check for sprinting
+            //reset movement speeds and variables
+            move_speed = 2; //base speed
+            animation_multiplier = 1; //base animation speed
+            hsp = 0;
+            vsp = 0;
+            frame_offset = 0;
+            key_count = 0;
+            opposite_directions_pressed = false;
+
+            //check if sprinting
             if (keyboard_check(vk_shift)) {
-                move_speed *= 1.5;
-                animation_multiplier = 1.5;
+                move_speed *= 1.5; //increase speed while sprinting
+                animation_multiplier = 1.5; //increase animation speed
             }
 
-            // Handle player movement and key press logic
+            //increment animation timer
+            animation_timer += animation_multiplier;
+
+            //check directional input
             var right_pressed = keyboard_check(vk_right) || keyboard_check(ord("D"));
             var left_pressed = keyboard_check(vk_left) || keyboard_check(ord("A"));
             var down_pressed = keyboard_check(vk_down) || keyboard_check(ord("S"));
             var up_pressed = keyboard_check(vk_up) || keyboard_check(ord("W"));
 
-            // Set movement direction
-            hsp = (right_pressed - left_pressed) * move_speed;
-            vsp = (down_pressed - up_pressed) * move_speed;
+            //check for opposite key presses
+            if (right_pressed && left_pressed) {
+                opposite_directions_pressed = true;
+            }
+            if (up_pressed && down_pressed) {
+                opposite_directions_pressed = true;
+            }
 
-            // Collision logic, including wall phase
-            if (global.wallPhase == true) {
-                // Check for wall-phase ability with bookshelf objects
-                if (place_meeting(x + hsp, y + vsp, objSolid) &&
-                    !place_meeting(x + hsp, y + vsp, objBookshelf1)) {
-                    hsp = 0;
-                    vsp = 0;
-                }
+            //count keys pressed
+            if (right_pressed) key_count++;
+            if (left_pressed) key_count++;
+            if (down_pressed) key_count++;
+            if (up_pressed) key_count++;
+
+            //stop movement if 3+ keys pressed
+            if (key_count >= 3 || opposite_directions_pressed) {
+                hsp = 0;
+                vsp = 0;
+                owner.image_index = 0; //idle frame
             } else {
-                // Normal collision behavior
-                if (place_meeting(x + hsp, y + vsp, objSolid)) {
-                    hsp = 0;
-                    vsp = 0;
+                var diagonal_movement = false;
+
+                //handle movement and track direction
+                if (right_pressed) {
+                    hsp = move_speed; //move right
+                    global.last_direction = 24; //track right direction
+                }
+                if (left_pressed) {
+                    hsp = -move_speed; //move left
+                    global.last_direction = 8; //track left direction
+                }
+                if (down_pressed) {
+                    vsp = move_speed; //move down
+                    global.last_direction = 0; //track down direction
+                }
+                if (up_pressed) {
+                    vsp = -move_speed; //move up
+                    global.last_direction = 16; //track up direction
+                }
+
+                //reduce speed for diagonal movement
+                if (hsp != 0 && vsp != 0) {
+                    hsp *= 0.8; //reduce horizontal speed
+                    vsp *= 0.8; //reduce vertical speed
+                    diagonal_movement = true;
+
+                    //handle diagonal direction for animations
+                    if (hsp > 0 && vsp > 0) {
+                        frame_offset = 28; //down-right
+                        global.last_direction = 28; //track down-right
+                    } else if (hsp > 0 && vsp < 0) {
+                        frame_offset = 20; //up-right
+                        global.last_direction = 20; //track up-right
+                    } else if (hsp < 0 && vsp > 0) {
+                        frame_offset = 4; //down-left
+                        global.last_direction = 4; //track down-left
+                    } else if (hsp < 0 && vsp < 0) {
+                        frame_offset = 12; //up-left
+                        global.last_direction = 12; //track up-left
+                    }
+                } else if (hsp > 0) {
+                    frame_offset = 24; //right
+                } else if (hsp < 0) {
+                    frame_offset = 8; //left
+                } else if (vsp > 0) {
+                    frame_offset = 0; //down
+                } else if (vsp < 0) {
+                    frame_offset = 16; //up
+                }
+
+                //update animation frame
+                if (animation_timer >= animation_speed / animation_multiplier) {
+                    owner.image_index = frame_offset + ((owner.image_index + 1) % 4); //cycle frames
+                    animation_timer = 0; //reset timer
+                }
+
+                //apply movement and handle collisions
+                owner.x += hsp;
+                owner.y += vsp;
+
+                //handle collisions
+                with (owner) {
+                    if (global.wallPhase == true) {
+                        //allow phasing through objBookshelf1
+                        if (place_meeting(x, y, objSolid) && !place_meeting(x, y, objBookshelf1)) {
+                            x -= hsp; //undo horizontal movement
+                            y -= vsp; //undo vertical movement
+                        }
+                    } else {
+                        //normal collision behavior
+                        if (place_meeting(x, y, objSolid)) {
+                            x -= hsp; //undo horizontal movement
+                            y -= vsp; //undo vertical movement
+                        }
+                    }
                 }
             }
 
-            // Move the player
-            x += hsp;
-            y += vsp;
-
-            // Depth handling
-            depth = -y;
-        }
-    };
-
-    // Display inventory
-    drawInventory = function() {
-        // Since drawing functions operate in the instance scope, use 'with'
-        with (owner) {
-            var inventoryText = "Inventory:\n";
-
-            // Iterate over player's inventory
-            for (var i = 0; i < array_length(global.inventory); i++) {
-                inventoryText += "- " + global.inventory[i] + "\n";
+            //handle idle frame
+            if (hsp == 0 && vsp == 0) {
+                owner.image_speed = 0; //stop animation
+                owner.image_index = global.last_direction; //stay on last direction
             }
 
-            // Set the font and draw inventory at the top-left corner
-            draw_set_color(c_white);
-            draw_set_font(-1);  // Use default system font
-            draw_text(10, 10, inventoryText);
+            //set depth for precise sorting
+            owner.depth = -owner.bbox_bottom;
         }
     };
 
-    // Method to handle all interactions (Librarian, Janitor, Bookshelf, etc.)
+    /// @function handleInteractions
+    /// @desc handles interactions with NPCs and objects in the room
+    /// @param none
     handleInteractions = function() {
         with (owner) {
-            // Handle Librarian Interaction
-            if (distance_to_object(objLibrarian) <= 15 && keyboard_check_pressed(ord("F"))) {
-                global.currentDialogueContext = "librarian";
-                isTalkingToLibrarian = true;
-            }
+            if (!global.isDialogueActive) {
+                var dialogueBoxInstance = global.dialogueBoxInstance;
 
-            // Librarian Interaction
-            var lib_distance = distance_to_object(objLibrarian);
-            if (!global.librarianDisabled && lib_distance <= 15 && keyboard_check_pressed(ord("F"))) {
-                global.currentDialogueContext = "librarian";  // Set context to librarian
-                isTalkingToLibrarian = true;
-                alarm[0] = 1;
-            }
+                //librarian interaction
+                var lib_distance = distance_to_object(objLibrarian);
+                if (!global.librarianDisabled && lib_distance <= 15 && keyboard_check_pressed(ord("F"))) {
+                    global.isDialogueActive = true;
+                    global.currentDialogueContext = "librarian";
+                    isTalkingToLibrarian = true;
+                    dialogueBoxInstance.initializeDialogue("Librarian: Can I help you?", ["Ask about books", "Walk away"]);
+                }
 
-            // Janitor Interaction
-            var jan_distance = distance_to_object(objJanitor);
-            if (!global.janitorDisabled && jan_distance <= 15 && keyboard_check_pressed(ord("F"))) {
-                isTalkingToJanitor = true;
-                alarm[0] = 1;
-            }
+                //janitor interaction
+                var jan_distance = distance_to_object(objJanitor);
+                if (!global.janitorDisabled && jan_distance <= 15 && keyboard_check_pressed(ord("F"))) {
+                    global.isDialogueActive = true;
+                    global.currentDialogueContext = "janitor";
+                    isTalkingToJanitor = true;
+                    dialogueBoxInstance.initializeDialogue("Janitor: Been cleaning forever...", ["What happened?", "Leave"]);
+                }
 
-            // Haunted Bookshelf Interaction
-            var hbs_distance = distance_to_object(objBookshelf1);
-            if (hbs_distance <= 15 && keyboard_check_pressed(ord("F"))) {
-                alarm[0] = 1;
-                if (global.unlockHauntedBookshelfJanitorHalf == true && global.unlockHauntedBookshelfLibrarianHalf == true) {
-                    global.hasCursedBook = true;  // Give player cursed book
-                    array_push(global.inventory, "Cursed Book");  // Add cursed book to inventory
-                } else {
-                    objDialogueBox.setDialogue("The bookshelf looks ordinary.");
+                //mirror interaction
+                var mirror = instance_nearest(x, y, objMirror1);
+                if (mirror != noone && point_distance(x, y, mirror.x, mirror.y) <= 15 && keyboard_check_pressed(ord("F"))) {
+                    isInteracting = true;
+                    if (owner != undefined && dialogueBoxInstance != undefined) {
+                        currentDialogue = new MirrorDialogue(player, dialogueBoxInstance);
+                    } else {
+                        show_debug_message("Owner or dialogueBoxInstance is undefined");
+                    }
+                    currentDialogue.displayMenu(); //show mirror dialogue
+                }
+
+                //bookshelf interaction
+                var bookshelf = instance_nearest(x, y, objBookshelf1);
+                if (bookshelf != noone && point_distance(x, y, bookshelf.x, bookshelf.y) <= 15 && keyboard_check_pressed(ord("F"))) {
+                    isInteracting = true;
+                    currentDialogue = new BookshelfDialogue(owner, dialogueBoxInstance);
+                    currentDialogue.displayMenu();
+                }
+
+                //lantern interaction
+                var lantern = instance_nearest(x, y, objLantern);
+                if (lantern != noone && point_distance(x, y, lantern.x, lantern.y) <= 15 && keyboard_check_pressed(ord("F"))) {
+                    if (!global.lanternLit && (global.hasCursedBook || global.pedestalOccupied)) {
+                        global.lanternLit = true;
+                        global.janitorDisabled = true;
+                        instance_create_layer(lantern.x, lantern.y, layer_get_name(lantern.layer), objLanternLit);
+                        with (lantern) instance_destroy();
+                    }
+                }
+
+                //pedestal interaction
+                var pedestal = instance_nearest(x, y, objAlter);
+                if (pedestal != noone && point_distance(x, y, pedestal.x, pedestal.y) <= 15 && keyboard_check_pressed(ord("F")) && !global.pedestalOccupied) {
+                    if (global.hasCursedBook) {
+                        global.pedestalOccupied = true;
+                        removeItemFromInventory("Cursed Book");
+                        global.hasCursedBook = false;
+                    }
+                }
+
+                //door interaction
+                var door = instance_nearest(x, y, objDoor);
+                if (door != noone && point_distance(x, y, door.x, door.y) <= 15 && keyboard_check_pressed(ord("F"))) {
+                    if (global.wallPhase == true) {
+                        room_goto(winScreen); //move to win screen
+                    } else {
+                        show_message("I can't get through...");
+                    }
                 }
             }
+        }
+    };
 
-            // Lantern Interaction
-            var lan_distance = distance_to_object(objLantern);
-            if (lan_distance <= 15 && keyboard_check_pressed(ord("F"))) {
-                if ((global.lanternLit == false) && (global.hasCursedBook == true || global.pedestalOccupied == true)) {
-                    global.lanternLit = true;
-                    global.janitorDisabled = true;
-                    instance_create_layer(x, y, "Lantern", objLanternLit);  // Replace lantern
-                    instance_destroy();  // Destroy unlit lantern
-                }
+    /// @function drawInventory
+    /// @desc draws the player's inventory at the top-left corner of the screen
+    /// @param none
+    drawInventory = function() {
+        with (owner) {
+            var inventoryText = "Inventory:\n";
+            for (var i = 0; i < array_length(global.inventory); i++) {
+                inventoryText += "- " + global.inventory[i] + "\n"; //list items in inventory
             }
-
-            // Pedestal Interaction
-            var ped_distance = distance_to_object(objAlter);
-            if (ped_distance <= 15 && keyboard_check_pressed(ord("F")) && !global.pedestalOccupied) {
-                if (global.hasCursedBook) {
-                    global.pedestalOccupied = true;  // Update pedestal state
-                    removeItemFromInventory();
-                    global.inventory = [];
-                    global.hasCursedBook = false;
-                }
-            }
-
-            // Mirror Interaction
-            var mirror_distance = distance_to_object(objMirror1);
-            if (mirror_distance <= 15 && keyboard_check_pressed(ord("F"))) {
-                if (global.librarianDisabled == true && global.janitorDisabled == true) {
-                    global.wallPhase = true;  // Unlock wallPhase ability
-                    array_push(global.inventory, "Wall Phase Ability");
-                }
-            }
-
-            // Door Interaction
-            var door_distance = distance_to_object(objDoor);
-            if (door_distance <= 15 && keyboard_check_pressed(ord("F"))) {
-                if (global.wallPhase == true) {
-                    room_goto(winScreen);  // Move to win screen
-                } else {
-                    objDialogueBox.setDialogue("I can't get through...");
-                }
-            }
+            draw_set_color(c_white); //set text color
+            draw_set_font(-1); //use default font
+            draw_text(10, 10, inventoryText); //draw inventory text
         }
     };
 }

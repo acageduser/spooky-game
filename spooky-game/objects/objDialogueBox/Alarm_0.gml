@@ -1,16 +1,17 @@
 /// @function Alarm 0
-/// @desc manages spacebar input and ensures the correct game flow when advancing the game
+/// @desc manages dialogue progression and action submission via the relevant dialogue struct
 /// @return none
 
+//proceed if text fully displayed and player can continue
 if (global.textFullyDisplayed && global.canProceed) {
-    if (choice) {
-        //handle option selection based on NPC context
-        if (objPlayer.isTalkingToLibrarian) {
-            submitLibrarianAction(selected);  //process librarian actions
-        } else if (objPlayer.isTalkingToJanitor) {
-            submitJanitorAction(selected);  //process janitor actions
+    //handle submission if choices are available
+    if (global.dialogueBoxInstance.choice) {
+        //submit player choice to the active dialogue
+        if (global.currentDialogue != undefined) {
+            global.currentDialogue.submitAction(global.dialogueBoxInstance.selected);  //submit chosen action
         }
     } else {
+        //proceed without choices, trigger next alarm
         self.alarm[2] = 1;
     }
 }

@@ -8,9 +8,3 @@ with (objSolid) {
         depth = -y;
     }
 }
-
-with (objPlayer) {
-    if (y != undefined) {
-        depth = -y;
-    }
-}

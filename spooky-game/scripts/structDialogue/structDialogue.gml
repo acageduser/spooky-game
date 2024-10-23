@@ -1,176 +1,161 @@
-// structDialogue.gml
-
-// Parent Dialogue Struct
+/// @function Dialogue
+/// @desc base struct for player and dialogue box interactions
+/// @param {object} _player - player instance
+/// @param {object} _dialogueBox - dialogue box instance
+/// @return none
 function Dialogue(_player, _dialogueBox) constructor {
-    // Common attributes
-    player = _player;              // Reference to the player instance
-    dialogueBox = _dialogueBox;    // Reference to the dialogue box instance
+    player = _player; //reference player instance
+    dialogueBox = _dialogueBox; //reference dialogue box instance
 
-    // Common methods (to be overridden by child structs)
+    //methods for child structs to override
     displayMenu = function() {};
     submitAction = function(choice) {};
 }
 
-// Janitor Dialogue Struct
-function JanitorDialogue(_player, _dialogueBox) : Dialogue(_player, _dialogueBox) constructor {
-    // Attributes specific to JanitorDialogue
-    dialogueBranch = 0;
-    disabled = false;
+/// @function DialogueBox
+/// @desc handles rendering and managing dialogue text and options
+/// @return none
+function DialogueBox() constructor {
+    //positioning variables
+    screenW = display_get_gui_width(); //gui width
+    screenH = display_get_gui_height(); //gui height
+    margin = 0.7; //margin around box
+    padding = 20; //padding inside box
+    width = screenW - (margin * 2); //box width
+    height = (screenH * 0.8) - (margin * 2); //box height
+    top = margin; //top margin
+    bottom = screenH - margin; //bottom margin
+    left = margin; //left margin
+    right = screenW - margin; //right margin
 
-    // Override displayMenu method
-    displayMenu = function() {
-        if (disabled) {
-            dialogueBox.setDialogue("The janitor has moved on and can no longer be spoken to.", ["Quit"]);
-            return;
-        }
+    //text variables
+    text = ""; //dialogue text content
+    textSpeed = 0.5; //speed for text display
+    textProgress = 0; //tracks current text progress
+    textLength = 0; //total length of text
 
-        if (dialogueBranch == 0) {
-            dialogueBox.setDialogue("Oh, you startled me! I'm the janitor here. I've been sweeping these floors for as long as I can remember.", ["What happened to you?", "Quit"]);
-        } else if (dialogueBranch == 1) {
-            var options = ["What's with the bookshelf?", "Quit"];
-            if (global.lanternLit) {
-                array_push(options, "Are you free?");
-            }
-            dialogueBox.setDialogue("What would you like to ask?", options);
-        } else if (dialogueBranch == 2) {
-            dialogueBox.setDialogue("What should I do now?", ["Goodbye"]);
-        }
-    };
+    //selection and options variables
+    choice = false; //flag for choices
+    selected = -1; //tracks selected option
+    options = []; //array of choices
+    mouseX = 0; //x position of mouse
+    mouseY = 0; //y position of mouse
 
-    // Override submitAction method
-    submitAction = function(choice) {
-        if (dialogueBranch == 0) {
-            switch (choice) {
-                case 0:
-                    dialogueBox.setDialogue("A mishap with the lantern... I'm cursed to sweep these floors for all eternity.");
-                    dialogueBranch = 1;
-                    player.isTalkingToJanitor = false;
-                    break;
-                case 1:
-                    player.isTalkingToJanitor = false;
-                    break;
-            }
-        } else if (dialogueBranch == 1) {
-            switch (choice) {
-                case 0:
-                    dialogueBox.setDialogue("That bookshelf hides a powerful book. The Yellow book must come last and the Green book comes after Blue.");
-                    global.unlockHauntedBookshelfJanitorHalf = true;
-                    break;
-                case 1:
-                    player.isTalkingToJanitor = false;
-                    break;
-                case 2:
-                    if (global.lanternLit) {
-                        dialogueBox.setDialogue("Yes, at last I can finally move on from this place. Thank you. Please speak with the Librarian now.");
-                        dialogueBranch = 2;
-                        disabled = true;
-                        global.janitorDisabled = true;
-                    }
-                    break;
-            }
-        } else if (dialogueBranch == 2) {
-            if (choice == 0) {
-                dialogueBox.setDialogue("Goodbye.");
-                player.isTalkingToJanitor = false;
-            }
-        }
-    };
-}
+    //global flags
+    global.textFullyDisplayed = false; //flag when text is fully displayed
+    global.canProceed = false; //flag to allow spacebar to proceed
+    global.showSpacebarPrompt = false; //flag for spacebar prompt
 
-// Librarian Dialogue Struct
-function LibrarianDialogue(_player, _dialogueBox) : Dialogue(_player, _dialogueBox) constructor {
-    // Attributes specific to LibrarianDialogue
-    dialogueBranch = 0;
-    disabled = false;
+    /// @function initializeDialogue
+    /// @desc sets the dialogue text and choices
+    /// @param {string} _text - dialogue text
+    /// @param {array} _choices - array of player choices
+    initializeDialogue = function(_text, _choices = []) {
+        text = _text; //set the dialogue text
+	    show_debug_message("Text set to: " + text);  //see what the current text should be
+        textProgress = 0; //reset text progress
+        textLength = string_length(text); //get text length
+        selected = -1; //reset selected option
+        choice = (array_length(_choices) > 0); //check if choices exist
+        options = _choices; //store choices
 
-    // Override displayMenu method
-    displayMenu = function() {
-        if (disabled) {
-            dialogueBox.setDialogue("You have done all that you can for us...but you are still here, aren't you? Look into the mirror, and you will see your true self. Only then can you escape. Thank you for setting me free... It is time to set yourself free...", ["Quit"]);
-            global.librarianDisabled = true;
-            return;
-        }
-
-        if (dialogueBranch == 0) {
-            dialogueBox.setDialogue("Hello there! How may I help you?", ["Who are you?", "Walk away"]);
-        } else if (dialogueBranch == 1) {
-            dialogueBox.setDialogue("I cannot help myself... However, there is another spirit here, cursed to endlessly toil. To free him, you must light the lantern that he cannot. But be warned, the flame required is not of this world.", ["What happens if I light the lantern?", "What do you know about the bookshelf?", "Quit"]);
-        } else if (dialogueBranch == 2) {
-            dialogueBox.setDialogue("Lighting the lantern will allow the janitor to move on. But to ignite the flame, you will need the Cursed Book, which is hidden behind the bookshelf. I don't know how to get it, but perhaps he does.", ["What happens if I light the lantern?", "Quit"]);
-        }
-    };
-
-    // Override submitAction method
-    submitAction = function(choice) {
-        if (dialogueBranch == 0) {
-            switch (choice) {
-                case 0:
-                    dialogueBox.setDialogue("I am the keeper of this place, bound to it for eternity...unless someone helps me find peace.");
-                    dialogueBranch = 1;
-                    player.isTalkingToLibrarian = false;
-                    break;
-                case 1:
-                    player.isTalkingToLibrarian = false;
-                    break;
-            }
-        } else if (dialogueBranch == 1) {
-            switch (choice) {
-                case 0:
-                    dialogueBox.setDialogue("Lighting the lantern will allow the janitor to move on. But to ignite the flame, you will need the Cursed Book, which is hidden behind the bookshelf. I don't know how to get it, but perhaps he does.");
-                    break;
-                case 1:
-                    dialogueBox.setDialogue("All I know is that the Blue book comes after the Red book.");
-                    global.unlockHauntedBookshelfLibrarianHalf = true;
-                    break;
-                case 2:
-                    player.isTalkingToLibrarian = false;
-                    break;
-            }
-        }
-    };
-}
-
-// Mirror Dialogue Struct
-function MirrorDialogue(_player, _dialogueBox) : Dialogue(_player, _dialogueBox) constructor {
-    // Override displayMenu method
-    displayMenu = function() {
-        if (global.librarianDisabled && global.janitorDisabled) {
-            dialogueBox.setDialogue("You look into the mirror and realize there is no reflection... Just as the Librarian and Janitor, you too are but a lost spirit. As the truth settles and you accept your fate, a strange power awakens within you... You can now phase through walls.", ["Continue"]);
-            global.wallPhase = true;
-            array_push(global.inventory, "Wall Phase Ability");
+        if (choice) {
+            global.showSpacebarPrompt = false; //no spacebar prompt for choices
         } else {
-            dialogueBox.setDialogue("It's just a dusty mirror...", ["Continue"]);
+            text += "\n\nPress spacebar to continue..."; //prompt for spacebar
+            global.showSpacebarPrompt = true; //enable spacebar prompt
         }
     };
 
-    // Override submitAction method
-    submitAction = function(choice) {
-        player.isInteracting = false;
-    };
-}
-
-// Bookshelf Dialogue Struct
-function BookshelfDialogue(_player, _dialogueBox) : Dialogue(_player, _dialogueBox) constructor {
-    // Override displayMenu method
-    displayMenu = function() {
-        if (global.unlockHauntedBookshelfJanitorHalf && global.unlockHauntedBookshelfLibrarianHalf) {
-            dialogueBox.setDialogue("You arrange the books in the correct order and reveal the Cursed Book. You open it up and learn to chant a curse to light a lantern...", ["Take the Cursed Book"]);
-        } else if (global.unlockHauntedBookshelfJanitorHalf || global.unlockHauntedBookshelfLibrarianHalf) {
-            dialogueBox.setDialogue("You learned the order of two books... But the other two colors remain a mystery!", ["Continue"]);
+    /// @function update
+    /// @desc handles dialogue text rendering and input
+    /// @return none
+    update = function() {
+        //handle text rendering
+        if (textProgress < textLength) {
+            if (keyboard_check(vk_space)) {
+                textProgress += textSpeed * 8; //speed up text display
+            } else {
+                textProgress += textSpeed; //normal text display speed
+            }
         } else {
-            dialogueBox.setDialogue("The bookshelf looks ordinary.", ["Continue"]);
-        }
-    };
+            if (!global.textFullyDisplayed) {
+                global.textFullyDisplayed = true; //mark text as fully displayed
+                global.canProceed = true; //allow player to proceed
+            }
 
-    // Override submitAction method
-    submitAction = function(choice) {
-        if (global.unlockHauntedBookshelfJanitorHalf && global.unlockHauntedBookshelfLibrarianHalf) {
-            if (choice == 0) { // "Take the Cursed Book"
-                global.hasCursedBook = true;
-                array_push(global.inventory, "Cursed Book");
-                show_debug_message("Cursed Book added to inventory.");
+            //proceed without choices if spacebar pressed
+            if (global.canProceed && !choice && global.showSpacebarPrompt && keyboard_check_pressed(vk_space)) {
+                if (global.currentDialogue != undefined) {
+                    global.currentDialogue.submitAction(-1); //submit action without choice
+                } else {
+                    global.isDialogueActive = false; //close dialogue if no actions
+                }
             }
         }
-        player.isInteracting = false;
+
+        //handle options if choices are available
+        if (choice && global.textFullyDisplayed) {
+            mouseX = device_mouse_x_to_gui(0); //get mouse x position
+            mouseY = device_mouse_y_to_gui(0); //get mouse y position
+
+            var optionY = bottom - padding - 30; //y position for options
+
+            //loop through available options
+            for (var i = array_length(options) - 1; i >= 0; i--) {
+                var optionTextWidth = string_width(options[i]); //get width of option text
+                var optionX = (screenW / 2) - (optionTextWidth / 2); //center option text
+
+                //check if mouse is over option
+                var mouseOver = (mouseX >= optionX && mouseX <= optionX + optionTextWidth &&
+                                 mouseY >= optionY && mouseY <= optionY + 30);
+
+                if (mouseOver) {
+                    selected = i; //update selected option
+                }
+
+                optionY -= 30; //move y position up for next option
+            }
+
+            //submit action on mouse click
+            if (mouse_check_button_pressed(mb_left) && selected >= 0) {
+                if (global.currentDialogue != undefined) {
+                    global.currentDialogue.submitAction(selected); //submit selected action
+                }
+            }
+        }
     };
+
+    /// @function draw
+    /// @desc handles rendering the dialogue box and options
+    /// @return none
+    draw = function() {
+        var offsetY = 55; //offset for box position
+        var boxTop = screenH - height - offsetY; //top of dialogue box
+        var boxBottom = screenH - offsetY; //bottom of dialogue box
+
+        //draw dialogue box background
+        draw_sprite_stretched(sprText_Box, 0, left, boxTop, width, height);
+
+        //draw dialogue text
+        var currentText = string_copy(text, 1, floor(textProgress)); //get current text to display
+        draw_set_font(fnt_dialogue); //set dialogue font
+        draw_set_color(c_white); //set text color
+        draw_text_ext(left + padding, boxTop + padding, currentText, -1, width - padding * 2); //draw the text
+
+        //draw options if available
+        if (choice && global.textFullyDisplayed) {
+            var optionY = boxBottom - padding - 30; //y position for options
+            for (var i = array_length(options) - 1; i >= 0; i--) {
+                var optionTextWidth = string_width(options[i]); //get width of option
+                var optionX = (screenW / 2) - (optionTextWidth / 2); //center option text
+                var mouseOver = (mouseX >= optionX && mouseX <= optionX + optionTextWidth && mouseY >= optionY && mouseY <= optionY + 30);
+                draw_set_color(mouseOver || i == selected ? c_yellow : c_white); //highlight option if hovered
+                draw_text(optionX, optionY, options[i]); //draw option text
+                optionY -= 30; //move y position up for next option
+            }
+        }
+    };
+
+    return self;
 }
