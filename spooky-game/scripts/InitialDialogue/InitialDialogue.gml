@@ -3,9 +3,13 @@ function InitialDialogue(_player) constructor {
     // Initialize the Dialogue struct (don't need to assign parent)
     Dialogue(_player, global.dialogueBoxInstance);
 
-    // You can assign them directly without copying from `parent`
+    // Assign dialogueBox and player directly from global and argument
     dialogueBox = global.dialogueBoxInstance;
     player = _player;
+
+    // Set the initial dialogue as the current active dialogue
+    global.currentDialogue = self;
+    global.isDialogueActive = true;
 
     // display the initial dialogue
     displayMenu = function() {
@@ -20,7 +24,19 @@ function InitialDialogue(_player) constructor {
 	        "\n\nPress spacebar to continue..."
         );
     };
+	
+    submitAction = function(choice) {
+        if (choice == -1) {
+            // Continue to the next dialogue or close the current dialogue
+            show_debug_message("Submit action called with -1. Proceeding...");
 
-    global.isDialogueActive = false;
-    global.currentDialogue = undefined;
+            // Mark the dialogue as complete or move on
+            global.isDialogueActive = false;
+            global.currentDialogue = undefined; // Clear current dialogue
+        }
+    };
+
+
+    // Call the displayMenu function to show the dialogue immediately
+    displayMenu();
 }

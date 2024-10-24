@@ -15,10 +15,9 @@ if (bookshelf_distance <= 15 && keyboard_check_pressed(ord("F"))) {
 
     //check if both book flags are unlocked
     if (global.unlockHauntedBookshelfLibrarianHalf == true && global.unlockHauntedBookshelfJanitorHalf == true) {
-        objDialogueBox.setDialogue("You arrange the books in the correct order and the bookshelf collapses!");  //bookshelf destruction message
+        global.dialogueBoxInstance.setDialogue("You arrange the books in the correct order and the bookshelf collapses!");  //set dialogue
         instance_destroy();  //destroy current instance of bookshelf
-        //needs to destroy the dialogue box here
     } else {
-        objDialogueBox.setDialogue("The bookshelf looks ordinary.");  //no action taken
+        global.dialogueBoxInstance.setDialogue("The bookshelf looks ordinary.");  //no action taken
     }
 }

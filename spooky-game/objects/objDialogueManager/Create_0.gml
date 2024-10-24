@@ -30,7 +30,7 @@ if (!variable_global_exists("showSpacebarPrompt")) {
 //create dialogueBoxInstance once, ensure it's not overwritten
 if (global.dialogueBoxInstance == undefined) {
     show_debug_message("Initializing DialogueBox in DialogueManager...");
-//    global.dialogueBoxInstance = new DialogueBox();
+    global.dialogueBoxInstance = new DialogueBox();
 } else {
     show_debug_message("DialogueBox already initialized.");  //does it already exist??
 }
@@ -41,7 +41,7 @@ instance_create_layer(0, 0, "DialogueBox", objDialogueBox);
 var playerInstance = instance_find(objPlayer, 0);  //find player instance
 
 //initialize initial dialogue
-//global.currentDialogue = new InitialDialogue(playerInstance);
+global.currentDialogue = new InitialDialogue(playerInstance);
 
 //set isDialogueActive to true to start interaction
 global.isDialogueActive = false;

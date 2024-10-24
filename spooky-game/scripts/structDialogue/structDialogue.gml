@@ -84,14 +84,21 @@ function DialogueBox() constructor {
                 global.canProceed = true; //allow player to proceed
             }
 
-            //proceed without choices if spacebar pressed
-            if (global.canProceed && !choice && global.showSpacebarPrompt && keyboard_check_pressed(vk_space)) {
-                if (global.currentDialogue != undefined) {
-                    global.currentDialogue.submitAction(-1); //submit action without choice
-                } else {
-                    global.isDialogueActive = false; //close dialogue if no actions
-                }
-            }
+			// Proceed without choices if spacebar pressed
+			if (global.canProceed && !choice && global.showSpacebarPrompt && keyboard_check_pressed(vk_space)) {
+			    if (global.currentDialogue != undefined) {
+			        global.currentDialogue.submitAction(-1); // Submit action without choice
+        
+			        // Destroy the objDialogueBox object instance if it exists
+			        var dialogueBoxObj = instance_find(objDialogueBox, 0); // Find the objDialogueBox instance
+			        if (instance_exists(dialogueBoxObj)) {
+			            instance_destroy(dialogueBoxObj); // Destroy the dialogue box instance
+			        }
+			    } else {
+			        global.isDialogueActive = false; // Close dialogue if no actions
+			    }
+			}
+
         }
 
         //handle options if choices are available
