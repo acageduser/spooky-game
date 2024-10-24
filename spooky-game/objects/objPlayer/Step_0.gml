@@ -1,3 +1,3 @@
 // objPlayer Step Event
-player.control();
-player.handleInteractions();
+thisPlayer.control();
+thisPlayer.handleInteractions();

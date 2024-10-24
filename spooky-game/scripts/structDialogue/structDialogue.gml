@@ -50,7 +50,7 @@ function DialogueBox() constructor {
     /// @desc sets the dialogue text and choices
     /// @param {string} _text - dialogue text
     /// @param {array} _choices - array of player choices
-    initializeDialogue = function(_text, _choices = []) {
+    function initializeDialogue (_text, _choices = []) {
         text = _text; //set the dialogue text
 	    show_debug_message("Text set to: " + text);  //see what the current text should be
         textProgress = 0; //reset text progress
@@ -70,7 +70,7 @@ function DialogueBox() constructor {
     /// @function update
     /// @desc handles dialogue text rendering and input
     /// @return none
-    update = function() {
+    function update () {
         //handle text rendering
         if (textProgress < textLength) {
             if (keyboard_check(vk_space)) {
@@ -129,7 +129,7 @@ function DialogueBox() constructor {
     /// @function draw
     /// @desc handles rendering the dialogue box and options
     /// @return none
-    draw = function() {
+    function draw () {
         var offsetY = 55; //offset for box position
         var boxTop = screenH - height - offsetY; //top of dialogue box
         var boxBottom = screenH - offsetY; //bottom of dialogue box

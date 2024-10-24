@@ -2,50 +2,54 @@
 /// @desc constructs player object with movement and interaction functionality
 /// @param {object} inst - player instance
 /// @return none
+function Player(inst) constructor {
+    owner = inst;  // make sure the instance (player) is properly assigned to owner
 
-function myPlayer(inst) constructor {
-    owner = inst; //store instance reference
+    // check if the owner variable is initialized correctly
+    if (is_undefined(owner)) {
+        show_debug_message("Error: owner not defined!");  // Debugging to catch initialization issues
+    }
 
     //initialize player attributes
-    move_speed = 4; //movement speed
-    animation_speed = room_speed / 6; //animation frame speed
-    animation_timer = 0; //timer for animations
-    hsp = 0; //horizontal speed
-    vsp = 0; //vertical speed
-    animation_multiplier = 1; //controls animation speed
-    frame_offset = 0; //adjusts animation frame
-    key_count = 0; //tracks number of keys pressed
-    opposite_directions_pressed = false; //flag for opposite key presses
+    move_speed = 4;  //movement speed
+    animation_speed = room_speed / 6;  //animation frame speed
+    animation_timer = 0;  //timer for animations
+    hsp = 0;  //horizontal speed
+    vsp = 0;  //vertical speed
+    animation_multiplier = 1;  //controls animation speed
+    frame_offset = 0;  //adjusts animation frame
+    key_count = 0;  //tracks number of keys pressed
+    opposite_directions_pressed = false;  //flag for opposite key presses
 
     //interaction flags stored on owner instance
     with (owner) {
         isTalkingToJanitor = false;
         isTalkingToLibrarian = false;
-        isInteracting = false; //flag for other interactions
+        isInteracting = false;  //flag for other interactions
         hasCursedBook = false;
         hasWallPhase = false;
-        image_speed = 0; //stop animation when idle
+        image_speed = 0;  //stop animation when idle
     }
 
     //initialize global variables if not yet set
     if (!variable_global_exists("last_direction")) {
-        global.last_direction = 0; //default direction (down)
+        global.last_direction = 0;  //default direction (down)
     }
 
     if (!variable_global_exists("currentDialogueContext")) {
-        global.currentDialogueContext = ""; //track dialogue context
+        global.currentDialogueContext = "";  //track dialogue context
     }
 
     /// @function control
     /// @desc handles player movement, input, and animation updates
     /// @param none
-    control = function() {
+    function control () {
         //disable player movement if dialogue box is active
         if (!instance_exists(objDialogueBox)) {
 
             //reset movement speeds and variables
-            move_speed = 2; //base speed
-            animation_multiplier = 1; //base animation speed
+            move_speed = 2;  //base speed
+            animation_multiplier = 1;  //base animation speed
             hsp = 0;
             vsp = 0;
             frame_offset = 0;
@@ -54,8 +58,8 @@ function myPlayer(inst) constructor {
 
             //check if sprinting
             if (keyboard_check(vk_shift)) {
-                move_speed *= 1.5; //increase speed while sprinting
-                animation_multiplier = 1.5; //increase animation speed
+                move_speed *= 1.5;  //increase speed while sprinting
+                animation_multiplier = 1.5;  //increase animation speed
             }
 
             //increment animation timer
@@ -85,62 +89,62 @@ function myPlayer(inst) constructor {
             if (key_count >= 3 || opposite_directions_pressed) {
                 hsp = 0;
                 vsp = 0;
-                owner.image_index = 0; //idle frame
+                owner.image_index = 0;  //idle frame
             } else {
                 var diagonal_movement = false;
 
                 //handle movement and track direction
                 if (right_pressed) {
-                    hsp = move_speed; //move right
-                    global.last_direction = 24; //track right direction
+                    hsp = move_speed;  //move right
+                    global.last_direction = 24;  //track right direction
                 }
                 if (left_pressed) {
-                    hsp = -move_speed; //move left
-                    global.last_direction = 8; //track left direction
+                    hsp = -move_speed;  //move left
+                    global.last_direction = 8;  //track left direction
                 }
                 if (down_pressed) {
-                    vsp = move_speed; //move down
-                    global.last_direction = 0; //track down direction
+                    vsp = move_speed;  //move down
+                    global.last_direction = 0;  //track down direction
                 }
                 if (up_pressed) {
-                    vsp = -move_speed; //move up
-                    global.last_direction = 16; //track up direction
+                    vsp = -move_speed;  //move up
+                    global.last_direction = 16;  //track up direction
                 }
 
                 //reduce speed for diagonal movement
                 if (hsp != 0 && vsp != 0) {
-                    hsp *= 0.8; //reduce horizontal speed
-                    vsp *= 0.8; //reduce vertical speed
+                    hsp *= 0.8;  //reduce horizontal speed
+                    vsp *= 0.8;  //reduce vertical speed
                     diagonal_movement = true;
 
                     //handle diagonal direction for animations
                     if (hsp > 0 && vsp > 0) {
-                        frame_offset = 28; //down-right
-                        global.last_direction = 28; //track down-right
+                        frame_offset = 28;  //down-right
+                        global.last_direction = 28;  //track down-right
                     } else if (hsp > 0 && vsp < 0) {
-                        frame_offset = 20; //up-right
-                        global.last_direction = 20; //track up-right
+                        frame_offset = 20;  //up-right
+                        global.last_direction = 20;  //track up-right
                     } else if (hsp < 0 && vsp > 0) {
-                        frame_offset = 4; //down-left
-                        global.last_direction = 4; //track down-left
+                        frame_offset = 4;  //down-left
+                        global.last_direction = 4;  //track down-left
                     } else if (hsp < 0 && vsp < 0) {
-                        frame_offset = 12; //up-left
-                        global.last_direction = 12; //track up-left
+                        frame_offset = 12;  //up-left
+                        global.last_direction = 12;  //track up-left
                     }
                 } else if (hsp > 0) {
-                    frame_offset = 24; //right
+                    frame_offset = 24;  //right
                 } else if (hsp < 0) {
-                    frame_offset = 8; //left
+                    frame_offset = 8;  //left
                 } else if (vsp > 0) {
-                    frame_offset = 0; //down
+                    frame_offset = 0;  //down
                 } else if (vsp < 0) {
-                    frame_offset = 16; //up
+                    frame_offset = 16;  //up
                 }
 
                 //update animation frame
                 if (animation_timer >= animation_speed / animation_multiplier) {
-                    owner.image_index = frame_offset + ((owner.image_index + 1) % 4); //cycle frames
-                    animation_timer = 0; //reset timer
+                    owner.image_index = frame_offset + ((owner.image_index + 1) % 4);  //cycle frames
+                    animation_timer = 0;  //reset timer
                 }
 
                 //apply movement and handle collisions
@@ -158,8 +162,12 @@ function myPlayer(inst) constructor {
                     } else {
                         //normal collision behavior
                         if (place_meeting(x, y, objSolid)) {
-                            x -= hsp; //undo horizontal movement
-                            y -= vsp; //undo vertical movement
+                            //debugging collision info
+                            show_debug_message("Collision Detected - hsp: " + string(other.hsp) + ", vsp: " + string(other.vsp));
+                            show_debug_message("Current hsp: " + string(other.hsp));
+                            x -= other.hsp; //undo horizontal movement
+                            show_debug_message("Current vsp: " + string(other.vsp));
+                            y -= other.vsp; //undo vertical movement
                         }
                     }
                 }
@@ -167,8 +175,8 @@ function myPlayer(inst) constructor {
 
             //handle idle frame
             if (hsp == 0 && vsp == 0) {
-                owner.image_speed = 0; //stop animation
-                owner.image_index = global.last_direction; //stay on last direction
+                owner.image_speed = 0;  //stop animation
+                owner.image_index = global.last_direction;  //stay on last direction
             }
 
             //set depth for precise sorting
@@ -179,7 +187,7 @@ function myPlayer(inst) constructor {
     /// @function handleInteractions
     /// @desc handles interactions with NPCs and objects in the room
     /// @param none
-    handleInteractions = function() {
+    function handleInteractions () {
         with (owner) {
             if (!global.isDialogueActive) {
                 var dialogueBoxInstance = global.dialogueBoxInstance;
@@ -211,7 +219,7 @@ function myPlayer(inst) constructor {
                     } else {
                         show_debug_message("Owner or dialogueBoxInstance is undefined");
                     }
-                    currentDialogue.displayMenu(); //show mirror dialogue
+                    currentDialogue.displayMenu();  //show mirror dialogue
                 }
 
                 //bookshelf interaction
@@ -247,7 +255,7 @@ function myPlayer(inst) constructor {
                 var door = instance_nearest(x, y, objDoor);
                 if (door != noone && point_distance(x, y, door.x, door.y) <= 15 && keyboard_check_pressed(ord("F"))) {
                     if (global.wallPhase == true) {
-                        room_goto(winScreen); //move to win screen
+                        room_goto(winScreen);  //move to win screen
                     } else {
                         show_message("I can't get through...");
                     }
@@ -259,15 +267,15 @@ function myPlayer(inst) constructor {
     /// @function drawInventory
     /// @desc draws the player's inventory at the top-left corner of the screen
     /// @param none
-    drawInventory = function() {
+    function drawInventory () {
         with (owner) {
             var inventoryText = "Inventory:\n";
             for (var i = 0; i < array_length(global.inventory); i++) {
-                inventoryText += "- " + global.inventory[i] + "\n"; //list items in inventory
+                inventoryText += "- " + global.inventory[i] + "\n";  //list items in inventory
             }
-            draw_set_color(c_white); //set text color
-            draw_set_font(-1); //use default font
-            draw_text(10, 10, inventoryText); //draw inventory text
+            draw_set_color(c_white);  //set text color
+            draw_set_font(-1);  //use default font
+            draw_text(10, 10, inventoryText);  //draw inventory text
         }
     };
 }
